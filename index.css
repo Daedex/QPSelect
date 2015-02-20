@@ -1,0 +1,18 @@
+label {
+	display: inline-block;
+	margin-left: 50px;
+	width: 135px;
+	padding: 5px;
+}
+
+input {
+	display: inline-block;
+	width:70px;
+}
+
+#calculate {
+	margin-left: 50px;
+	width: 225px;
+	padding: 10px;
+	font-size: 25px;
+}
