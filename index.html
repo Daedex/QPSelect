@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  	<link rel="stylesheet" type="text/css" href="index.css">
     <title>QPSelect</title>
   </head>
 
   <body>
+  	<h3>QPSelect</h3>
   	<form action="" method="post">
 			<div class="field">
-				<label for="first_name">Air Volume</label>
-				<input type="text" name="first_name" id="first_name" autocomplete="off">
-			</div>
-			<div>
-				<label for="Last_name">Total Static Pressure</label>
-				<input type="text" name="last_name" id="last_name" autocomplete="off">
+				<label for="air_volume">Air Volume</label>
+				<input type="text" name="air_volume" id="air_volume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
 			</div>
 			<div class="field">
-				<label for="num_fish">Voltage</label>
-				<input name="num_fish" id="num_fish" autocomplete="off">
+				<label for="total_static_pressure">Total Static Pressure</label>
+				<input type="text" name="total_static_pressure" id="total_static_pressure" autocomplete="off">&nbsp;iwc</input>
 			</div>
 			<div class="field">
-				<label for="num_alive">Section Width</label>
-				<input name="num_alive" id="num_alive" autocomplete="off">
+				<label for="voltage">Voltage</label>
+				<input name="voltage" id="voltage" autocomplete="off">
 			</div>
 			<div class="field">
-				<label for="num_alive">Section Height</label>
-				<input name="num_alive" id="num_alive" autocomplete="off">
+				<label for="section_width">Section Width</label>
+				<input name="section_width" id="section_width" autocomplete="off">&nbsp;in</input>
 			</div>
-			<input type="submit" value="Calculate">
+			<div class="field">
+				<label for="section_height">Section Height</label>
+				<input name="section_height" id="section_height" autocomplete="off">&nbsp;in</input>
+			</div>
+			<input type="submit" name="calculate" id="calculate" value="Calculate">
 	</form>
     
   </body>
