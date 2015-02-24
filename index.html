@@ -2,22 +2,27 @@
 <html lang="en">
   <head>
   	<link rel="stylesheet" type="text/css" href="index.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <title>QPSelect</title>
   </head>
 
   <body>
   	<h3>QP<span>Select</span></h3>
   	<form action="" method="post">
-			<div class="field">
-				<label for="air_volume">Air Volume</label>
-				<input type="text" name="air_volume" id="air_volume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+			<div class="field1">
+				<label for="airVolume">Air Volume</label>
+				<input type="text" name="airVolume" id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
 			</div>
-			<div class="field">
-				<label for="total_static_pressure">Total Static Pressure</label>
-				<input type="text" name="total_static_pressure" id="total_static_pressure" autocomplete="off">&nbsp;iwc</input>
+			<div class="field2">
+				<label for="airVelocity">Air Velocity</label>
+				<input type="text" name="airVelocity" id="airVelocity" autocomplete="off">&nbsp;ft/min</input>
 			</div>
-			<div class="field">
-				<label for="voltage">Voltage</label>
+			<div class="field3">
+				<label for="totalStaticPressure">Total Static Pressure</label>
+				<input type="text" name="totalStaticPressure" id="totalStaticPressure" autocomplete="off">&nbsp;iwc</input>
+			</div>
+			<div class="field4">
+				<label for="powerSupply">Power Supply</label>
 				<select>
 					<option value="none"></option>
 			  		<option value="400">1-phase / 230V / 60Hz</option>
@@ -25,15 +30,15 @@
 			  		<option value="500">3-phase / 460V / 60Hz</option>
 				</select>
 			</div>
-			<div class="field">
-				<label for="section_width">Section Width</label>
-				<input name="section_width" id="section_width" autocomplete="off">&nbsp;in</input>
+			<div class="field5">
+				<label for="sectionWidth">Section Width</label>
+				<input name="sectionWidth" id="sectionWidth" autocomplete="off">&nbsp;in</input>
 			</div>
-			<div class="field">
-				<label for="section_height">Section Height</label>
-				<input name="section_height" id="section_height" autocomplete="off">&nbsp;in</input>
+			<div class="field6">
+				<label for="sectionHeight">Section Height</label>
+				<input name="sectionHeight" id="sectionHeight" autocomplete="off">&nbsp;in</input>
 			</div>
-			<div class="field">
+			<div class="field7">
 				<label for="fanDiameter">Fan Diameter</label>
 				<select>
 				<option value="none"></option>
@@ -43,8 +48,28 @@
 		  		<option value="560">560</option>
 				</select>
 			</div>
-			<input type="submit" name="select" id="select" value="Select">
+			<div class="field8">
+				<label for="fanQuantity">Fan Quantity</label>
+				<select>
+				<option value="none"></option>
+		  		<option value="400">1</option>
+		  		<option value="450">2</option>
+		  		<option value="500">3</option>
+		  		<option value="560">4</option>
+		  		<option value="560">5</option>
+				</select>
+			</div>
+			<input type="button" onclick="qpSelect()" value="Select" id="qpSelect">
 	</form>
-    
+
+    <script type="text/javascript">    	
+		function qpSelect() {
+			var airVolume = document.form.airVolume.value;
+			document.form.airVelocity.value = airVolume;			
+		};
+
+	</script>
+
   </body>
 </html>
+
