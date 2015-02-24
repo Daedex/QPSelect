@@ -6,7 +6,7 @@
   </head>
 
   <body>
-  	<h3>QPSelect</h3>
+  	<h3>QP<span>Select</span></h3>
   	<form action="" method="post">
 			<div class="field">
 				<label for="air_volume">Air Volume</label>
@@ -18,7 +18,11 @@
 			</div>
 			<div class="field">
 				<label for="voltage">Voltage</label>
-				<input name="voltage" id="voltage" autocomplete="off">
+				<select>
+		  		<option value="400">1-phase / 230V / 60Hz</option>
+		  		<option value="450">3-phase / 230V / 60Hz</option>
+		  		<option value="500">3-phase / 460V / 60Hz</option>
+			</select>
 			</div>
 			<div class="field">
 				<label for="section_width">Section Width</label>
@@ -27,6 +31,15 @@
 			<div class="field">
 				<label for="section_height">Section Height</label>
 				<input name="section_height" id="section_height" autocomplete="off">&nbsp;in</input>
+			</div>
+			<div class="field">
+			<label for="fanDiameter">Fan Diameter</label>
+			<select>
+		  		<option value="400">400</option>
+		  		<option value="450">450</option>
+		  		<option value="500">500</option>
+		  		<option value="560">560</option>
+			</select>
 			</div>
 			<input type="submit" name="calculate" id="calculate" value="Calculate">
 	</form>
