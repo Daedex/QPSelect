@@ -60,19 +60,55 @@
 			  		<option value="560">5</option>
 					</select>
 				</div>
-				<input type="button" onclick="qpSelect()" value="Select" id="qpSelect">
+
+				<input type="button" value="Select" id="qpSelect">
+
+
 		</form>
 
 		<div class="selectGrid">
-			
-		</div>
+		<script type="text/javascript">
 
-	    <script type="text/javascript">    	
-			function qpSelect() {
-							
-			};
+		$('#gridGenerator').click(function(){
+
+		    var $grid = $('#selectGrid');
+
+		   for(i=0; i<100; i++)
+		    {
+		    	var row = '<div>';
+
+		    	for(j=0; j<100; j++){
+		    		row += '<div class="square">' + j + '</div>';
+		    	}
+
+		    	row += '</div>';
+
+		    	$grid.append(row);
+
+		    }
+		 }); 
 
 		</script>
+			
+		</div>
+		<input type="button" value="Generate" id="gridGenerator">
+
+	    <script type="text/javascript">  
+
+			$("#qpSelect").click(function(){
+				var airVolume=$('#airVolume').val();
+		
+				var sectionWidth=$('#sectionWidth').val();
+				var sectionHeight=$('#sectionHeight').val()
+
+				var airVelocity=airVolume/((sectionWidth*sectionHeight)/144);
+
+				$('#airVelocity').val(airVelocity); 
+
+			});   
+
+
+			</script>
 	</div>
   </body>
 </html>
