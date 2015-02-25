@@ -62,36 +62,25 @@
 				</div>
 
 				<input type="button" value="Select" id="qpSelect">
-
-
 		</form>
 
-		<div class="selectGrid">
+		<table id="pixelgrid"></table>
+		
 		<script type="text/javascript">
-
-		$('#gridGenerator').click(function(){
-
-		    var $grid = $('#selectGrid');
-
-		   for(i=0; i<100; i++)
-		    {
-		    	var row = '<div>';
-
-		    	for(j=0; j<100; j++){
-		    		row += '<div class="square">' + j + '</div>';
-		    	}
-
-		    	row += '</div>';
-
-		    	$grid.append(row);
-
-		    }
-		 }); 
-
+			$(document).ready(function() {
+				var $table = $('#pixelgrid');
+				var html = [];
+				var row, col;
+				for(row=0; row<16; row++) {
+					html.push('<tr class="line">')
+					for(col=0; col<16; col++) {
+						html.push('<td class="square">'+'</td>');
+					}
+					html.push('</tr>');
+				}
+				$table.append(html.join(''));
+			});
 		</script>
-			
-		</div>
-		<input type="button" value="Generate" id="gridGenerator">
 
 	    <script type="text/javascript">  
 
@@ -106,9 +95,7 @@
 				$('#airVelocity').val(airVelocity); 
 
 			});   
-
-
-			</script>
+		</script>
 	</div>
   </body>
 </html>
