@@ -8,21 +8,17 @@
 
   <body>
   	<div class="container">
-	  	<h3>QP<span>Select</span></h3>
+	  	<h3>Q<span>uips</span></h3>
 	  	<form id="selectForm" action="" method="post">
 				<div class="field1">
 					<label for="airVolume">Air Volume</label>
 					<input type="text" name="airVolume" id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
 				</div>
 				<div class="field2">
-					<label for="airVelocity">Air Velocity</label>
-					<input type="text" name="airVelocity" id="airVelocity" autocomplete="off">&nbsp;ft/min</input>
-				</div>
-				<div class="field3">
 					<label for="totalStaticPressure">Total Static Pressure</label>
 					<input type="text" name="totalStaticPressure" id="totalStaticPressure" autocomplete="off">&nbsp;iwc</input>
 				</div>
-				<div class="field4">
+				<div class="field3">
 					<label for="powerSupply">Power Supply</label>
 					<select>
 						<option value="none"></option>
@@ -31,36 +27,15 @@
 				  		<option value="500">3-phase / 460V / 60Hz</option>
 					</select>
 				</div>
-				<div class="field5">
-					<label for="sectionWidth">Section Width</label>
+				<div class="field4">
+					<label for="sectionWidth">Unit Width</label>
 					<input name="sectionWidth" id="sectionWidth" autocomplete="off">&nbsp;in</input>
 				</div>
-				<div class="field6">
-					<label for="sectionHeight">Section Height</label>
+				<div class="field5">
+					<label for="sectionHeight">Unit Height</label>
 					<input name="sectionHeight" id="sectionHeight" autocomplete="off">&nbsp;in</input>
 				</div>
-				<div class="field7">
-					<label for="fanDiameter">Fan Diameter</label>
-					<select>
-					<option value="none"></option>
-			  		<option value="400">400</option>
-			  		<option value="450">450</option>
-			  		<option value="500">500</option>
-			  		<option value="560">560</option>
-					</select>
-				</div>
-				<div class="field8">
-					<label for="fanQuantity">Fan Quantity</label>
-					<select>
-					<option value="none"></option>
-			  		<option value="400">1</option>
-			  		<option value="450">2</option>
-			  		<option value="500">3</option>
-			  		<option value="560">4</option>
-			  		<option value="560">5</option>
-					</select>
-				</div>
-
+				
 				<input type="button" value="Select" id="qpSelect">
 		</form>
 
