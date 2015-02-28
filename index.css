@@ -34,8 +34,8 @@ input {
 	float: left;
 	border: 1px solid #00AEEF;
 	padding: 10px;
-	width: 315px;
 	margin: 10px;
+	width: 315px;
 }
 
 #selectGrid {
@@ -44,12 +44,11 @@ input {
     border-spacing: 0;
     padding: 10px;
     margin: 10px;
-        
 }
 
 .square {
 	height: 5px;
-    width: 5px;    
+    width: 5px;
     border: 1px solid black;
     background-color: #00FE00;
     float:left;
