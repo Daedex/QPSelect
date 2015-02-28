@@ -1,2 +1,2 @@
-# QPSelect
+# QUIPS
 Q-PAC Product Selector
