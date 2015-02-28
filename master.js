@@ -10,6 +10,13 @@ function runSelection() {
 
 	};
 
+function clearSelection() {
+		$('#airVolume').val(null);
+		$('#totalStaticPressure').val(null);
+		$('#sectionWidth').val(null);
+		$('#sectionHeight').val(null);
+	};
+
 	/*   ** GRID AS A TABLE **   
 			$(document).ready(function() {
 				var $table = $('#pixelgrid');
