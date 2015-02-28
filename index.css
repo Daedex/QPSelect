@@ -2,9 +2,9 @@ body {
 
 }
 
-.container{
+.container {
 	margin: 0px auto;
-	width: 75%;	
+	width: 100%;	
 }
 
 h3 {
@@ -20,8 +20,7 @@ h3 span {
 label {
 	display: inline-block;	
 	width: 135px;
-	padding: 5px;
-	
+	padding: 5px;	
 }
 
 input {
@@ -33,19 +32,19 @@ input {
 
 #selectForm {
 	float: left;
-	border: 2px solid #00AEEF;
+	border: 1px solid #00AEEF;
 	padding: 10px;
 	width: 315px;
 	margin: 10px;
 }
 
-#pixelGrid {
+#selectGrid {
 	float: left;
     border-collapse: collapse;
     border-spacing: 0;
     padding: 10px;
     margin: 10px;
-    width: 700px;    
+        
 }
 
 .square {

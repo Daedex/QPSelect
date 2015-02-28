@@ -9,6 +9,7 @@
   <body>
   	<div class="container">
 	  	<h3>Q<span>uips</span></h3>
+
 	  	<form id="selectForm" action="" method="post">
 				<div class="field1">
 					<label for="airVolume">Air Volume</label>
@@ -20,7 +21,7 @@
 				</div>
 				<div class="field3">
 					<label for="powerSupply">Power Supply</label>
-					<select>
+					<select id="powerSupply">
 						<option value="none"></option>
 				  		<option value="400">1-phase / 230V / 60Hz</option>
 				  		<option value="450">3-phase / 230V / 60Hz</option>
@@ -28,27 +29,28 @@
 					</select>
 				</div>
 				<div class="field4">
-					<label for="sectionWidth">Unit Width</label>
-					<input name="sectionWidth" id="sectionWidth" autocomplete="off">&nbsp;in</input>
+					<label for="unitWidth">Unit Width</label>
+					<input name="unitWidth" id="unitWidth" autocomplete="off">&nbsp;in</input>
 				</div>
 				<div class="field5">
-					<label for="sectionHeight">Unit Height</label>
-					<input name="sectionHeight" id="sectionHeight" autocomplete="off">&nbsp;in</input>
+					<label for="unitHeight">Unit Height</label>
+					<input name="unitHeight" id="unitHeight" autocomplete="off">&nbsp;in</input>
 				</div>
-				
-				<input type="button" value="Select" id="btnSelect">
-				<input type="button" value="Clear" id="btnClear">
+				<div class="field6">	
+					<input type="button" value="Select" id="btnSelect">
+					<input type="button" value="Clear" id="btnClear">
+				</div>
 		</form>
 		
-		<table id="pixelgrid"></table>
+		<table id="selectGrid"></table>
 
-	    <!--<div id="pixelGrid"></div>-->
-		
-		<script src="master.js"></script>
+	    <script src="master.js"></script>
 		<script type="text/javascript">
 
 			$("#btnSelect").click(runSelection);
 			$("#btnClear").click(clearSelection);
+			
+
 
 		</script>
 	</div>
