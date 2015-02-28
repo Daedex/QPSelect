@@ -39,9 +39,14 @@
 				<input type="button" value="Select" id="qpSelect">
 		</form>
 
-		<table id="pixelgrid"></table>
+<!--		<table id="pixelgrid"></table> -->
+
+	    <div id="pixelGrid"></div>
 		
 		<script type="text/javascript">
+
+
+		/*   ** GRID AS A TABLE **   
 			$(document).ready(function() {
 				var $table = $('#pixelgrid');
 				var html = [];
@@ -54,10 +59,33 @@
 					html.push('</tr>');
 				}
 				$table.append(html.join(''));
-			});
-		</script>
 
-	    <script type="text/javascript">  
+				document.querySelector(".square").onclick=function(){
+					document.querySelector(".square").style.backgroundColor="red"; 
+			}
+			});
+		*/
+
+
+		// ** GRID USING DIVS ** // 
+		var $grid = $('#pixelGrid');
+		for(i=0; i<100; i++) {
+
+			var row = '<div>';
+
+			for(j=0; j<100; j++) {
+				row += '<div class = "square">' + '</div>';
+			}
+
+			row += '</div>';
+
+			$grid.append(row);
+		}
+
+		document.getElementsByClassName('.square').onlick=function() {
+			document.getElementsByClassName('.square').style.backgroundColor="red";
+		}
+
 
 			$("#qpSelect").click(function(){
 				var airVolume=$('#airVolume').val();
@@ -74,4 +102,3 @@
 	</div>
   </body>
 </html>
-
