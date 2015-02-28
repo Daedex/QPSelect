@@ -36,13 +36,14 @@
 					<input name="sectionHeight" id="sectionHeight" autocomplete="off">&nbsp;in</input>
 				</div>
 				
-				<input type="button" value="Select" id="qpSelect">
+				<input type="button" value="Select" id="btnSelect">
 		</form>
 
-<!--		<table id="pixelgrid"></table> -->
+		<table id="pixelgrid"></table>
 
-	    <div id="pixelGrid"></div>
+	    <!--<div id="pixelGrid"></div>-->
 		
+		<script src="master.js"></script>
 		<script type="text/javascript">
 
 
@@ -51,23 +52,23 @@
 				var $table = $('#pixelgrid');
 				var html = [];
 				var row, col;
-				for(row=0; row<100; row++) {
+				for(row=0; row<80; row++) {
 					html.push('<tr class="line">')
-					for(col=0; col<100; col++) {
+					for(col=0; col<80; col++) {
 						html.push('<td class="square">'+'</td>');
 					}
 					html.push('</tr>');
 				}
 				$table.append(html.join(''));
 
-				document.querySelector(".square").onclick=function(){
-					 document.querySelector(".square").style.backgroundColor="red"; 
-			}
+				//document.querySelector(".square").onclick=function(){
+					// document.querySelector(".square").style.backgroundColor="red"; 
+			//}
 			});
-		*/
+		
 
 
-		// ** GRID USING DIVS ** // 
+		/** GRID USING DIVS ** // 
 		var $grid = $('#pixelGrid');
 		for(i=0; i<100; i++) {
 
@@ -85,19 +86,9 @@
 		document.getElementsByClassName('.square').onlick=function() {
 			document.getElementsByClassName('.square').style.backgroundColor="red";
 		}
+		*/
 
-
-			$("#qpSelect").click(function(){
-				var airVolume=$('#airVolume').val();
-		
-				var sectionWidth=$('#sectionWidth').val();
-				var sectionHeight=$('#sectionHeight').val()
-
-				var airVelocity=airVolume/((sectionWidth*sectionHeight)/144);
-
-				$('#airVelocity').val(airVelocity); 
-
-			});   
+			$("#btnSelect").click(runSelection);  
 		</script>
 	</div>
   </body>

@@ -45,15 +45,15 @@ input {
     border-spacing: 0;
     padding: 10px;
     margin: 10px;
-    width: 700px;
+    width: 700px;    
 }
 
 .square {
-	float:left;
-    height: 5px;
-    width: 5px;
-    text-align: center;
-    vertical-align: middle;
+	height: 5px;
+    width: 5px;    
     border: 1px solid black;
     background-color: #00FE00;
+    float:left;
+	text-align: center;
+	vertical-align: middle;
 }
