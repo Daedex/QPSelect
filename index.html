@@ -39,16 +39,16 @@
 				<input type="button" value="Select" id="btnSelect">
 		</form>
 
-		<table id="pixelgrid"></table>
+		<!-- <table id="pixelgrid"></table> -->
 
 	    <!--<div id="pixelGrid"></div>-->
 		
 		<script src="master.js"></script>
 		<script type="text/javascript">
 
+		$("#btnSelect").click(runSelection);
 
-		/*   ** GRID AS A TABLE **   
-			$(document).ready(function() {
+		/*$(document).ready(function() {
 				var $table = $('#pixelgrid');
 				var html = [];
 				var row, col;
@@ -60,35 +60,9 @@
 					html.push('</tr>');
 				}
 				$table.append(html.join(''));
-
-				//document.querySelector(".square").onclick=function(){
-					// document.querySelector(".square").style.backgroundColor="red"; 
-			//}
+				}
 			});
 		
-
-
-		/** GRID USING DIVS ** // 
-		var $grid = $('#pixelGrid');
-		for(i=0; i<100; i++) {
-
-			var row = '<div>';
-
-			for(j=0; j<100; j++) {
-				row += '<div class = "square">' + '</div>';
-			}
-
-			row += '</div>';
-
-			$grid.append(row);
-		}
-
-		document.getElementsByClassName('.square').onlick=function() {
-			document.getElementsByClassName('.square').style.backgroundColor="red";
-		}
-		*/
-
-			$("#btnSelect").click(runSelection);  
 		</script>
 	</div>
   </body>
