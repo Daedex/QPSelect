@@ -1,2 +1,2 @@
 # QUIPS
-Q-PAC Product Selector
+Q-PAC User Interface Product Selector
