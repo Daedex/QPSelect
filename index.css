@@ -3,6 +3,7 @@ body {
 }
 
 .container {
+	padding:20px;
 	margin: 0px auto;
 	width: 100%;	
 }
@@ -31,10 +32,10 @@ input {
 }
 
 #selectForm {
-	float: left;
+	display: block;
 	border: 1px solid #939598;
 	padding: 10px;
-	margin: 10px;
+	margin: 5px;
 	width: 315px;
 }
 
@@ -43,8 +44,8 @@ input {
 	border: 1px solid #939598;
 	width: 641px;
 	height: 641px;
-	margin: 10px;
 	padding: 0px;
+	margin-top: 5px;
 }
 
 #grid {
@@ -71,4 +72,18 @@ input {
    	text-align: center;
 	vertical-align: middle;
 	border: 1px solid black;
+}
+
+.leftSideBar {
+	float: left;
+	padding: 0px;
+}
+
+.selectResults {
+	display: block;
+	border: 1px solid #939598;
+	padding: 10px;
+	margin: 5px;
+	width: 315px;
+	height: 401px;
 }

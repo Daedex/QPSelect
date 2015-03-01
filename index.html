@@ -10,38 +10,43 @@
   	<div class="container">
 	  	<h3>Q<span>uips</span></h3>
 
-	  	<form id="selectForm" action="" method="post">
-				<div class="field1">
-					<label for="airVolume">Air Volume</label>
-					<input type="text" name="airVolume" id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
-				</div>
-				<div class="field2">
-					<label for="totalStaticPressure">Total Static Pressure</label>
-					<input type="text" name="totalStaticPressure" id="totalStaticPressure" autocomplete="off">&nbsp;iwc</input>
-				</div>
-				<div class="field3">
-					<label for="powerSupply">Power Supply</label>
-					<select id="powerSupply">
-						<option value="none"></option>
-				  		<option value="400">1-phase / 230V / 60Hz</option>
-				  		<option value="450">3-phase / 230V / 60Hz</option>
-				  		<option value="500">3-phase / 460V / 60Hz</option>
-					</select>
-				</div>
-				<div class="field4">
-					<label for="unitWidth">Unit Width</label>
-					<input name="unitWidth" id="unitWidth" autocomplete="off">&nbsp;in</input>
-				</div>
-				<div class="field5">
-					<label for="unitHeight">Unit Height</label>
-					<input name="unitHeight" id="unitHeight" autocomplete="off">&nbsp;in</input>
-				</div>
-				<div class="field6">	
-					<input type="button" value="Select" id="btnSelect">
-					<input type="button" value="Clear" id="btnClear">
-				</div>
-		</form>
-		
+	  	<div class="leftSideBar">
+		  	<form id="selectForm" action="" method="post">
+					<div class="field1">
+						<label for="airVolume">Air Volume</label>
+						<input type="text" name="airVolume" id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+					</div>
+					<div class="field2">
+						<label for="totalStaticPressure">Total Static Pressure</label>
+						<input type="text" name="totalStaticPressure" id="totalStaticPressure" autocomplete="off">&nbsp;iwc</input>
+					</div>
+					<div class="field3">
+						<label for="powerSupply">Power Supply</label>
+						<select id="powerSupply">
+							<option value="none"></option>
+					  		<option value="400">1-phase / 230V / 60Hz</option>
+					  		<option value="450">3-phase / 230V / 60Hz</option>
+					  		<option value="500">3-phase / 460V / 60Hz</option>
+						</select>
+					</div>
+					<div class="field4">
+						<label for="unitWidth">Unit Width</label>
+						<input name="unitWidth" id="unitWidth" autocomplete="off">&nbsp;in</input>
+					</div>
+					<div class="field5">
+						<label for="unitHeight">Unit Height</label>
+						<input name="unitHeight" id="unitHeight" autocomplete="off">&nbsp;in</input>
+					</div>
+					<div class="field6">	
+						<input type="button" value="Select" id="btnSelect">
+						<input type="button" value="Clear" id="btnClear">
+					</div>
+			</form>
+			
+			<div class="selectResults">
+			</div>
+		</div>
+
 		<div id="emptyGrid">
 			<table id="grid"></table>
 		</div>

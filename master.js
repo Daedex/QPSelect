@@ -23,11 +23,11 @@ function createGrid() {
 		var unitHeight = $('#unitHeight').val();
 		var $grid = $('#grid');
 		var html = [];
-		var row, col;
-		for(row=0; row<80; row++) {
+		var W, H;
+		for(W=24; W<=182; W+=2) {
 			html.push('<tr class="line">')
-			for(col=0; col<80; col++) {
-				if(row*2==unitWidth && col*2==unitHeight) {
+			for(H=24; H<=182; H+=2) {
+				if(W==unitWidth && H==unitHeight) {
 					html.push('<td class="selectedSquare">'+'</td>');
 				}
 				else {
