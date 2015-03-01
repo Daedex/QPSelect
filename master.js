@@ -14,6 +14,7 @@ function clearSelection() {
 		$('#powerSupply').val(null);
 		$('#unitWidth').val(null);
 		$('#unitHeight').val(null);
+		createGrid();
 	};
 
 //create grid for current selection
@@ -24,9 +25,9 @@ function createGrid() {
 		var $grid = $('#grid');
 		var html = [];
 		var W, H;
-		for(W=24; W<=182; W+=2) {
+		for(H=182; H>=24; H-=2) {
 			html.push('<tr class="line">')
-			for(H=24; H<=182; H+=2) {
+			for(W=24; W<=182; W+=2) {
 				if(W==unitWidth && H==unitHeight) {
 					html.push('<td class="selectedSquare">'+'</td>');
 				}
@@ -41,26 +42,13 @@ function createGrid() {
 
 //makes clicked square the selected square
 function clickSquare() {
-	$('#unitWidth').val("56");
-	$('#unitHeight').val("28");
+	$('#unitWidth').val("unit width"); //need to get values from square that was clicked
+	$('#unitHeight').val("unit height");
+	runSelection();
 };
 
-	/** GRID USING DIVS ** // 
-	var $grid = $('#pixelGrid');
-	for(i=0; i<100; i++) {
-
-	var row = '<div>';
-
-	for(j=0; j<100; j++) {
-		row += '<div class = "square">' + '</div>';
-	}
-
-	row += '</div>';
-
-	$grid.append(row);
-	}
-
-	document.getElementsByClassName('.square').onlick=function() {
-	document.getElementsByClassName('.square').style.backgroundColor="red";
-	}
-	*/
+function selectRatio() {
+	//this function should handle the two selection methods for a square
+	//user inputs the "Unit Width" and "Unit Height"
+	//or the user clicks the square with the dimensions they want
+};
