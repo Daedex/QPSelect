@@ -16,6 +16,7 @@ function clearSelection() {
 		$('#powerSupply').val(null);
 		$('#unitWidth').val(null);
 		$('#unitHeight').val(null);
+		$('#selectGrid').empty();
 	};
 
 //create grid for current selection

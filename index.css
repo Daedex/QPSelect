@@ -39,17 +39,20 @@ input {
 }
 
 #emptyGrid {
-	border: 1px solid #00AEEF;
-	width: 500px;
-	height: 500px;
+	display: inline-block;
+	border: 1px solid #939598;
+	width: 641px;
+	height: 641px;
+	margin: 10px;
+	padding: 0px;
 }
 
 #selectGrid {
 	float: left;
 	border-collapse: collapse;
     border-spacing: 0px;
-    padding: 10px;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .square {
