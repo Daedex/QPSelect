@@ -40,6 +40,8 @@ input {
 
 #emptyGrid {
 	border: 1px solid #00AEEF;
+	width: 500px;
+	height: 500px;
 }
 
 #selectGrid {
