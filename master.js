@@ -16,11 +16,11 @@ function clearSelection() {
 		$('#powerSupply').val(null);
 		$('#unitWidth').val(null);
 		$('#unitHeight').val(null);
-		$('#selectGrid').empty();
 	};
 
 //create grid for current selection
-function createGrid() {  	
+function createGrid() {  
+		$('#selectGrid').empty();	
 		var $table = $('#selectGrid');
 		var html = [];
 		var row, col;
@@ -32,12 +32,6 @@ function createGrid() {
 			html.push('</tr>');
 		}
 		$table.append(html.join(''));
-
-/*
-		document.querySelector(".square").onclick=function(){
-			document.querySelector(".square").style.backgroundColor="red"; 
-		}
-*/
 	};
 
 
