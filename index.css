@@ -32,7 +32,7 @@ input {
 
 #selectForm {
 	float: left;
-	border: 1px solid #00AEEF;
+	border: 1px solid #939598;
 	padding: 10px;
 	margin: 10px;
 	width: 315px;
@@ -47,7 +47,7 @@ input {
 	padding: 0px;
 }
 
-#selectGrid {
+#grid {
 	float: left;
 	border-collapse: collapse;
     border-spacing: 0px;
@@ -59,6 +59,15 @@ input {
 	height: 5px;
     width: 5px;   
     background-color: #00FE00;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.selectedSquare {
+	height: 5px;
+    width: 5px;   
+    background-color: yellow;
    	text-align: center;
 	vertical-align: middle;
 	border: 1px solid black;

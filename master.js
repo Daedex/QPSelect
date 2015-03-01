@@ -2,9 +2,7 @@
 function runSelection() {
 		var airVolume = $('#airVolume').val();
 		var airVolume = $('#totalStaticPressure').val();
-		var unitWidth = $('#unitWidth').val();
-		var unitHeight = $('#unitHeight').val();
-		
+				
 		//run createGrid function 
 		createGrid();
 	};
@@ -20,21 +18,32 @@ function clearSelection() {
 
 //create grid for current selection
 function createGrid() {  
-		$('#selectGrid').empty();	
-		var $table = $('#selectGrid');
+		$('#grid').empty();
+		var unitWidth = $('#unitWidth').val();
+		var unitHeight = $('#unitHeight').val();
+		var $grid = $('#grid');
 		var html = [];
 		var row, col;
 		for(row=0; row<80; row++) {
 			html.push('<tr class="line">')
 			for(col=0; col<80; col++) {
-				html.push('<td class="square">'+'</td>');
+				if(row*2==unitWidth && col*2==unitHeight) {
+					html.push('<td class="selectedSquare">'+'</td>');
+				}
+				else {
+					html.push('<td class="square" onclick="clickSquare();">'+'</td>');
+				}
 			}
 			html.push('</tr>');
 		}
-		$table.append(html.join(''));
+		$grid.append(html.join(''));
 	};
 
-
+//makes clicked square the selected square
+function clickSquare() {
+	$('#unitWidth').val("56");
+	$('#unitHeight').val("28");
+};
 
 	/** GRID USING DIVS ** // 
 	var $grid = $('#pixelGrid');
