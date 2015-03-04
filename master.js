@@ -32,7 +32,7 @@ function createGrid() {
 					html.push('<td class="selectedSquare">'+'</td>');
 				}
 				else {
-					html.push('<td class="square' + W + "x" + H + '" onclick="clickSquare();">'+'</td>');
+					html.push('<td class="square" id="'+W+'x'+H+'" onclick="clickSquare();">'+'</td>');
 				}
 			}
 			html.push('</tr>');
@@ -42,6 +42,8 @@ function createGrid() {
 
 //makes clicked square the selected square
 function clickSquare() {
+
+
 	$('#unitWidth').val("unit width"); //need to get values from square that was clicked
 	$('#unitHeight').val("unit height");
 	runSelection();
