@@ -1,9 +1,8 @@
 //square class declaration
 function Square(unitWidth, unitHeight){
 	this.width=unitWidth;
-	this.height-unitHeigt;
+	this.height=unitHeight; 
 }
-
 
 //run the current selection
 function runSelection() {
