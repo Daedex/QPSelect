@@ -32,6 +32,7 @@ function createGrid() {
 					html.push('<td class="selectedSquare">'+'</td>');
 				}
 				else {
+					//deleteme
 					html.push('<td class="square" id="square'+W+'x'+H+'" onclick="clickSquare();">'+'</td>');
 				}
 			}
