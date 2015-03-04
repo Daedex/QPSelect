@@ -1,3 +1,10 @@
+//square class declaration
+function Square(unitWidth, unitHeight){
+	this.width=unitWidth;
+	this.height-unitHeigt;
+}
+
+
 //run the current selection
 function runSelection() {
 		var airVolume = $('#airVolume').val();
@@ -43,7 +50,6 @@ function createGrid() {
 
 //makes clicked square the selected square
 function clickSquare() {
-
 
 	$('#unitWidth').val("unit width"); //need to get values from square that was clicked
 	$('#unitHeight').val("unit height");
