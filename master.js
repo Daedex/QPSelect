@@ -106,4 +106,14 @@ var Selection = function (x, y, id) {
 	};
 	
 };
+<<<<<<< HEAD
 */
+=======
+
+//basic function to change color of units on click
+	$(function(){
+			$('.selection-type-0').click(function(){
+				$(this).css('background-color', 'white'); 
+			});
+		});
+>>>>>>> 9aa664f227e338d4ed227cd927ed4c9eb91ea51f
