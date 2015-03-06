@@ -1,5 +1,4 @@
 body {
-
 }
 
 .container {
@@ -33,7 +32,7 @@ input {
 
 #selectForm {
 	display: block;
-	border: 1px solid #939598;
+	border: 1px solid #00AEEF;
 	padding: 10px;
 	margin: 5px;
 	width: 315px;
@@ -41,12 +40,11 @@ input {
 
 #emptyGrid {
 	display: inline-block;
-	border: 1px solid #939598;
-	width: 641px;
-	height: 641px;
+	border: 1px solid #00AEEF;
+	width: 777px;
+	height: 425px;
 	padding: 0px;
 	margin-top: 5px;
-	background-color: black;
 }
 
 #grid {
@@ -57,19 +55,37 @@ input {
     margin: 0px;
 }
 
-.square {
+.selected {
 	height: 5px;
     width: 5px;   
-    background-color: #00FE00;
+    background-color: white;
    	text-align: center;
 	vertical-align: middle;
 	border: 1px solid black;
 }
 
-.selectedSquare {
+.selection-type-none {
 	height: 5px;
     width: 5px;   
-    background-color: yellow;
+    background-color: black;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.selection-type-0 {
+	height: 5px;
+    width: 5px;   
+    background-color: #939598;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.selection-type-1 {
+	height: 5px;
+    width: 5px;   
+    background-color: #00FE00;
    	text-align: center;
 	vertical-align: middle;
 	border: 1px solid black;
@@ -80,9 +96,9 @@ input {
 	padding: 0px;
 }
 
-.selectResults {
+#selectedInfo {
 	display: block;
-	border: 1px solid #939598;
+	border: 1px solid #00AEEF;
 	padding: 10px;
 	margin: 5px;
 	width: 315px;

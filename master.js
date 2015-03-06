@@ -1,65 +1,64 @@
-//square class declaration
-var Unit = function (width, height) {
-	this.width = width;
-	this.height = height;
+//initialize the grid
+function initGrid() {
+	var $grid = $('#grid');
+	var html = [];
+	var id, x, y,
+		X_MIN = 36,
+		Y_MIN = 26,
+		X_MAX = 228,
+		Y_MAX = 130;
+		
+	for(y=Y_MAX; y>=Y_MIN; y-=2) {
+	    html.push('<tr>')
+	    for(x=X_MIN; x<=X_MAX; x+=2) {
+	    	id = '"'+'x'+x+'y'+y+'"';
+	        html.push('<td class="selection-type-0" id='+id+'></td>');
+	        //initialize Selection objects here??
+	    }
+	    html.push('</tr>');
+	}
+	$grid.append(html.join(''));
+
+	//unavailable selection sizes - will we need to hardcode all of them?
+	//i think a couple for loops could do the trick
+	document.getElementById("x36y26").className = "selection-type-none";
+	document.getElementById("x228y130").className = "selection-type-none";
+};
+
+//refreshes the grid
+function refreshGrid() {
+	//delete all contents of the table "grid"
+	$('#grid').empty();
+	//reinitialize the grid
+	initGrid();
 };
 
 //run the current selection
 function runSelection() {
-	var airVolume = $('#airVolume').val();
-					
-	//run createGrid function 
-	createGrid();
+	//refresh grid to remove previous selections
+	refreshGrid();
+	//store dimensions
+	var width = $('#width').val();
+	var height = $('#height').val();
+	//create id string - this is redundant and will be part of the selection class
+	var size = 'x'+width+'y'+height;
+	//renames the table element's class name to indicate selected size with css
+	document.getElementById(size).className = "selected";
 };
 
 //clear the current selection
 function clearSelection() {
-	$('#airVolume').val(null);
-	$('#totalStaticPressure').val(null);
-	$('#powerSupply').val(null);
-	$('#unitWidth').val(null);
-	$('#unitHeight').val(null);
-	createGrid();
+	//sets inputs to null
+	$('#width').val(null);
+	$('#height').val(null);
+	//refresh grid to remove previous selections
+	refreshGrid();
 };
 
-//create grid for current selection
-function createGrid() {  
-	$('#grid').empty();
-	var unitWidth = $('#unitWidth').val();
-	var unitHeight = $('#unitHeight').val();
-	var $grid = $('#grid');
-	var html = [];
-	var W, H;
-	for(H=182; H>=24; H-=2) {
-		html.push('<tr class="line">')
-		for(W=24; W<=182; W+=2) {
-			if(W==unitWidth && H==unitHeight) {
-				html.push('<td class="selectedSquare">'+'</td>');
-			}
-			else {
 
-				html.push('<td class="square" id="square'+W+'x'+H+'" onclick="clickSquare();">'+'</td>');
-			}
-		}
-		html.push('</tr>');
-	}
-	$grid.append(html.join(''));
+//selection class declaration
+var Selection = function (x, y) {
+	this.width = x;
+	this.height = y;
+	this.id = '"'+'x'+x+'y'+y+'"';
 };
-
-//makes clicked square the selected square
-function clickSquare() {
-
-	$('#unitWidth').val("unit width"); //need to get values from square that was clicked
-	$('#unitHeight').val("unit height");
-	runSelection();
-};
-
-function selectRatio() {
-	//this function should handle the two selection methods for a square
-	//user inputs the "Unit Width" and "Unit Height"
-	//or the user clicks the square with the dimensions they want
-};
-
-function runOnePac() {
-
-}
