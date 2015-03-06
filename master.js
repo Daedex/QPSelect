@@ -23,6 +23,13 @@ function initGrid() {
 	//i think a couple for loops could do the trick
 	document.getElementById("x36y26").className = "selection-type-none";
 	document.getElementById("x228y130").className = "selection-type-none";
+	document.getElementById("x86y28").className = "selection-type-none";
+	document.getElementById("x144y46").className = "selection-type-none";
+	document.getElementById("x144y82").className = "selection-type-none";
+	document.getElementById("x144y82").className = "selection-type-none";
+	document.getElementById("x228y82").className = "selection-type-none";
+	document.getElementById("x64y130").className = "selection-type-none";
+	document.getElementById("x36y74").className = "selection-type-none";
 };
 
 //refreshes the grid
@@ -75,20 +82,19 @@ function clearSelection() {
 	refreshGrid();
 };
 
-/*
+
 //selection class declaration
 var Selection = function (x, y, id) {
 	this.width = x;
 	this.height = y;
 	this.id = id;
 
-	
+	/*
 	Selection.prototype.info () {
 		return '<p>This is some info on this selection</p>'
 	};
-	
+	*/
 };
-*/
 
 //basic function to change color of units on click
 	$(function(){
