@@ -45,10 +45,9 @@ function inputSelection() {
 function clickSelection(id) {
 	var id = id,
 		arrayId = parseId(id);
-	alert(parseInt('x36'));
 	$('#unitWidth').val(arrayId[0]);
 	$('#unitHeight').val(arrayId[1]);
-	runSelection(id);
+	//runSelection(id);
 };
 
 //run the current selection
@@ -60,8 +59,10 @@ function runSelection(id) {
 };
 
 function parseId(id) {
-	var x = 60,
-		y = 60;
+	var split1 = id.split('y',2);
+		split2 = split1[0].split('x',2);
+		x = split2[1],
+		y = split1[1];
 	return [x, y];
 };
 
