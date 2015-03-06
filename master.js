@@ -74,6 +74,7 @@ function clearSelection() {
 	refreshGrid();
 };
 
+
 function getre(str, num) {
   if(str === num) return 'nice try';
   var res = [/^\D+/g,/\D+$/g,/^\D+|\D+$/g,/\D+/g,/\D.*/g, /.*\D/g,/^\D+|\D.*$/g,/.*\D(?=\d)|\D+$/g];
@@ -106,9 +107,7 @@ var Selection = function (x, y, id) {
 	};
 	
 };
-<<<<<<< HEAD
 */
-=======
 
 //basic function to change color of units on click
 	$(function(){
@@ -116,4 +115,4 @@ var Selection = function (x, y, id) {
 				$(this).css('background-color', 'white'); 
 			});
 		});
->>>>>>> 9aa664f227e338d4ed227cd927ed4c9eb91ea51f
+
