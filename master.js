@@ -75,26 +75,6 @@ function clearSelection() {
 	refreshGrid();
 };
 
-
-function getre(str, num) {
-  if(str === num) return 'nice try';
-  var res = [/^\D+/g,/\D+$/g,/^\D+|\D+$/g,/\D+/g,/\D.*/g, /.*\D/g,/^\D+|\D.*$/g,/.*\D(?=\d)|\D+$/g];
-  for(var i = 0; i < res.length; i++)
-    if(str.replace(res[i], '') === num) 
-      return 'num = str.replace(/' + res[i].source + '/g, "")';
-  return 'no idea';
-};
-function update() {
-  $ = function(x) { return document.getElementById(x) };
-  var re = getre($('str').value, $('num').value);
-  $('re').innerHTML = 'Numex speaks: <code>' + re + '</code>';
-}
-
-
-
-
-
-
 /*
 //selection class declaration
 var Selection = function (x, y, id) {
