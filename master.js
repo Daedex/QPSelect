@@ -62,3 +62,10 @@ var Selection = function (x, y) {
 	this.height = y;
 	this.id = '"'+'x'+x+'y'+y+'"';
 };
+
+//basic function to change color of units on click
+	$(function(){
+			$('.selection-type-0').click(function(){
+				$(this).css('background-color', 'white'); 
+			});
+		});
