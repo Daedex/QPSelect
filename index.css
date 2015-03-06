@@ -41,8 +41,8 @@ input {
 #emptyGrid {
 	display: inline-block;
 	border: 1px solid #00AEEF;
-	width: 641px;
-	height: 641px;
+	width: 777px;
+	height: 425px;
 	padding: 0px;
 	margin-top: 5px;
 }
@@ -102,5 +102,5 @@ input {
 	padding: 10px;
 	margin: 5px;
 	width: 315px;
-	height: 467px;
+	height: 251px;
 }

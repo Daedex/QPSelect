@@ -3,12 +3,14 @@ function initGrid() {
 	var $grid = $('#grid');
 	var html = [];
 	var id, x, y,
-		X_MAX = 182,
-		Y_MAX = 182;
+		X_MIN = 36,
+		Y_MIN = 26,
+		X_MAX = 228,
+		Y_MAX = 130;
 		
-	for(y=Y_MAX; y>=24; y-=2) {
+	for(y=Y_MAX; y>=Y_MIN; y-=2) {
 	    html.push('<tr>')
-	    for(x=24; x<=X_MAX; x+=2) {
+	    for(x=X_MIN; x<=X_MAX; x+=2) {
 	    	id = '"'+'x'+x+'y'+y+'"';
 	        html.push('<td class="selection-type-0" id='+id+'></td>');
 	        //initialize Selection objects here??
@@ -19,15 +21,8 @@ function initGrid() {
 
 	//unavailable selection sizes - will we need to hardcode all of them?
 	//i think a couple for loops could do the trick
-	document.getElementById("x182y182").className = "selection-type-none";
-	document.getElementById("x180y182").className = "selection-type-none";
-	document.getElementById("x182y180").className = "selection-type-none";
-	document.getElementById("x180y180").className = "selection-type-none";
-	document.getElementById("x178y182").className = "selection-type-none";
-	document.getElementById("x178y180").className = "selection-type-none";
-	document.getElementById("x178y178").className = "selection-type-none";
-	document.getElementById("x180y178").className = "selection-type-none";
-	document.getElementById("x182y178").className = "selection-type-none";
+	document.getElementById("x36y26").className = "selection-type-none";
+	document.getElementById("x228y130").className = "selection-type-none";
 };
 
 //refreshes the grid
