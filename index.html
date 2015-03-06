@@ -13,16 +13,24 @@
 	  	
 	  	<div class="sideBar">
 		  	<form id="selectForm" action="" method="post">
-					<div>
-						<label for="width">Unit Width</label>
-						<input name="width" id="width" autocomplete="off">&nbsp;in</input>
+		  			<div>
+						<label for="unitType">Unit Type:</label>
+						<select id="unitType">
+							<option value="none"></option>
+					  		<option value="vision">Vision Custom</option>
+					  		<option value="skyline">Skyline Custom</option>
+					</select>
 					</div>
 					<div>
-						<label for="height">Unit Height</label>
-						<input name="height" id="height" autocomplete="off">&nbsp;in</input>
+						<label for="unitWidth">Unit Width:</label>
+						<input name="unitWidth" id="unitWidth" autocomplete="off">&nbsp;in</input>
 					</div>
 					<div>
-						<label for="fanSpacing">Fan Spacing</label>
+						<label for="unitHeight">Unit Height:</label>
+						<input name="unitHeight" id="unitHeight" autocomplete="off">&nbsp;in</input>
+					</div>
+					<div>
+						<label for="fanSpacing">Fan Spacing:</label>
 						<select id="fanSpacing">
 					  		<option value="1.8">1.8</option>
 					  		<option value="1.6">1.6</option>
@@ -30,12 +38,12 @@
 						</select>
 					</div>
 					<div>	
-						<input type="button" value="Select" id="btnSelect" onclick="runSelection();">
+						<input type="button" value="Select" id="btnSelect" onclick="inputSelection();">
 						<input type="button" value="Clear" id="btnClear" onclick="clearSelection();">
 					</div>
 			</form>
 			
-			<div id="selectedInfo">
+			<div id="selectionInfo">
 			</div>
 		</div>
 		
@@ -44,6 +52,12 @@
 		<div id="emptyGrid">
 			<table id="grid"></table>
 		</div>
+
+		<p>Hi, I'm Numex, the Number Extractor Oracle.
+<p>What is your string? <input id="str" value="42abc"></p>
+<p>What number do you want to extract? <input id="num" value="42"></p>
+<p><button onclick="update()">Insert Coin</button></p>
+<p id="re"></p>
 			  
 	</div>
   </body>

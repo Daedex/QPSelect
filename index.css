@@ -96,11 +96,11 @@ input {
 	padding: 0px;
 }
 
-#selectedInfo {
+#selectionInfo {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 10px;
 	margin: 5px;
 	width: 315px;
-	height: 251px;
+	height: 223px;
 }
