@@ -2,26 +2,26 @@
 <html lang="en">
   <head>
   	<link rel="stylesheet" type="text/css" href="index.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" async></script>
-  	<script type="text/javascript" src="master.js" async></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  	<script type="text/javascript" src="master.js"></script>
   	<title>QUIPS</title>
   </head>
 
   <body>
   	<div class="container">
 	  	<h3>Q<span>uips</span></h3>
-
+	  	
 	  	<div class="sideBar">
 		  	<form id="selectForm" action="" method="post">
-					<div class="field1">
+					<div>
 						<label for="width">Unit Width</label>
 						<input name="width" id="width" autocomplete="off">&nbsp;in</input>
 					</div>
-					<div class="field2">
+					<div>
 						<label for="height">Unit Height</label>
 						<input name="height" id="height" autocomplete="off">&nbsp;in</input>
 					</div>
-					<div class="field3">
+					<div>
 						<label for="fanSpacing">Fan Spacing</label>
 						<select id="fanSpacing">
 					  		<option value="1.8">1.8</option>
@@ -29,21 +29,22 @@
 					  		<option value="1.5">1.5</option>
 						</select>
 					</div>
-					<div class="field4">	
+					<div>	
 						<input type="button" value="Select" id="btnSelect" onclick="runSelection();">
 						<input type="button" value="Clear" id="btnClear" onclick="clearSelection();">
 					</div>
 			</form>
 			
-			<div class="selectedInfo">
+			<div id="selectedInfo">
 			</div>
 		</div>
-		<script>
-			myAlert();
-		</script>
+		
+		<script>$(document).ready(initGrid);</script>
+
 		<div id="emptyGrid">
 			<table id="grid"></table>
-		</div>	  	
+		</div>
+			  
 	</div>
   </body>
 </html>
