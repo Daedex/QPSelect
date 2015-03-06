@@ -1,25 +1,42 @@
-//square class declaration
-var Unit = function (width, height) {
+function myAlert() {
+	alert("please work");
+};
+/*
+//selection class declaration
+var Selection = function () {
 	this.width = width;
 	this.height = height;
+
 };
 
 //run the current selection
 function runSelection() {
-	var airVolume = $('#airVolume').val();
-					
-	//run createGrid function 
-	createGrid();
+	alert("test");
 };
 
 //clear the current selection
 function clearSelection() {
-	$('#airVolume').val(null);
-	$('#totalStaticPressure').val(null);
-	$('#powerSupply').val(null);
-	$('#unitWidth').val(null);
-	$('#unitHeight').val(null);
-	createGrid();
+	$('#width').val(null);
+	$('#height').val(null);
+};
+
+//initialize the grid
+function initGrid() {
+	alert("test");
+	var $grid = $('#grid');
+	var html = [];
+	var x, y,
+		X_MAX = 80;
+		Y_MAX = 80;
+	for(y=0; y<=Y_MAX; y++) {
+		html.push('<tr>')
+		for(x=0; x<=X_MAX; x++) {
+				html.push('<td class="selection-type-0" id="x0y0" onclick="clickSquare();">'+'</td>');
+			}
+		}
+		html.push('</tr>');
+	}
+	$grid.append(html.join(''));
 };
 
 //create grid for current selection
@@ -37,7 +54,6 @@ function createGrid() {
 				html.push('<td class="selectedSquare">'+'</td>');
 			}
 			else {
-
 				html.push('<td class="square" id="square'+W+'x'+H+'" onclick="clickSquare();">'+'</td>');
 			}
 		}
@@ -45,21 +61,3 @@ function createGrid() {
 	}
 	$grid.append(html.join(''));
 };
-
-//makes clicked square the selected square
-function clickSquare() {
-
-	$('#unitWidth').val("unit width"); //need to get values from square that was clicked
-	$('#unitHeight').val("unit height");
-	runSelection();
-};
-
-function selectRatio() {
-	//this function should handle the two selection methods for a square
-	//user inputs the "Unit Width" and "Unit Height"
-	//or the user clicks the square with the dimensions they want
-};
-
-function runOnePac() {
-
-}
