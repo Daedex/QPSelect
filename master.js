@@ -47,7 +47,7 @@ function clickSelection(id) {
 		arrayId = parseId(id);
 	$('#unitWidth').val(arrayId[0]);
 	$('#unitHeight').val(arrayId[1]);
-	//runSelection(id);
+	runSelection(id);
 };
 
 //run the current selection
