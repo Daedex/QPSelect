@@ -21,8 +21,8 @@ function initGrid() {
 
 	//unavailable selection sizes - will we need to hardcode all of them?
 	//i think a couple for loops could do the trick
-	//document.getElementById("x36y26").className = "selection-type-none";
-	//document.getElementById("x228y130").className = "selection-type-none";
+	document.getElementById("x36y26").className = "selection-type-none";
+	document.getElementById("x228y130").className = "selection-type-none";
 };
 
 //refreshes the grid
@@ -68,7 +68,7 @@ function parseId(id) {
 
 //clear the current selection
 function clearSelection() {
-	//sets inputs to null
+	//emtpy the user input fields
 	$('#unitWidth').val(null);
 	$('#unitHeight').val(null);
 	//refresh grid to remove previous selections
