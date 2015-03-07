@@ -19,17 +19,16 @@ function initGrid() {
 	}
 	$grid.append(html.join(''));
 
-	//unavailable selection sizes - will we need to hardcode all of them?
-	//i think a couple for loops could do the trick
-	document.getElementById("x36y26").className = "selection-type-none";
-	document.getElementById("x228y130").className = "selection-type-none";
-	document.getElementById("x86y28").className = "selection-type-none";
-	document.getElementById("x144y46").className = "selection-type-none";
-	document.getElementById("x144y82").className = "selection-type-none";
-	document.getElementById("x144y82").className = "selection-type-none";
-	document.getElementById("x228y82").className = "selection-type-none";
-	document.getElementById("x64y130").className = "selection-type-none";
-	document.getElementById("x36y74").className = "selection-type-none";
+	//unavailable selection sizes
+	document.getElementById("x36y26").className = "selection-type-na";
+	document.getElementById("x228y130").className = "selection-type-na";
+	document.getElementById("x86y28").className = "selection-type-na";
+	document.getElementById("x144y46").className = "selection-type-na";
+	document.getElementById("x144y82").className = "selection-type-na";
+	document.getElementById("x144y82").className = "selection-type-na";
+	document.getElementById("x228y82").className = "selection-type-na";
+	document.getElementById("x64y130").className = "selection-type-na";
+	document.getElementById("x36y74").className = "selection-type-na";
 };
 
 //refreshes the grid
@@ -85,15 +84,14 @@ function clearSelection() {
 
 //selection class declaration
 var Selection = function (x, y, id) {
-	this.width = x;
-	this.height = y;
+	this.x = x,
+	this.y = y,
 	this.id = id;
-
-	/*
-	Selection.prototype.info () {
+	
+	Selection.prototype.info = function() {
 		return '<p>This is some info on this selection</p>'
 	};
-	*/
+	
 };
 
 //basic function to change color of units on click

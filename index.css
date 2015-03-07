@@ -64,7 +64,7 @@ input {
 	border: 1px solid black;
 }
 
-.selection-type-none {
+.selection-type-na {
 	height: 5px;
     width: 5px;   
     background-color: black;
