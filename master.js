@@ -13,7 +13,6 @@ function initGrid() {
 	    for(x=X_MIN; x<=X_MAX; x+=2) {
 	    	id = 'x'+x+'y'+y;
 	        html.push('<td class="selection-type-0" id="'+id+'"" onclick="clickSelection(this.id);"></td>');
-	        //initialize Selection objects here??
 	    }
 	    html.push('</tr>');
 	}
@@ -35,6 +34,8 @@ function initGrid() {
 function refreshGrid() {
 	//delete all contents of the table "grid"
 	$('#grid').empty();
+	//delete all contents of the div "selectionInfo"
+	$('#selectionInfo').empty();
 	//reinitialize the grid
 	initGrid();
 };
@@ -49,8 +50,7 @@ function inputSelection() {
 };
 
 function clickSelection(id) {
-	var id = id,
-		arrayId = parseId(id);
+	var arrayId = parseId(id);
 	$('#unitWidth').val(arrayId[0]);
 	$('#unitHeight').val(arrayId[1]);
 	runSelection(id);
@@ -62,6 +62,9 @@ function runSelection(id) {
 	refreshGrid();	
 	//renames the table element's class name to indicate selected size with css
 	document.getElementById(id).className = "selected";
+
+	var selection = new Selection(60, 60, 'x60y60');
+	$('#selectionInfo').append(selection.x);
 };
 
 function parseId(id) {
@@ -89,7 +92,8 @@ var Selection = function (x, y, id) {
 	this.id = id;
 	
 	Selection.prototype.info = function() {
-		return '<p>This is some info on this selection</p>'
+		var testInfo = '<p>This object\'s id is: '+this.id+'</p>';
+		return testInfo;
 	};
 	
 };
