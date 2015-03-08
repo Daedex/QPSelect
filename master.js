@@ -15,13 +15,13 @@ function initGrid(availArray) {
 	    for(x=X_MIN; x<=X_MAX; x+=2) {
 	    	var selection = new Selection(x, y);
 	    	selections[y][x] = selection;
-	    	if(compareArrays(selections[y][x].x, selection[y][x].y, availArray)) {
+	    	/*if(compareArrays(selections[y][x].x, selection[y][x].y, availArray)) {
 	    		html.push('<td class="selection-type-0" id="'+selections[y][x].id+'" onclick="clickSelection(this.id);"></td>');
 	    	}
 	    	else {
 	    		html.push('<td class="selection-type-na" id="'+selections[y][x].id+'"></td>');
-	    	}
-	    	//html.push('<td class="selection-type-0" id="'+selections[y][x].id+'" onclick="clickSelection(this.id);"></td>');
+	    	}*/
+	    	html.push('<td class="selection-type-0" id="'+selections[y][x].id+'" onclick="clickSelection(this.id);"></td>');
 	    }
 	    html.push('</tr>');
 	}
@@ -37,7 +37,6 @@ function initGrid(availArray) {
 	document.getElementById("x228y82").className = "selection-type-na";
 	document.getElementById("x64y130").className = "selection-type-na";
 	document.getElementById("x36y74").className = "selection-type-na";
-	
 };
 
 function compareArrays(x, y, availArray) {
