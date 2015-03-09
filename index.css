@@ -64,7 +64,7 @@ input {
 	border: 1px solid black;
 }
 
-.selection-type-na {
+.blackCell {
 	height: 5px;
     width: 5px;   
     background-color: black;
@@ -73,7 +73,7 @@ input {
 	border: 1px solid black;
 }
 
-.selection-type-0 {
+.defaultCell {
 	height: 5px;
     width: 5px;   
     background-color: #939598;
@@ -82,7 +82,7 @@ input {
 	border: 1px solid black;
 }
 
-.selection-type-1 {
+.greenCell {
 	height: 5px;
     width: 5px;   
     background-color: #00FE00;

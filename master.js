@@ -1,44 +1,37 @@
 //initialize the grid
-function initGrid(availArray) {
+function initGrid() {
 	var $grid = $('#grid');
 	var html = [];
-	var x, y, id, 
+	var x, y, 
 		X_MIN = 36,
 		Y_MIN = 26,
 		X_MAX = 228,
-		Y_MAX = 130,
-		selections = [];
+		Y_MAX = 130;
 		
 	for(y=Y_MAX; y>=Y_MIN; y-=2) {
 	    html.push('<tr>')
-	    selections[y] = [];
-	    for(x=X_MIN; x<=X_MAX; x+=2) {
-	    	var selection = new Selection(x, y);
-	    	selections[y][x] = selection;
-	    	/*if(compareArrays(selections[y][x].x, selection[y][x].y, availArray)) {
-	    		html.push('<td class="selection-type-0" id="'+selections[y][x].id+'" onclick="clickSelection(this.id);"></td>');
-	    	}
-	    	else {
-	    		html.push('<td class="selection-type-na" id="'+selections[y][x].id+'"></td>');
-	    	}*/
-	    	html.push('<td class="selection-type-0" id="'+selections[y][x].id+'" onclick="clickSelection(this.id);"></td>');
+	   	for(x=X_MIN; x<=X_MAX; x+=2) {
+	    	html.push('<td class="defaultCell" data-x="'+x+'" data-y="'+y+'"></td>');	     	
 	    }
 	    html.push('</tr>');
 	}
 	$grid.append(html.join(''));
-
-	//unavailable selection sizes
-	document.getElementById("x36y26").className = "selection-type-na";
-	document.getElementById("x228y130").className = "selection-type-na";
-	document.getElementById("x86y28").className = "selection-type-na";
-	document.getElementById("x144y46").className = "selection-type-na";
-	document.getElementById("x144y82").className = "selection-type-na";
-	document.getElementById("x144y82").className = "selection-type-na";
-	document.getElementById("x228y82").className = "selection-type-na";
-	document.getElementById("x64y130").className = "selection-type-na";
-	document.getElementById("x36y74").className = "selection-type-na";
 };
 
+	/*unavailable selection sizes
+	document.getElementById("x36y26").className = "blackCell";
+	document.getElementById("x228y130").className = "blackCell";
+	document.getElementById("x86y28").className = "blackCell";
+	document.getElementById("x144y46").className = "blackCell";
+	document.getElementById("x144y82").className = "blackCell";
+	document.getElementById("x144y82").className = "blackCell";
+	document.getElementById("x228y82").className = "blackCell";
+	document.getElementById("x64y130").className = "blackCell";
+	document.getElementById("x36y74").className = "blackCell";
+	*/
+
+
+/*
 function compareArrays(x, y, availArray) {
 	for(var i=0;i<availArray.length; i++) {
 		if(availArray[i][0] == x) {
