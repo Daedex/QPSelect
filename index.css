@@ -55,7 +55,7 @@ input {
     margin: 0px;
 }
 
-.selected {
+.selectedCell {
 	height: 5px;
     width: 5px;   
     background-color: white;
@@ -64,7 +64,7 @@ input {
 	border: 1px solid black;
 }
 
-.blackCell {
+.unavailableCell {
 	height: 5px;
     width: 5px;   
     background-color: black;

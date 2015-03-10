@@ -15,10 +15,56 @@ function initGrid() {
 	    }
 	    html.push('</tr>');
 	}
+	$grid.empty();
 	$grid.append(html.join(''));
 };
 
-	/*unavailable selection sizes
+//input selection
+function inputSelection() {
+	var unitType = $('#unitType').val(),
+		unitWidth = $('#unitWidth').val(),
+		unitHeight = $('#unitHeight').val(),
+		fanSpacing = $('#fanSpacing').val();
+		//performCalcs();
+};
+
+//clear selection
+function clearSelection() {
+	var unitType = $('#unitType').val(null),
+		unitWidth = $('#unitWidth').val(null),
+		unitHeight = $('#unitHeight').val(null),
+		fanSpacing = $('#fanSpacing').val('1.8');
+		initGrid();
+};
+
+//pass final calculation results to render all new information
+function renderGrid() {
+		var x = unitWidth,
+			y = unitHeight;
+		$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
+};
+
+//selection object function
+var Selection = function(unitWidth, unitHeight) {
+	this.unitWidth = unitWidth,
+	this.unitHeight = unitHeight,
+		
+	Selection.prototype.info = function() {
+		var testInfo = '<p>This object\'s id is: '+this.id+'</p>';
+		return testInfo;
+	};
+};
+
+/*basic function to change color of units on click
+	$(function(){
+			$('.selection-type-0').click(function(){
+				$(this).css('background-color', 'white'); 
+			});
+		});
+*/
+
+/*
+	//unavailable selection sizes
 	document.getElementById("x36y26").className = "blackCell";
 	document.getElementById("x228y130").className = "blackCell";
 	document.getElementById("x86y28").className = "blackCell";
@@ -28,91 +74,4 @@ function initGrid() {
 	document.getElementById("x228y82").className = "blackCell";
 	document.getElementById("x64y130").className = "blackCell";
 	document.getElementById("x36y74").className = "blackCell";
-	*/
-
-
-/*
-function compareArrays(x, y, availArray) {
-	for(var i=0;i<availArray.length; i++) {
-		if(availArray[i][0] == x) {
-			for(var j=0;j<availArray[i];j++) {
-				if(availArray[j][1] == y) {
-					return true;
-				}
-			}
-		}
-	}	
-};
-
-//refreshes the grid
-function refreshGrid() {
-	//delete all contents of the table "grid"
-	$('#grid').empty();
-	//delete all contents of the div "selectionInfo"
-	$('#selectionInfo').empty();
-	//reinitialize the grid
-	initGrid();
-};
-
-function inputSelection() {
-	//retreive and define dimensions from input fields
-	var x = $('#unitWidth').val();
-	var y = $('#unitHeight').val();
-	//create and define id string
-	var id = 'x'+x+'y'+y;
-	runSelection(id);
-};
-
-function clickSelection(id) {
-	var arrayId = parseId(id);
-	$('#unitWidth').val(arrayId[0]);
-	$('#unitHeight').val(arrayId[1]);
-	runSelection(id);
-};
-
-//run the current selection
-function runSelection(id) {
-	//refresh grid to remove previous selections
-	refreshGrid();	
-	//renames the table element's class name to indicate selected size with css
-	document.getElementById(id).className = "selected";
-};
-
-function parseId(id) {
-	var split1 = id.split('y',2);
-		split2 = split1[0].split('x',2);
-		x = split2[1],
-		y = split1[1];
-	return [x, y];
-};
-
-//clear the current selection
-function clearSelection() {
-	//emtpy the user input fields
-	$('#unitWidth').val(null);
-	$('#unitHeight').val(null);
-	//refresh grid to remove previous selections
-	refreshGrid();
-};
-
-
-//selection class declaration
-var Selection = function(x, y) {
-	this.x = x,
-	this.y = y,
-	this.id = 'x'+x+'y'+y;
-	
-	Selection.prototype.info = function() {
-		var testInfo = '<p>This object\'s id is: '+this.id+'</p>';
-		return testInfo;
-	};
-	
-};
-
-/*basic function to change color of units on click
-	$(function(){
-			$('.selection-type-0').click(function(){
-				$(this).css('background-color', 'white'); 
-			});
-		});
 */
