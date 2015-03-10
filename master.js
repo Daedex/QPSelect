@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+//VIEW - RENDERING FUNCTIONS / DOM MANIPULATIONS
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 //initialize the grid
 function initGrid() {
 	var $grid = $('#grid');
@@ -17,8 +21,50 @@ function initGrid() {
 	}
 	$grid.empty();
 	$grid.append(html.join(''));
-	createSelectionObjects(visionSizes);
 };
+
+//pass final calculation results to render all new information
+function renderGrid(unitWidth, unitHeight) {
+	var x = unitWidth,
+		y = unitHeight;
+	$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//CONTROLLER - USER INPUTS
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+//select unit type
+document.getElementById("selectUnitType").onchange = selectUnitType;
+function selectUnitType() {
+	var unitType = $('#selectUnitType').val();
+};
+
+//enter unit width and unit height
+document.getElementById("inputDimensions").onclick = inputDimensions;
+function inputDimensions() {
+	var unitWidth = $('#unitWidth').val(),
+		unitHeight = $('#unitHeight').val();
+};
+
+//select fan spacing
+document.getElementById("selectFanSpacing").onchange = selectFanSpacing;
+function selectFanSpacing() {
+	var fanSpacing = $('#selectFanSpacing').val();
+};
+
+//clear all inputs
+document.getElementById("clearInputs").onclick = clearInputs;
+function clearInputs() {
+	var unitType = $('#selectUnitType').val(null),
+		unitWidth = $('#unitWidth').val(null),
+		unitHeight = $('#unitHeight').val(null),
+		fanSpacing = $('#selectFanSpacing').val(null);
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//MODEL - DATA AND LOGIC
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 //create available selection objects
 function createSelectionObjects(availableSizes) {
@@ -29,59 +75,38 @@ function createSelectionObjects(availableSizes) {
 	alert("Width: "+selections[6].unitWidth + " Height: " + selections[6].unitHeight);
 };
 
-//input selection
-function inputSelection() {
-	var unitType = $('#unitType').val(),
-		unitWidth = $('#unitWidth').val(),
-		unitHeight = $('#unitHeight').val(),
-		fanSpacing = $('#fanSpacing').val();
-		//performCalcs();
-};
-
-//clear selection
-function clearSelection() {
-	var unitType = $('#unitType').val(null),
-		unitWidth = $('#unitWidth').val(null),
-		unitHeight = $('#unitHeight').val(null),
-		fanSpacing = $('#fanSpacing').val('1.8');
-		initGrid();
-};
-
-//pass final calculation results to render all new information
-function renderGrid(unitWidth, unitHeight) {
-	var x = unitWidth,
-		y = unitHeight;
-	$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
-};
-
-//selection object function
+//initialize selection object
 var Selection = function(unitWidth, unitHeight) {
 	this.unitWidth = unitWidth,
 	this.unitHeight = unitHeight,
 		
 	Selection.prototype.info = function() {
-		var testInfo = '<p>This object\'s id is: '+this.id+'</p>';
+		var testInfo = '<p>This object\'s info goes here.</p>';
 		return testInfo;
 	};
 };
 
-/*basic function to change color of units on click
-	$(function(){
-			$('.selection-type-0').click(function(){
-				$(this).css('background-color', 'white'); 
-			});
-		});
-*/
-
+////////////////////////////////////////////////////////////////////////////////////////////////
+//FIDDLE CODE
+////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-	//unavailable selection sizes
-	document.getElementById("x36y26").className = "blackCell";
-	document.getElementById("x228y130").className = "blackCell";
-	document.getElementById("x86y28").className = "blackCell";
-	document.getElementById("x144y46").className = "blackCell";
-	document.getElementById("x144y82").className = "blackCell";
-	document.getElementById("x144y82").className = "blackCell";
-	document.getElementById("x228y82").className = "blackCell";
-	document.getElementById("x64y130").className = "blackCell";
-	document.getElementById("x36y74").className = "blackCell";
+
+//basic function to change color of units on click
+$(function(){
+		$('.selection-type-0').click(function(){
+			$(this).css('background-color', 'white'); 
+		});
+	});
+
+//unavailable selection sizes
+document.getElementById("x36y26").className = "blackCell";
+document.getElementById("x228y130").className = "blackCell";
+document.getElementById("x86y28").className = "blackCell";
+document.getElementById("x144y46").className = "blackCell";
+document.getElementById("x144y82").className = "blackCell";
+document.getElementById("x144y82").className = "blackCell";
+document.getElementById("x228y82").className = "blackCell";
+document.getElementById("x64y130").className = "blackCell";
+document.getElementById("x36y74").className = "blackCell";
+
 */

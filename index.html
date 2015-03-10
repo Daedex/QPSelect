@@ -15,32 +15,33 @@
 	  	<div class="sideBar">
 		  	<form id="selectForm" action="" method="post">
 		  			<div>
-						<label for="unitType">Unit Type:</label>
-						<select id="unitType">
+						<label>Unit Type:</label>
+						<select id="selectUnitType">
 							<option value="none"></option>
 					  		<option value="vision">Vision Custom</option>
 					  		<option value="skyline">Skyline Custom</option>
-					</select>
+						</select>
 					</div>
 					<div>
-						<label for="unitWidth">Unit Width:</label>
+						<label>Unit Width:</label>
 						<input name="unitWidth" id="unitWidth" autocomplete="off">&nbsp;in</input>
 					</div>
 					<div>
-						<label for="unitHeight">Unit Height:</label>
+						<label>Unit Height:</label>
 						<input name="unitHeight" id="unitHeight" autocomplete="off">&nbsp;in</input>
 					</div>
 					<div>
-						<label for="fanSpacing">Fan Spacing:</label>
-						<select id="fanSpacing">
+						<label>Fan Spacing:</label>
+						<select id="selectFanSpacing">
+							<option value="none"></option>
 					  		<option value="1.8">1.8</option>
 					  		<option value="1.6">1.6</option>
 					  		<option value="1.5">1.5</option>
 						</select>
 					</div>
 					<div>	
-						<input type="button" value="Select" id="btnSelect" onclick="inputSelection();">
-						<input type="button" value="Clear" id="btnClear" onclick="clearSelection();">
+						<input type="button" value="Select" id="inputDimensions">
+						<input type="button" value="Clear" id="clearInputs">
 					</div>
 			</form>
 			
