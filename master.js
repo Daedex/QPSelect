@@ -17,6 +17,16 @@ function initGrid() {
 	}
 	$grid.empty();
 	$grid.append(html.join(''));
+	createSelectionObjects(visionSizes);
+};
+
+//create available selection objects
+function createSelectionObjects(availableSizes) {
+	var selections = [];
+	for(var i=0;i<availableSizes.length;i++) {
+		selections.push(new Selection(availableSizes[i][0], availableSizes[i][1]));
+	}
+	alert("Width: "+selections[6].unitWidth + " Height: " + selections[6].unitHeight);
 };
 
 //input selection
@@ -38,10 +48,10 @@ function clearSelection() {
 };
 
 //pass final calculation results to render all new information
-function renderGrid() {
-		var x = unitWidth,
-			y = unitHeight;
-		$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
+function renderGrid(unitWidth, unitHeight) {
+	var x = unitWidth,
+		y = unitHeight;
+	$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
 };
 
 //selection object function
