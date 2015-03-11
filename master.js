@@ -24,10 +24,11 @@ function initGrid() {
 };
 
 //pass final calculation results to render all new information
-function renderGrid(unitWidth, unitHeight) {
-	var x = unitWidth,
-		y = unitHeight;
-	$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
+function render(selections) {
+	
+	//$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
+
+	//alert("Width: "+selections[0].unitWidth + " Height: " + selections[0].unitHeight);
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,6 +39,12 @@ function renderGrid(unitWidth, unitHeight) {
 document.getElementById("selectUnitType").onchange = selectUnitType;
 function selectUnitType() {
 	var unitType = $('#selectUnitType').val();
+	if(unitType == "vision") {
+		return render(initAvailableSelections(visionSizes));
+	}
+	else if (unitType == "skyline") {
+		return render(initAvailableSelections(skylineSizes));
+	}
 };
 
 //enter unit width and unit height
@@ -66,19 +73,20 @@ function clearInputs() {
 //MODEL - DATA AND LOGIC
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-//create available selection objects
-function createSelectionObjects(availableSizes) {
+//initialize available selections
+function initAvailableSelections(availableSizes) {
 	var selections = [];
 	for(var i=0;i<availableSizes.length;i++) {
-		selections.push(new Selection(availableSizes[i][0], availableSizes[i][1]));
+		selections.push(new Selection(availableSizes[i][0], availableSizes[i][1]), true);
 	}
-	alert("Width: "+selections[6].unitWidth + " Height: " + selections[6].unitHeight);
+	return selections;
 };
 
 //initialize selection object
-var Selection = function(unitWidth, unitHeight) {
+var Selection = function(unitWidth, unitHeight, isAvailable) {
 	this.unitWidth = unitWidth,
 	this.unitHeight = unitHeight,
+	this.isAvailable = isAvailable;
 		
 	Selection.prototype.info = function() {
 		var testInfo = '<p>This object\'s info goes here.</p>';
@@ -108,5 +116,18 @@ document.getElementById("x144y82").className = "blackCell";
 document.getElementById("x228y82").className = "blackCell";
 document.getElementById("x64y130").className = "blackCell";
 document.getElementById("x36y74").className = "blackCell";
+
+// array = [{key:value},{key:value}]
+function objectFindByKey(array, key, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+}
+
+var array = [{'id':'73','foo':'bar'},{'id':'45','foo':'bar'}];
+var result_obj = objectFindByKey(array, 'id', '45');
 
 */
