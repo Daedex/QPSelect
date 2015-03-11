@@ -17,6 +17,11 @@ h3 span {
 	 color: #939598;
 }
 
+.sideBar {
+	float: left;
+	padding: 0px;
+}
+
 label {
 	display: inline-block;	
 	width: 135px;
@@ -38,7 +43,16 @@ input {
 	width: 315px;
 }
 
-#emptyGrid {
+#selectionInfo {
+	display: block;
+	border: 1px solid #00AEEF;
+	padding: 10px;
+	margin: 5px;
+	width: 315px;
+	height: 279px;
+}
+
+#viewArea {
 	display: inline-block;
 	border: 1px solid #00AEEF;
 	width: 777px;
@@ -47,61 +61,6 @@ input {
 	margin-top: 5px;
 }
 
-#grid {
-	float: left;
-	border-collapse: collapse;
-    border-spacing: 0px;
-    padding: 0px;
-    margin: 0px;
-}
 
-.selectedCell {
-	height: 5px;
-    width: 5px;   
-    background-color: white;
-   	text-align: center;
-	vertical-align: middle;
-	border: 1px solid black;
-}
 
-.unavailableCell {
-	height: 5px;
-    width: 5px;   
-    background-color: black;
-   	text-align: center;
-	vertical-align: middle;
-	border: 1px solid black;
-}
-
-.defaultCell {
-	height: 5px;
-    width: 5px;   
-    background-color: #939598;
-   	text-align: center;
-	vertical-align: middle;
-	border: 1px solid black;
-}
-
-.greenCell {
-	height: 5px;
-    width: 5px;   
-    background-color: #00FE00;
-   	text-align: center;
-	vertical-align: middle;
-	border: 1px solid black;
-}
-
-.sideBar {
-	float: left;
-	padding: 0px;
-}
-
-#selectionInfo {
-	display: block;
-	border: 1px solid #00AEEF;
-	padding: 10px;
-	margin: 5px;
-	width: 315px;
-	height: 223px;
-}
 

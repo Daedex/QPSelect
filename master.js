@@ -2,62 +2,17 @@
 //VIEW - RENDERING FUNCTIONS / DOM MANIPULATIONS
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-//initialize the grid
-function initGrid() {
-	var $grid = $('#grid');
-	var html = [];
-	var x, y, 
-		X_MIN = 36,
-		Y_MIN = 26,
-		X_MAX = 228,
-		Y_MAX = 130;
-		
-	for(y=Y_MAX; y>=Y_MIN; y-=2) {
-	    html.push('<tr>')
-	   	for(x=X_MIN; x<=X_MAX; x+=2) {
-	    	html.push('<td class="defaultCell" data-x="'+x+'" data-y="'+y+'"></td>');	     	
-	    }
-	    html.push('</tr>');
-	}
-	$grid.empty();
-	$grid.append(html.join(''));
-};
 
-//pass final calculation results to render all new information
-function render(selections) {
-	
-	//$('td[data-x="'+x+'"][data-y="'+y+'"]').attr('class','selectedCell');
-
-	//alert("Width: "+selections[0].unitWidth + " Height: " + selections[0].unitHeight);
-};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //CONTROLLER - USER INPUTS
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
-//select unit type
-document.getElementById("selectUnitType").onchange = selectUnitType;
-function selectUnitType() {
-	var unitType = $('#selectUnitType').val();
-	if(unitType == "vision") {
-		return render(initAvailableSelections(visionSizes));
-	}
-	else if (unitType == "skyline") {
-		return render(initAvailableSelections(skylineSizes));
-	}
-};
 
 //enter unit width and unit height
 document.getElementById("inputDimensions").onclick = inputDimensions;
 function inputDimensions() {
 	var unitWidth = $('#unitWidth').val(),
 		unitHeight = $('#unitHeight').val();
-};
-
-//select fan spacing
-document.getElementById("selectFanSpacing").onchange = selectFanSpacing;
-function selectFanSpacing() {
-	var fanSpacing = $('#selectFanSpacing').val();
 };
 
 //clear all inputs
@@ -73,20 +28,14 @@ function clearInputs() {
 //MODEL - DATA AND LOGIC
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-//initialize available selections
-function initAvailableSelections(availableSizes) {
-	var selections = [];
-	for(var i=0;i<availableSizes.length;i++) {
-		selections.push(new Selection(availableSizes[i][0], availableSizes[i][1]), true);
-	}
-	return selections;
-};
+
 
 //initialize selection object
 var Selection = function(unitWidth, unitHeight, isAvailable) {
 	this.unitWidth = unitWidth,
 	this.unitHeight = unitHeight,
-	this.isAvailable = isAvailable;
+	this.isAvailable = false;
+	this.cssClass = 'defaultCell';
 		
 	Selection.prototype.info = function() {
 		var testInfo = '<p>This object\'s info goes here.</p>';
@@ -98,6 +47,85 @@ var Selection = function(unitWidth, unitHeight, isAvailable) {
 //FIDDLE CODE
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /*
+
+// array = [{key:value},{key:value}]
+function objectFindByKey(array, key, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+}
+
+var array = [{'id':'73','foo':'bar'},{'id':'45','foo':'bar'}];
+var result_obj = objectFindByKey(array, 'id', '45');
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//GRID CONCEPT HAS BEEN SHELVED
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+//initialize the grid
+function initGrid() {
+	var $grid = $('#grid');
+	var html = [];
+	var x, y, 
+		X_MIN = 36,
+		Y_MIN = 26,
+		X_MAX = 228,
+		Y_MAX = 130;
+		
+	for(y=Y_MAX; y>=Y_MIN; y-=2) {
+	    html.push('<tr>')
+	   	for(x=X_MIN; x<=X_MAX; x+=2) {
+	    	html.push('<td class="unavailableCell" data-x="'+x+'" data-y="'+y+'"></td>');	     	
+	    }
+	    html.push('</tr>');
+	}
+	$grid.empty();
+	$grid.append(html.join(''));
+};
+
+//pass updated objects to render user interface
+function render(selections) {
+	for(i=0;i<selections.length;i++) {
+		$('td[data-x="'+selections[i].unitWidth+'"][data-y="'+selections[i].unitHeight+'"]').attr('class', selections[i].cssClass);
+	}	
+	alert("Width: "+selections[1].unitWidth + " Height: " + selections[1].unitHeight);
+};
+
+//initialize selection objects
+function initSelectionObjects() {
+	var x, y,
+		X_MIN = 36,
+		Y_MIN = 26,
+		X_MAX = 228,
+		Y_MAX = 130,
+		selections = [];
+		
+	for(y=Y_MAX; y>=Y_MIN; y-=2) {
+	   	for(x=X_MIN; x<=X_MAX; x+=2) {
+	    	selections.push(new Selection(x, y));	
+	    }
+	}
+};
+
+//initialize selection objects
+function setAvailableSelections(availableSizes) {
+	for(var i=0;i<selections.length;i++) {
+
+		for(var j=0;j<availableSizes.length;j++) {
+
+			if(selections[i].unitWidth == availableSizes[j][0] && selections[i].unitHeight == availableSizes[j][1]) {
+				selections.isAvailable = true;
+			}		
+			else {
+				selections.isAvailable = false;
+			}		
+		}
+	}
+	return selections;
+};
 
 //basic function to change color of units on click
 $(function(){
@@ -117,17 +145,59 @@ document.getElementById("x228y82").className = "blackCell";
 document.getElementById("x64y130").className = "blackCell";
 document.getElementById("x36y74").className = "blackCell";
 
-// array = [{key:value},{key:value}]
-function objectFindByKey(array, key, value) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i][key] === value) {
-            return array[i];
-        }
-    }
-    return null;
+#emptyGrid {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	width: 777px;
+	height: 425px;
+	padding: 0px;
+	margin-top: 5px;
 }
 
-var array = [{'id':'73','foo':'bar'},{'id':'45','foo':'bar'}];
-var result_obj = objectFindByKey(array, 'id', '45');
+#grid {
+	float: left;
+	border-collapse: collapse;
+    border-spacing: 0px;
+    padding: 0px;
+    margin: 0px;
+}
 
+.selectedCell {
+	height: 5px;
+    width: 5px;   
+    background-color: white;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.unavailableCell {
+	height: 5px;
+    width: 5px;   
+    background-color: black;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.defaultCell {
+	height: 5px;
+    width: 5px;   
+    background-color: #939598;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.greenCell {
+	height: 5px;
+    width: 5px;   
+    background-color: #00FE00;
+   	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
 */
+
+
+

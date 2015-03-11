@@ -15,29 +15,12 @@
 	  	<div class="sideBar">
 		  	<form id="selectForm" action="" method="post">
 		  			<div>
-						<label>Unit Type:</label>
-						<select id="selectUnitType">
-							<option value="none"></option>
-					  		<option value="vision">Vision Custom</option>
-					  		<option value="skyline">Skyline Custom</option>
-						</select>
-					</div>
-					<div>
 						<label>Unit Width:</label>
 						<input name="unitWidth" id="unitWidth" autocomplete="off">&nbsp;in</input>
 					</div>
 					<div>
 						<label>Unit Height:</label>
 						<input name="unitHeight" id="unitHeight" autocomplete="off">&nbsp;in</input>
-					</div>
-					<div>
-						<label>Fan Spacing:</label>
-						<select id="selectFanSpacing">
-							<option value="none"></option>
-					  		<option value="1.8">1.8</option>
-					  		<option value="1.6">1.6</option>
-					  		<option value="1.5">1.5</option>
-						</select>
 					</div>
 					<div>	
 						<input type="button" value="Select" id="inputDimensions">
@@ -48,17 +31,11 @@
 			<div id="selectionInfo">
 			</div>
 		</div>
-		
-		<script>$(document).ready(initGrid);</script>
 
-		<div id="emptyGrid">
-			<table id="grid"></table>
+		<div id="viewArea">
 		</div>
 			  
 	    <script src="master.js"></script>
-		<script type="text/javascript"> 
-			
-		</script>
 	</div>
   </body>
 </html>
