@@ -18,30 +18,35 @@ function inputDimensions() {
 //clear all inputs
 document.getElementById("clearInputs").onclick = clearInputs;
 function clearInputs() {
-	var unitType = $('#selectUnitType').val(null),
-		unitWidth = $('#unitWidth').val(null),
-		unitHeight = $('#unitHeight').val(null),
-		fanSpacing = $('#selectFanSpacing').val(null);
+	var unitWidth = $('#unitWidth').val(null),
+		unitHeight = $('#unitHeight').val(null);
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //MODEL - DATA AND LOGIC
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 //initialize selection object
-var Selection = function(unitWidth, unitHeight, isAvailable) {
+var Selection = function(unitWidth, unitHeight) {
 	this.unitWidth = unitWidth,
-	this.unitHeight = unitHeight,
-	this.isAvailable = false;
-	this.cssClass = 'defaultCell';
+	this.unitHeight = unitHeight;
 		
 	Selection.prototype.info = function() {
 		var testInfo = '<p>This object\'s info goes here.</p>';
 		return testInfo;
 	};
 };
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //FIDDLE CODE
