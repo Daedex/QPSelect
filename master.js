@@ -12,16 +12,17 @@
 document.getElementById("inputDimensions").onclick = inputDimensions;
 function inputDimensions() {
 	var airVolume = $('#airVolume').val(),
-		unitWidth = $('#unitWidth').val(),
-		unitHeight = $('#unitHeight').val();
+		unitHeight = $('#unitHeight').val(),
+		unitWidth = $('#unitWidth').val();
+		runCalculations(airVolume, unitHeight, unitWidth);
 };
 
 //clear all inputs
 document.getElementById("clearInputs").onclick = clearInputs;
 function clearInputs() {
 	$('#airVolume').val(null);
-	$('#unitWidth').val(null);
 	$('#unitHeight').val(null);
+	$('#unitWidth').val(null);
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,9 +30,10 @@ function clearInputs() {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 //initialize selection object
-var Selection = function(unitWidth, unitHeight) {
-	this.unitWidth = unitWidth,
-	this.unitHeight = unitHeight;
+var Selection = function(airVolume, unitHeight, unitWidth) {
+	this.airVolume = airVolume,
+	this.unitHeight = unitHeight,
+	this.unitWidth = unitWidth;	
 		
 	Selection.prototype.info = function() {
 		var testInfo = '<p>This object\'s info goes here.</p>';
@@ -39,13 +41,9 @@ var Selection = function(unitWidth, unitHeight) {
 	};
 };
 
-
-
-
-
-
-
-
+function runCalculations(CFM, H, W) {
+	$('#viewArea').append("<p>"+(CFM/((H*W)/144))+"ft/min</p>");
+};
 
 
 
