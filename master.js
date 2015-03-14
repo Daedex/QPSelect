@@ -11,15 +11,17 @@
 //enter unit width and unit height
 document.getElementById("inputDimensions").onclick = inputDimensions;
 function inputDimensions() {
-	var unitWidth = $('#unitWidth').val(),
+	var airVolume = $('#airVolume').val(),
+		unitWidth = $('#unitWidth').val(),
 		unitHeight = $('#unitHeight').val();
 };
 
 //clear all inputs
 document.getElementById("clearInputs").onclick = clearInputs;
 function clearInputs() {
-	var unitWidth = $('#unitWidth').val(null),
-		unitHeight = $('#unitHeight').val(null);
+	$('#airVolume').val(null);
+	$('#unitWidth').val(null);
+	$('#unitHeight').val(null);
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
