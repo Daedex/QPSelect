@@ -17,7 +17,7 @@ h3 span {
 	 color: #939598;
 }
 
-.sideBar {
+.sideBarLeft {
 	float: left;
 	padding: 0px;
 }
@@ -43,21 +43,30 @@ input {
 	width: 315px;
 }
 
-#selectionInfo {
+#jobManager {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 10px;
 	margin: 5px;
-	width: 315px;
-	height: 246px;
+	width: 200px;
+	height: 425px;
 }
 
-#viewArea {
+.jobList {
+	display: block;
+	border: 1px solid #00AEEF;
+	padding: 5px;
+	margin: 5px;
+	width: auto;
+	height: 315px;
+}
+
+#selectionArea {
 	display: inline-block;
 	border: 1px solid #00AEEF;
 	width: 777px;
 	height: 425px;
-	padding: 0px;
+	padding: 10px;
 	margin-top: 5px;
 }
 

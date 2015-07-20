@@ -12,8 +12,18 @@
   	<div class="container">
 	  	<h3>Q<span>uips</span></h3>
 	  	
-	  	<div class="sideBar">
-		  	<form id="selectForm" action="" method="post">
+	  	<div class="sideBarLeft">			
+			<div id="jobManager">
+				<p>Job Manager</p>
+				<input type="button" value="Create" id="createJob">
+				<input type="button" value="Delete" id="deleteJob">
+				<div class="jobList">
+				</div>
+			</div>
+		</div>
+
+		<div id="selectionArea">
+			<form id="selectForm" action="" method="post">
 	  			<div>
 					<label>Air Volume:</label>
 					<input id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
@@ -31,12 +41,6 @@
 					<input type="button" value="Clear" id="clearInputs">
 				</div>
 			</form>
-			
-			<div id="selectionInfo">
-			</div>
-		</div>
-
-		<div id="viewArea">
 		</div>
 			  
 	    <script src="master.js"></script>
