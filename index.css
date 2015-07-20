@@ -1,3 +1,4 @@
+
 body {
 }
 
@@ -24,7 +25,7 @@ h3 span {
 
 label {
 	display: inline-block;	
-	width: 135px;
+	width: 145px;
 	padding: 5px;	
 }
 
@@ -35,12 +36,12 @@ input {
 	margin: 2px;
 }
 
-#selectForm {
+#selectionForm {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 10px;
 	margin: 5px;
-	width: 315px;
+	width: 600px;
 }
 
 #jobManager {
@@ -49,7 +50,7 @@ input {
 	padding: 10px;
 	margin: 5px;
 	width: 200px;
-	height: 425px;
+	height: 600px;
 }
 
 .jobList {
@@ -58,16 +59,25 @@ input {
 	padding: 5px;
 	margin: 5px;
 	width: auto;
-	height: 315px;
+	height: 495px;
 }
 
 #selectionArea {
 	display: inline-block;
 	border: 1px solid #00AEEF;
 	width: 777px;
-	height: 425px;
+	height: 600px;
 	padding: 10px;
 	margin-top: 5px;
+}
+
+#resultsList {
+	display: block;
+	border: 1px solid #00AEEF;
+	padding: 10px;
+	margin: 5px;
+	width: 600px;
+	height: 342px;
 }
 
 
