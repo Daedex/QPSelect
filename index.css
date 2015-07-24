@@ -1,5 +1,7 @@
 
 body {
+	border: 1px solid #00AEEF;
+	width: 960px;
 }
 
 .container {
@@ -25,7 +27,7 @@ body {
 }
 
 #sideBarRight {
-	display: inline-block;
+	display: block;
 	border: 1px solid #00AEEF;
 	width: 200px;
 	height: 600px;
