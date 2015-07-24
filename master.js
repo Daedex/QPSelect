@@ -8,19 +8,23 @@
 //CONTROLLER - USER INPUTS
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-//enter unit width and unit height
-document.getElementById("inputDimensions").onclick = inputDimensions;
-function inputDimensions() {
+//run new selection
+document.getElementById("runSelection").onclick = runSelection;
+function runSelection() {
 	var airVolume = $('#airVolume').val(),
+		totalSP = $('#totalSP').val(),
+		voltage = $('#voltage').val(),
 		unitHeight = $('#unitHeight').val(),
 		unitWidth = $('#unitWidth').val();
 		runCalculations(airVolume, unitHeight, unitWidth);
 };
 
 //clear all inputs
-document.getElementById("clearInputs").onclick = clearInputs;
-function clearInputs() {
+document.getElementById("clearSelection").onclick = clearSelection;
+function clearSelection() {
 	$('#airVolume').val(null);
+	$('#totalSP').val(null);
+	$('#voltage').val(null);
 	$('#unitHeight').val(null);
 	$('#unitWidth').val(null);
 };
@@ -41,9 +45,28 @@ var Selection = function(airVolume, unitHeight, unitWidth) {
 	};
 };
 
+//run selections
 function runCalculations(CFM, H, W) {
 	$('#viewArea').append("<p>"+(CFM/((H*W)/144))+"ft/min</p>");
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

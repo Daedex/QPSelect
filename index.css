@@ -8,6 +8,29 @@ body {
 	width: 100%;	
 }
 
+#sideBarLeft {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	float: left;
+	padding: 0px;
+}
+
+#selectionArea {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	width: 535px;
+	height: 600px;
+	padding: 10px;
+	margin-top: 5px;
+}
+
+#sideBarRight {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	width: 200px;
+	height: 600px;
+}
+
 h3 {
 	font-size: 2em;
 	color: #00AEEF;
@@ -16,11 +39,6 @@ h3 {
 
 h3 span {
 	 color: #939598;
-}
-
-.sideBarLeft {
-	float: left;
-	padding: 0px;
 }
 
 label {
@@ -38,10 +56,10 @@ input {
 
 #selectionForm {
 	display: block;
-	border: 1px solid #00AEEF;
+	border: 1px solid white;
 	padding: 10px;
 	margin: 5px;
-	width: 600px;
+	width: 500px;
 }
 
 #jobManager {
@@ -62,24 +80,19 @@ input {
 	height: 495px;
 }
 
-#selectionArea {
-	display: inline-block;
-	border: 1px solid #00AEEF;
-	width: 777px;
-	height: 600px;
-	padding: 10px;
-	margin-top: 5px;
-}
-
 #resultsList {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 10px;
 	margin: 5px;
-	width: 600px;
+	width: 500px;
 	height: 342px;
 }
 
-
+select {
+	height: 29px;
+	width: 84px;
+	margin: 2px;	
+}
 
 
