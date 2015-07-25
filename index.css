@@ -1,13 +1,23 @@
+html {
+	background-color: #939598;
+}
 
 body {
+	background-color: white;
 	border: 1px solid #00AEEF;
 	width: 960px;
+	margin: auto;
+	margin-top: 25px;
 }
 
 .container {
 	padding:20px;
 	margin: 0px auto;
 	width: 100%;	
+}
+
+#header {
+	border: 1px solid #00AEEF;
 }
 
 #sideBarLeft {
@@ -21,7 +31,7 @@ body {
 	display: inline-block;
 	border: 1px solid #00AEEF;
 	width: 535px;
-	height: 600px;
+	height: 500px;
 	padding: 10px;
 	margin-top: 5px;
 }
@@ -30,7 +40,7 @@ body {
 	display: block;
 	border: 1px solid #00AEEF;
 	width: 200px;
-	height: 600px;
+	height: 500px;
 }
 
 h3 {
@@ -70,7 +80,7 @@ input {
 	padding: 10px;
 	margin: 5px;
 	width: 200px;
-	height: 600px;
+	height: 500px;
 }
 
 .jobList {
@@ -79,7 +89,7 @@ input {
 	padding: 5px;
 	margin: 5px;
 	width: auto;
-	height: 495px;
+	height: 395px;
 }
 
 #resultsList {
@@ -88,7 +98,7 @@ input {
 	padding: 10px;
 	margin: 5px;
 	width: 500px;
-	height: 342px;
+	height: 245px;
 }
 
 select {
