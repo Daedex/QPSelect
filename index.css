@@ -1,158 +1,108 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/*----------------------------*/
-
 html {
-	background-color: #939598;
+	background-color: #353739;
 }
 
 body {
-	background-color: white;
-	border: 1px solid #00AEEF;
 	width: 960px;
 	margin: auto;
 	margin-top: 25px;
 }
 
 .container {
-	padding:20px;
-	margin: 0px auto;
-	width: 100%;
-	border: 1px solid #00AEEF;	
+	padding: 20px;		
+	border: 1px solid #9A989A;
+	background-color: #FFFFFF;	
 }
 
 #header {
 	border: 1px solid #00AEEF;
 }
 
-#sideBarLeft {
-	display: inline-block;
-	border: 1px solid #00AEEF;
-	float: left;
-	padding: 0px;
-}
-
-#selectionArea {
-	display: inline-block;
-	border: 1px solid #00AEEF;
-	width: 535px;
-	height: 500px;
-	padding: 10px;
-	margin-top: 5px;
-}
-
-#sideBarRight {
-	display: block;
-	border: 1px solid #00AEEF;
-	width: 200px;
-	height: 500px;
-}
-
-h3 {
+#header h3 {
 	font-size: 2em;
-	color: #00AEEF;
+	color: #00ADF1;
 	margin: 5px;
 	display: inline-block;
 }
 
-h3 span {
-	 color: #939598;
+#header h3 span {
+	 color: #9A989A;
 }
 
-label {
-	display: inline-block;	
-	width: 145px;
-	padding: 5px;	
+#login {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	color: #292929;
 }
 
-input {
+#jobManager {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	padding: 10px;
+	margin: 0px;
+	width: 152px;
+	height: 500px;
+	color: #292929;
+	float: left;
+}
+
+#jobManager input {
 	display: inline-block;
 	width: 70px;
 	padding: 5px;
 	margin: 2px;
 }
 
-#selectionForm {
-	display: block;
-	border: 1px solid white;
-	padding: 10px;
-	margin: 5px;
-	width: 500px;
-}
-
-#jobManager {
-	display: block;
-	border: 1px solid #00AEEF;
-	padding: 10px;
-	margin: 5px;
-	width: 200px;
-	height: 500px;
-}
-
 .jobList {
 	display: block;
 	border: 1px solid #00AEEF;
-	padding: 5px;
-	margin: 5px;
 	width: auto;
-	height: 395px;
+	height: 450px;
+}
+
+#selectionArea {
+	display: inline-block;
+	border: 1px solid #00AEEF;
+	width: 722px;
+	height: 500px;
+}
+
+#selectionForm {
+	display: block;
+	border: 1px solid #00AEEF;
+	padding: 10px;
+	margin: 5px;
+	width: 315px;
+	color: #292929;
+}
+
+#selectionForm label {
+	display: inline-block;	
+	width: 145px;
+	padding: 5px;	
+}
+
+#selectionForm input {
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 2px;
+}
+
+#selectionForm select {
+	height: 29px;
+	width: 84px;
+	margin: 2px;	
 }
 
 #resultsList {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 10px;
-	margin: 5px;
-	width: 500px;
-	height: 245px;
+	margin: 5px;	
+	height: 243px;
 }
 
-select {
-	height: 29px;
-	width: 84px;
-	margin: 2px;	
-}
+
 
 
