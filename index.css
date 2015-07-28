@@ -5,17 +5,16 @@ html {
 body {
 	width: 960px;
 	margin: auto;
-	margin-top: 25px;
+	margin-top: 20px;
 }
 
 .container {
-	padding: 20px;		
-	border: 1px solid #9A989A;
+	padding: 5px;
 	background-color: #FFFFFF;	
 }
 
 #header {
-	border: 1px solid #00AEEF;
+	margin: 5px;
 }
 
 #header h3 {
@@ -31,9 +30,10 @@ body {
 
 #login {
 	display: inline-block;
-	border: 1px solid #00AEEF;
 	color: #292929;
 	font-size: 1em;
+	padding: 5px;
+	float: right;
 }
 
 #login input {
@@ -43,11 +43,11 @@ body {
 #jobManager {
 	display: inline-block;
 	float: left;
-	border: 1px solid #00AEEF;
 	padding: 5px;
 	width: 152px;
 	height: 500px;
 	color: #292929;	
+	margin: 5px;
 }
 
 #jobManager input {
@@ -66,15 +66,16 @@ body {
 
 #selectionArea {
 	display: inline-block;
-	border: 1px solid #00AEEF;
 	width: 722px;
 	height: 500px;
+	margin: 5px;
+	padding: 5px;
 }
 
 #selectionForm {
 	display: block;
-	border: 1px solid #00AEEF;
 	padding: 5px;
+	margin: 5px;
 	width: 315px;
 	color: #292929;
 	font-size: 1em;
@@ -98,7 +99,7 @@ body {
 }
 
 #selectionForm select {
-	height: 29px;
+	height: 29px;	
 	width: 84px;	
 	font-size: 1em;	
 }
@@ -106,7 +107,8 @@ body {
 #resultsList {
 	display: block;
 	border: 1px solid #00AEEF;
-	padding: 5px;	
+	padding: 5px;
+	margin: 5px;	
 	height: 243px;
 }
 
