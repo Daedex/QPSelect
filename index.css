@@ -33,17 +33,21 @@ body {
 	display: inline-block;
 	border: 1px solid #00AEEF;
 	color: #292929;
+	font-size: 1em;
+}
+
+#login input {
+	width: 100px;
 }
 
 #jobManager {
 	display: inline-block;
+	float: left;
 	border: 1px solid #00AEEF;
-	padding: 10px;
-	margin: 0px;
+	padding: 5px;
 	width: 152px;
 	height: 500px;
-	color: #292929;
-	float: left;
+	color: #292929;	
 }
 
 #jobManager input {
@@ -51,12 +55,12 @@ body {
 	width: 70px;
 	padding: 5px;
 	margin: 2px;
+	font-size: .7em;
+	color: #292929;
 }
 
-.jobList {
-	display: block;
-	border: 1px solid #00AEEF;
-	width: auto;
+#jobList {
+	border: 1px solid #00AEEF;	
 	height: 450px;
 }
 
@@ -70,10 +74,10 @@ body {
 #selectionForm {
 	display: block;
 	border: 1px solid #00AEEF;
-	padding: 10px;
-	margin: 5px;
+	padding: 5px;
 	width: 315px;
 	color: #292929;
+	font-size: 1em;
 }
 
 #selectionForm label {
@@ -84,25 +88,27 @@ body {
 
 #selectionForm input {
 	display: inline-block;
-	width: 70px;
-	padding: 5px;
-	margin: 2px;
+	width: 70px;	
+	font-size: 1em;
+}
+
+#selectionForm input[type=button] {
+	display: inline-block;	
+	font-size: 1em;
 }
 
 #selectionForm select {
 	height: 29px;
-	width: 84px;
-	margin: 2px;	
+	width: 84px;	
+	font-size: 1em;	
 }
 
 #resultsList {
 	display: block;
 	border: 1px solid #00AEEF;
-	padding: 10px;
-	margin: 5px;	
+	padding: 5px;	
 	height: 243px;
 }
-
 
 
 
