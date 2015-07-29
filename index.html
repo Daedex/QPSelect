@@ -13,7 +13,7 @@
   	<div class="container">
 	  	<div id="header">
 	  		<h3>Q<span>uips</span></h3>
-	  		<div id="login">
+	  		<div id="userLogin">
 		  		<label>Username:</label>
 				<input id="username" autocomplete="off"></input>
 				<label>Password:</label>
@@ -42,8 +42,8 @@
 					<label>Voltage:</label>
 					<select id="voltage" autocomplete="off">
 						<option value=""></option>
-						<option value="460">460V 3ph</option>
-						<option value="208">208V 3ph</option>
+						<option value="460">460V / 3~ / 60Hz</option>
+						<option value="208">208V / 3~ / 60Hz</option>
 					</select>
 				</div>
 				<div>
@@ -55,12 +55,17 @@
 					<input id="unitWidth" autocomplete="off">&nbsp;in</input>
 				</div>
 				<div>	
-					<input type="button" value="Select" id="runSelection">
-					<input type="button" value="Clear" id="clearSelection">
+					<input type="button" value="Search" id="runSelection">
+					<input type="button" value="Reset" id="clearSelection">
 				</div>
 			</form>
-			<div id="resultsList">
-				List Possible Selections Here.
+			<div id="mainWindowViews">
+				<div class="viewButton">Search Results</div>
+				<div class="viewButton">Details</div>
+				<div class="viewButton">Documentation</div>
+			</div>
+			<div id="mainWindow">
+				
 			</div>
 		</div>
 

@@ -8,6 +8,10 @@ body {
 	margin-top: 20px;
 }
 
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
 .container {
 	padding: 5px;
 	background-color: #FFFFFF;	
@@ -28,15 +32,18 @@ body {
 	 color: #9A989A;
 }
 
-#login {
+#userLogin {
 	display: inline-block;
 	color: #292929;
-	font-size: 1em;
 	padding: 5px;
 	float: right;
 }
 
-#login input {
+#userLogin label {
+	font-size: .85em;
+}
+
+#userLogin input {
 	width: 100px;
 }
 
@@ -78,39 +85,44 @@ body {
 	margin: 5px;
 	width: 315px;
 	color: #292929;
-	font-size: 1em;
+	font-size: .85em;
 }
 
 #selectionForm label {
 	display: inline-block;	
-	width: 145px;
-	padding: 5px;	
+	width: 96px;
+	padding: 5px;
+	font-size: .85em;	
 }
 
 #selectionForm input {
 	display: inline-block;
 	width: 70px;	
-	font-size: 1em;
+	font-size: .85em;
 }
 
 #selectionForm input[type=button] {
 	display: inline-block;	
-	font-size: 1em;
+	font-size: .85em;
 }
 
 #selectionForm select {
-	height: 29px;	
-	width: 84px;	
-	font-size: 1em;	
+	font-size: .85em;	
 }
 
-#resultsList {
+#mainWindow {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 5px;
 	margin: 5px;	
-	height: 243px;
+	height: 300px;
 }
 
+.viewButton {
+	display: inline-block;
+	background-color: #EFEFEF;
+	padding: 5px;
+	color: #292929;
+}
 
 
