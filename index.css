@@ -12,9 +12,35 @@ sup {
 	vertical-align: super;
 	font-size: smaller;
 }
+
+h2 {
+	font-weight: bold;
+}
+
+td {
+	margin-left: 50px;
+}
+
 .container {
 	padding: 5px;
 	background-color: #FFFFFF;	
+}
+
+.register_form_wrapper {
+	padding: 5px;
+	border: 1px solid #00AEEF;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 50px;
+}
+
+.register_form_wrapper h3 {
+	font-weight: bold;
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+	text-align: middle;
+
 }
 
 #header {
@@ -110,6 +136,12 @@ sup {
 	font-size: .85em;	
 }
 
+#register_form label {
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+}
+
 #mainWindow {
 	display: block;
 	border: 1px solid #00AEEF;
@@ -124,5 +156,4 @@ sup {
 	padding: 5px;
 	color: #292929;
 }
-
 
