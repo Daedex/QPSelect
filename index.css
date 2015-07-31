@@ -26,6 +26,12 @@ td {
 	background-color: #FFFFFF;	
 }
 
+.reg_container {
+	padding: 5px;
+	background-color: #FFFFFF;
+	margin-top: 600px;
+}
+
 .register_form_wrapper {
 	padding: 5px;
 	border: 1px solid #00AEEF;
@@ -40,7 +46,6 @@ td {
 	width: 96px;
 	padding: 5px;
 	text-align: middle;
-
 }
 
 #header {
