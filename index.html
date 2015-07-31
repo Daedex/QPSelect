@@ -12,13 +12,13 @@
   	<div class="container">
 	  	<div id="header">
 	  		<h3>Q<span>uips</span></h3>
-	  		<div id="userLogin">
+	  		<form action="login.php" method="get" id="userLogin">
 		  		<label>Username:</label>
 				<input id="username" autocomplete="off"></input>
 				<label>Password:</label>
 				<input id="password" autocomplete="off"></input>
-				<input type="button" value="Login" id="login">
-			</div>
+				<input type="submit" value="Login" id="login">
+			</form>
 			<div id="welcome">
 				<span>Welcome *User's First Name*!</span>
 				<input type="button" value="Logout" id="logout">
