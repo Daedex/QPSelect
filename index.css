@@ -64,7 +64,7 @@ td {
 }
 
 #userLogin {
-	display: none;
+	display: inline-block;
 	color: #292929;
 	padding: 5px;
 	float: right;
@@ -83,7 +83,7 @@ td {
 }
 
 #welcome {
-	display: inline-block;
+	display: none;
 	color: #292929;
 	padding: 5px;
 	float: right;
