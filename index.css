@@ -64,7 +64,7 @@ td {
 }
 
 #userLogin {
-	display: inline-block;
+	display: none;
 	color: #292929;
 	padding: 5px;
 	float: right;
@@ -75,7 +75,22 @@ td {
 }
 
 #userLogin input {
-	width: 100px;
+	width: 140px;
+}
+
+#userLogin #login {
+	width: 70px;
+}
+
+#welcome {
+	display: inline-block;
+	color: #292929;
+	padding: 5px;
+	float: right;
+}
+
+#welcome #logout {
+	width: 70px;
 }
 
 #jobManager {
