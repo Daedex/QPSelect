@@ -13,6 +13,11 @@ sup {
 	font-size: smaller;
 }
 
+h1{
+	margin: auto;
+	position: center;
+}
+
 h2 {
 	font-weight: bold;
 }
@@ -26,13 +31,13 @@ td {
 	background-color: #FFFFFF;	
 }
 
-.reg_container {
+.login_container {
 	padding: 5px;
 	background-color: #FFFFFF;
 	margin-top: 600px;
 }
 
-.register_form_wrapper {
+.login_form_wrapper {
 	padding: 5px;
 	border: 1px solid #00AEEF;
 	margin-left: 200px;
@@ -40,7 +45,7 @@ td {
 	margin-bottom: 50px;
 }
 
-.register_form_wrapper h3 {
+.login_form_wrapper h3 {
 	font-weight: bold;
 	display: inline-block;	
 	width: 96px;
@@ -156,7 +161,7 @@ td {
 	font-size: .85em;	
 }
 
-#register_form label {
+#login_form label {
 	display: inline-block;	
 	width: 96px;
 	padding: 5px;
