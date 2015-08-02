@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<link rel="stylesheet" type="text/css" href="reset.css">
+  	<link rel="stylesheet" type="text/css" href="index.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  	<script type="text/javascript" src="master.js"></script>
+  	<title>QUIPS</title>
+  </head>
+
+  <body>
+  	<div class="container">
+	  	<div id="header">
+	  		<h3>Q<span>uips</span></h3>
+	  		<form action="login.php" method="get" id="userLogin">
+		  		<label>Username:</label>
+				<input id="username" autocomplete="off"></input>
+				<label>Password:</label>
+				<input id="password" autocomplete="off"></input>
+				<input type="submit" value="Login" id="login">
+			</form>
+			<div id="welcome">
+				<span>Welcome *User's First Name*!</span>
+				<input type="button" value="Logout" id="logout">
+			</div>
+	  	</div>
+	  		  				
+		<div id="jobManager">
+			<input type="button" value="Create Job" id="createJob">
+			<input type="button" value="Delete Job" id="deleteJob">
+			<div id="jobList">
+			</div>
+		</div>		
+
+		<div id="selectionArea">
+			<form id="selectionForm" action="" method="post">
+	  			<div>
+					<label>Air Volume:</label>
+					<input id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+				</div>
+				<div>
+					<label>Total Static Pressure:</label>
+					<input id="totalSP" autocomplete="off">&nbsp;in W.C.</input>
+				</div>
+				<div>
+					<label>Voltage:</label>
+					<select id="voltage" autocomplete="off">
+						<option value=""></option>
+						<option value="460">460V / 3~ / 60Hz</option>
+						<option value="208">208V / 3~ / 60Hz</option>
+					</select>
+				</div>
+				<div>
+					<label>Unit Height:</label>
+					<input id="unitHeight" autocomplete="off">&nbsp;in</input>
+				</div>
+	  			<div>
+					<label>Unit Width:</label>
+					<input id="unitWidth" autocomplete="off">&nbsp;in</input>
+				</div>
+				<div>	
+					<input type="button" value="Search" id="runSelection">
+					<input type="button" value="Reset" id="clearSelection">
+				</div>
+			</form>
+			<div id="mainWindowViews">
+				<div class="viewButton">Search Results</div>
+				<div class="viewButton">Details</div>
+				<div class="viewButton">Documentation</div>
+			</div>
+			<div id="mainWindow">
+				
+			</div>
+		</div>
+
+	    <script src="master.js"></script>
+	</div>
+  </body>
+</html>
