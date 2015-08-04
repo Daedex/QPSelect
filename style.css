@@ -1,0 +1,160 @@
+html {
+	background-color: #353739;
+}
+
+body {
+	width: 960px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+td {
+	margin-left: 50px;
+}
+
+.container {
+	padding: 5px;
+	background-color: #FFFFFF;	
+}
+
+.reg_container {
+	padding: 5px;
+	background-color: #FFFFFF;
+	margin-top: 600px;
+}
+
+.register_form_wrapper {
+	padding: 5px;
+	border: 1px solid #00AEEF;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 50px;
+}
+
+.register_form_wrapper h3 {
+	font-weight: bold;
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+	text-align: middle;
+}
+
+#header {
+	margin: 5px;
+}
+
+#header h3 {
+	font-size: 2em;
+	color: #00ADF1;
+	margin: 5px;
+	display: inline-block;
+}
+
+#header h3 span {
+	 color: #9A989A;
+}
+
+#welcome {
+	display: none;
+	color: #292929;
+	padding: 5px;
+	float: right;
+}
+
+#welcome #logout {
+	width: 70px;
+}
+
+#jobManager {
+	display: inline-block;
+	float: left;
+	padding: 5px;
+	width: 152px;
+	height: 500px;
+	color: #292929;	
+	margin: 5px;
+}
+
+#jobManager input {
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 2px;
+	font-size: .7em;
+	color: #292929;
+}
+
+#jobList {
+	border: 1px solid #00AEEF;	
+	height: 450px;
+}
+
+#selectionArea {
+	display: inline-block;
+	width: 722px;
+	height: 500px;
+	margin: 5px;
+	padding: 5px;
+}
+
+#selectionForm {
+	display: block;
+	padding: 5px;
+	margin: 5px;
+	width: 315px;
+	color: #292929;
+	font-size: .85em;
+}
+
+#selectionForm label {
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+	font-size: .85em;	
+}
+
+#selectionForm input {
+	display: inline-block;
+	width: 70px;	
+	font-size: .85em;
+}
+
+#selectionForm input[type=button] {
+	display: inline-block;	
+	font-size: .85em;
+}
+
+#selectionForm select {
+	font-size: .85em;	
+}
+
+#register_form label {
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+}
+
+#mainWindow {
+	display: block;
+	border: 1px solid #00AEEF;
+	padding: 5px;
+	margin: 5px;	
+	height: 300px;
+}
+
+.viewButton {
+	display: inline-block;
+	background-color: #EFEFEF;
+	padding: 5px;
+	color: #292929;
+}
+
