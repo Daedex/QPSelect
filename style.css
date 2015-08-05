@@ -143,18 +143,11 @@ td {
 	padding: 5px;
 }
 
-#mainWindow {
+#mainView {
 	display: block;
 	border: 1px solid #00AEEF;
 	padding: 5px;
 	margin: 5px;	
 	height: 300px;
-}
-
-.viewButton {
-	display: inline-block;
-	background-color: #EFEFEF;
-	padding: 5px;
-	color: #292929;
 }
 
