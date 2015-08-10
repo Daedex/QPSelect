@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `jobs`
+--
+
+DROP TABLE IF EXISTS `jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jobs` (
+  `job_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`job_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+INSERT INTO `jobs` VALUES (1,'PMHS'),(2,''),(3,''),(4,''),(5,'');
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `selections`
 --
 
@@ -23,7 +47,7 @@ DROP TABLE IF EXISTS `selections`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `selections` (
-  `unit_tag` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `unit_tag` int(10) unsigned NOT NULL,
   `air_vol` int(11) DEFAULT NULL,
   `total_static_press` int(11) DEFAULT NULL,
   `voltage` int(11) DEFAULT NULL,
@@ -39,6 +63,7 @@ CREATE TABLE `selections` (
 
 LOCK TABLES `selections` WRITE;
 /*!40000 ALTER TABLE `selections` DISABLE KEYS */;
+INSERT INTO `selections` VALUES (0,0,0,0,0,0);
 /*!40000 ALTER TABLE `selections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +82,7 @@ CREATE TABLE `user` (
   `password` varchar(20) NOT NULL,
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +91,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('Dustin','Burt','dburt88@gmail.com','dburt','Jygi#321',1),('Matt','Kent','mkent@mas-hvac.com','mkent','biscuit1',2),('Jerry','Tyberghein','jtyberghein@mas-hvac.com','jtyberghein','biscuit1',3),('Clarke','Story','cstory@mas-hvac.com','cstory','biscuit1',4),('','','','','',5),('','','','','',6),('','','','','',7),('','','','','',8),('','','','','',9),('','','','','',10),('','','','','',11),('','','','','',12);
+INSERT INTO `user` VALUES ('Dustin','Burt','dburt88@gmail.com','dburt','Jygi#321',1),('Matt','Kent','mkent@mas-hvac.com','mkent','biscuit1',2),('Jerry','Tyberghein','jtyberghein@mas-hvac.com','jtyberghein','biscuit1',3),('Clarke','Story','cstory@mas-hvac.com','cstory','biscuit1',4),('','','','','',13),('','','','','',14),('','','','','',15);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-09 23:58:50
+-- Dump completed on 2015-08-10  1:09:15

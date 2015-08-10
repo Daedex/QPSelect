@@ -22,25 +22,28 @@
 	  	</div>
 	  		  				
 		<div id="jobManager">
-			<input type="button" value="Create Job" id="createJob">
-			<input type="button" value="Delete Job" id="deleteJob">
-			<div id="jobList">
-			</div>
+			<form action="create_job.php" method="get">
+				<input type="submit" value="Create Job">
+			</form>
+			<form action = "delete_job.php" method="get"
+				<input type="submit" value="Delete Job">
+			</form>
+				<div id="jobList"></div>
 		</div>		
 
 		<div id="selectionArea">
-			<form id="selectionForm" action="" method="post">
+			<form id="selectionForm" action="select.php" method="get">
 				<div>
 					<label>Unit Tag:</label>
-					<input id="unitTag" autocomplete="off"></input>
+					<input id="unit_tag" autocomplete="off"></input>
 				</div>
 	  			<div>
 					<label>Air Volume:</label>
-					<input id="airVolume" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+					<input id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
 				</div>
 				<div>
 					<label>Total Static Pressure:</label>
-					<input id="totalSP" autocomplete="off">&nbsp;in W.C.</input>
+					<input id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
 				</div>
 				<div>
 					<label>Voltage:</label>
@@ -52,14 +55,14 @@
 				</div>
 				<div>
 					<label>Unit Height:</label>
-					<input id="unitHeight" autocomplete="off">&nbsp;in</input>
+					<input id="unit_height" autocomplete="off">&nbsp;in</input>
 				</div>
 	  			<div>
 					<label>Unit Width:</label>
-					<input id="unitWidth" autocomplete="off">&nbsp;in</input>
+					<input id="unit_weight" autocomplete="off">&nbsp;in</input>
 				</div>
 				<div>	
-					<input type="button" value="Search" id="runSelection">
+					<input type="submit" value="Search" id="runSelection">
 					<input type="button" value="Reset" id="clearSelection">
 				</div>
 			</form>
