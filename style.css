@@ -156,3 +156,12 @@ td {
 	height: 300px;
 }
 
+#sign_out_button {
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 7px;
+	font-size: .7em;
+	color: #292929;
+}
+

@@ -1,5 +1,5 @@
 <?php
-header('Location: http://localhost/quips/index.html');
+header('Location: http://localhost/quips/landing.html');
 $first_name = mysql_real_escape_string($_POST["first_name"]);
 $last_name = mysql_real_escape_string($_POST["last_name"]);
 $email = mysql_real_escape_string($_POST["email"]);
