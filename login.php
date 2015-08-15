@@ -13,7 +13,7 @@ if (mysql_num_rows($check) != 1){
 } elseif (mysql_num_rows($check2) != 0) {
 	header('Location: http://localhost/quips/quips.html'); 
 } else {
-	die("Invalid username or password");
+	die("Invalid username or password"); 
 }
 
 
