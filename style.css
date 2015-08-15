@@ -26,17 +26,8 @@ td {
 	margin-left: 50px;
 }
 
-.container {
-	padding: 5px;
-	background-color: #FFFFFF;	
-}
-
-.login_container {
-	padding: 5px;
-	background-color: #FFFFFF;
-	margin-top: 600px;
-}
-
+/** index.php **/
+/* log in form */ 
 .login_form_wrapper {
 	padding: 5px;
 	border: 1px solid #00AEEF;
@@ -53,6 +44,20 @@ td {
 	text-align: middle;
 }
 
+#login_form label {
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+}
+
+/** quips.html **/
+
+.container {
+	padding: 5px;
+	background-color: #FFFFFF;	
+}
+
+/* Header */
 #header {
 	margin: 5px;
 }
@@ -79,6 +84,16 @@ td {
 	width: 70px;
 }
 
+#sign_out_button {
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 7px;
+	font-size: .7em;
+	color: #292929;
+}
+
+/* Job List */ 
 #jobManager {
 	display: inline-block;
 	float: left;
@@ -103,6 +118,16 @@ td {
 	height: 450px;
 }
 
+#current_jobs{
+	font-size: 1.2em; 
+	font-family: sans-serif;
+	font-weight: bold;
+	position: relative;
+	left: 11px;
+	top: 3px;
+}
+
+/* Selection Display */ 
 #selectionArea {
 	display: inline-block;
 	width: 722px;
@@ -142,12 +167,6 @@ td {
 	font-size: .85em;	
 }
 
-#login_form label {
-	display: inline-block;	
-	width: 96px;
-	padding: 5px;
-}
-
 #mainView {
 	display: block;
 	border: 1px solid #00AEEF;
@@ -155,13 +174,3 @@ td {
 	margin: 5px;	
 	height: 300px;
 }
-
-#sign_out_button {
-	display: inline-block;
-	width: 70px;
-	padding: 5px;
-	margin: 7px;
-	font-size: .7em;
-	color: #292929;
-}
-
