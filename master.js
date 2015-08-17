@@ -29,7 +29,12 @@ function clearSelection() {
 	$('#unitWidth').val(null);
 };
 
+<<<<<<< HEAD
 /*//new job prompt
+=======
+//new job prompt
+/*
+>>>>>>> 399151f2c6cfaee98e5956e8986cf68be88fd260
 document.getElementById("create_job").onclick = create_job;
 function create_job() {
 	var new_job = prompt("Please enter job name: "); 
@@ -37,11 +42,17 @@ function create_job() {
 	 $('ul').append('<hr>'); 
 };
 */
+<<<<<<< HEAD
 document.getElementById("create_job").onclick = create_job;
 function create_job(){
 	var new_job = prompt("Please enter job name: ");
 	document.getElementById("new_job").value = new_job; 
 	document.getElementById("form").submit(); 
+=======
+
+function openModal(){
+	$("#newJobModal").modal(); 
+>>>>>>> 399151f2c6cfaee98e5956e8986cf68be88fd260
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //MODEL - DATA AND LOGIC
