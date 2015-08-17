@@ -31,7 +31,6 @@ li {
 	font-family: sans-serif;
 	position: relative;
 	left: 20px;
-
 }
 
 /** index.php **/
@@ -124,6 +123,8 @@ li {
 #jobList {
 	border: 1px solid #00AEEF;	
 	height: 450px;
+	overflow-y: auto;
+	overflow-x: hidden; 
 }
 
 #current_jobs{

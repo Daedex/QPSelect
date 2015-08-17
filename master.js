@@ -30,13 +30,18 @@ function clearSelection() {
 };
 
 //new job prompt
+/*
 document.getElementById("create_job").onclick = create_job;
 function create_job() {
 	var new_job = prompt("Please enter job name: "); 
 	 $('ul').append('<li>' + new_job + '</li>');
 	 $('ul').append('<hr>'); 
 };
+*/
 
+function openModal(){
+	$("#newJobModal").modal(); 
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //MODEL - DATA AND LOGIC
 ////////////////////////////////////////////////////////////////////////////////////////////////
