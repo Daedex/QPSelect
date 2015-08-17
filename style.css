@@ -80,17 +80,6 @@ li {
 	 color: #9A989A;
 }
 
-#welcome {
-	display: none;
-	color: #292929;
-	padding: 5px;
-	float: right;
-}
-
-#welcome #logout {
-	width: 70px;
-}
-
 #sign_out_button {
 	display: inline-block;
 	width: 70px;
