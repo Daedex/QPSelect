@@ -26,14 +26,6 @@ td {
 	margin-left: 50px;
 }
 
-li {
-	font-size: 1em; 
-	font-family: sans-serif;
-	position: relative;
-	left: 20px;
-
-}
-
 /** index.php **/
 /* log in form */ 
 .login_form_wrapper {
