@@ -6,9 +6,7 @@ $db_user = 'root';
 $db_pwd = 'Quips123'; 
 $database = "quips";
 
-
 mysql_connect($db_host, $db_user, $db_pwd);
-
 mysql_select_db($database) or die(mysql_error());
 
 $insert = "INSERT INTO jobs (job_name)

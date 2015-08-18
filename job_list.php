@@ -1,5 +1,5 @@
 <?php
-//header('Location: http://localhost/quips/quips.html');
+header('Location: http://localhost/quips/quips.html');
 //$job_name = mysql_real_escape_string($_POST["new_job"]);
 $db_host = 'localhost';
 $db_user = 'root';
@@ -22,4 +22,4 @@ while($record = mysql_fetch_array($result))
 	//echo "<hr>";
 }
 echo "</table>";
-?>
+?> 
