@@ -36,7 +36,7 @@
 						<div class="modal-body">
 							<p>Job Name: </p>
 							<form method="post" action="create_job.php">
-								<input name="new_job" placeholder="New Job">
+								<input name="new_job" placeholder="New Job" id="new_job_input">
 								<input type="submit" value= "Create Job" id="create_job">
 							</form>
 						</div>
@@ -50,25 +50,21 @@
 			</div>
 			<!-- newJobModal -->
 
-			<!--<form method="get">
-				<input type="button" value="Create Job" id="create_job">
-			</form>
+
+			<!--
 			<form action="" method="get">
 				<input type="submit" value="Delete Job" id="delete_job">
 			</form>
 			-->
 			<div id="jobList">
-			<p id="current_jobs">Current Jobs</p>
-			<hr>
-
-		<!-- Jobs List Display
-			<ul>
-				<li></li>
-			</ul>
-		--> 
+				<p id="current_jobs">Current Jobs</p>
+				<hr>
+				<form method="post" action="job_list.php">
+					<input type="submit" value="Display Jobs"> 
+				</form>
 			</div>
-
 		</div>		
+		<!-- jobManager -->
 
 		<div id="selectionArea">
 			
