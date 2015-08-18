@@ -9,7 +9,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 //run new selection
-document.getElementById("runSelection").onclick = runSelection;
+/*document.getElementById("runSelection").onclick = runSelection;
 function runSelection() {
 	var airVolume = $('#airVolume').val(),
 		totalSP = $('#totalSP').val(),
@@ -37,8 +37,13 @@ function create_job() {
 	 $('ul').append('<li>' + new_job + '</li>');
 	 $('ul').append('<hr>'); 
 };
-*/
 
+document.getElementById("create_job").onclick = create_job;
+function create_job(){
+	var new_job = prompt("Please enter job name: ");
+	document.getElementById("new_job").value = new_job; 
+	document.getElementById("form").submit(); 
+*/
 function openModal(){
 	$("#newJobModal").modal(); 
 }
