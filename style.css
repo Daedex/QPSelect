@@ -26,8 +26,6 @@ td {
 	margin-left: 50px;
 }
 
-<<<<<<< HEAD
-=======
 li {
 	font-size: 1em; 
 	font-family: sans-serif;
@@ -35,7 +33,6 @@ li {
 	left: 20px;
 }
 
->>>>>>> 399151f2c6cfaee98e5956e8986cf68be88fd260
 /** index.php **/
 /* log in form */ 
 .login_form_wrapper {
