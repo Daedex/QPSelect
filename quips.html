@@ -3,6 +3,7 @@
   <head>
   	<title>QUIPS</title>
   	<meta charset="utf-8">
+  	<script src="master.js"></script>
   	<script type="text/javascript" src="master.js"></script><link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
@@ -18,14 +19,10 @@
 	  		<form action="login.php" method="get" id="sign_out">
 				<input type="submit" value="Sign Out" id="sign_out_button">
 			</form>
-			<div id="welcome">
-				<span>Welcome *User's First Name*!</span>
-				<input type="button" value="Logout" id="logout">
-			</div>
 	  	</div>
-	  		  				
-		<div id="jobManager">
 
+<!-- Modal to input new jobs -->	  		  				
+		<div id="jobManager">
 			<!-- Modal -->
 			<button onclick="openModal()">New Job</button>
 			<div id="newJobModal" class="modal fade" style="display: none;">
@@ -54,28 +51,19 @@
 			</div>
 			<!-- newJobModal -->
 
-
-			<!--<form method="get">
-				<input type="button" value="Create Job" id="create_job">
-			</form>
-			<form action="" method="get">
-				<input type="submit" value="Delete Job" id="delete_job">
-			</form>
-			-->
-			<div id="jobList">
-			<p id="current_jobs">Current Jobs</p>
-			<hr>
-
-		<!-- Jobs List Display
-			<ul>
-				<li></li>
-			</ul>
-		--> 
+<!-- Display current jobs list -->
+			<div id="jobList">			
+				<form method="post" action="job_list.php">
+					<p id="current_jobs">Current Jobs</p>
+					<hr>
+					<input type="submit" value="Display Jobs"> 
+				</form>
 			</div>
-
 		</div>		
+		<!-- jobManager -->
 
 		<div id="selectionArea">
+			
 			<form id="selectionForm" action="select.php" method="get">
 				<div>
 					<label>Unit Tag:</label>
@@ -110,12 +98,22 @@
 					<input type="button" value="Reset" id="clearSelection">
 				</div>
 			</form>
+			
 			<div id="mainView">
-				
+				<table style="width:100%">
+					<tr>
+						<th>Unit Tag</th>
+						<th>Detail 1</th> 
+						<th>Detail 2</th>
+					</tr>
+					<tr>
+						<td>AHU-1 SA</td>
+						<td>14700</td> 
+						<td>3.6</td>
+					</tr>
+				</table>
 			</div>
 		</div>
-
-	    <script src="master.js"></script>
 	</div>
   </body>
 </html>

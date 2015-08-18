@@ -1,13 +1,13 @@
 <?php
 header('Location: http://localhost/quips/quips.html');
-$job_name = mysql_real_escape_string($_GET["new_job"]);
+$new_job = mysql_real_escape_string($_POST["new_job"]);
+$db_host = 'localhost'; 
+$db_user = 'root';
+$db_pwd = 'Quips123'; 
 $database = "quips";
-$location = "localhost";
-$user = "root";
-$pw = "Quips123"; 
-mysql_connect($location, $user, $pw) or die(mysql_error());
+mysql_connect($db_host, $db_user, $db_pwd);
 mysql_select_db($database) or die(mysql_error());
-$insert = "INSERT INTO jobs (new_job)
-	       VALUES ('$job_name')"; 
-mysql_query($insert); 
+$insert = "INSERT INTO jobs (job_name)
+	       VALUES ('$new_job')"; 
+mysql_query($insert);
 ?>
