@@ -39,9 +39,9 @@
 						</div>
 						<div class="modal-body">
 							<p>Job Name: </p>
-							<form metho="get">
-								<input type="text" placeholder="New Job">
-								<input type="submit" value= "Create Job" id="create_job">
+							<form method="post" action="create_job.php">
+								<input name="new_job" placeholder="New Job" autocomplete="off">
+								<input type="submit" value= "Create Job">
 							</form>
 						</div>
 						<div class="modal-footer">
