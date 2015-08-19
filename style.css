@@ -22,15 +22,20 @@ h2 {
 	font-weight: bold;
 }
 
-td {
-	margin-left: 50px;
-}
-
 li {
 	font-size: 1em; 
 	font-family: sans-serif;
 	position: relative;
 	left: 20px;
+}
+
+button{
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 7px;
+	font-size: .7em;
+	color: #292929;
 }
 
 /** index.php **/
@@ -80,21 +85,12 @@ li {
 	 color: #9A989A;
 }
 
-#sign_out_button {
-	display: inline-block;
-	width: 70px;
-	padding: 5px;
-	margin: 7px;
-	font-size: .7em;
-	color: #292929;
-}
-
 /* Job List */ 
 #jobManager {
 	display: inline-block;
 	float: left;
 	padding: 5px;
-	width: 152px;
+	width: 190px;
 	height: 500px;
 	color: #292929;	
 	margin: 5px;
@@ -123,6 +119,11 @@ li {
 	position: relative;
 	left: 11px;
 	top: 3px;
+}
+
+table.job_list_table td{
+	width: 70px;
+	font-weight: bold;
 }
 
 /* Selection Display */ 

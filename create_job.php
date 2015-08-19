@@ -1,5 +1,5 @@
 <?php
-header('Location: http://localhost/quips/quips.html');
+header('Location: http://localhost/quips/quips.php');
 $new_job = mysql_real_escape_string($_POST["new_job"]);
 $db_host = 'localhost'; 
 $db_user = 'root';
