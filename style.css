@@ -121,9 +121,10 @@ button{
 	top: 3px;
 }
 
-table.job_list_table td{
-	width: 70px;
+.job_list_table, .job_list_table td{
+	font-family: sans-serif;
 	font-weight: bold;
+	margin: auto;
 }
 
 /* Selection Display */ 
