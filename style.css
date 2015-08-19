@@ -22,16 +22,25 @@ h2 {
 	font-weight: bold;
 }
 
-td {
-	margin-left: 50px;
-}
-
 li {
 	font-size: 1em; 
 	font-family: sans-serif;
 	position: relative;
 	left: 20px;
 }
+
+button{
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 7px;
+	font-size: .7em;
+	color: #292929;
+}
+
+tr:nth-child(odd) { background-color : #b8d1f3; }
+tr:nth-child(even) { background-color : #dae5f4; }
+tr:hover { background-color : #00ADF1; }
 
 /** index.php **/
 /* log in form */ 
@@ -80,21 +89,12 @@ li {
 	 color: #9A989A;
 }
 
-#sign_out_button {
-	display: inline-block;
-	width: 70px;
-	padding: 5px;
-	margin: 7px;
-	font-size: .7em;
-	color: #292929;
-}
-
 /* Job List */ 
 #jobManager {
 	display: inline-block;
 	float: left;
 	padding: 5px;
-	width: 152px;
+	width: 190px;
 	height: 500px;
 	color: #292929;	
 	margin: 5px;
@@ -117,12 +117,21 @@ li {
 }
 
 #current_jobs{
+	border-bottom: 10px;
 	font-size: 1.2em; 
 	font-family: sans-serif;
 	font-weight: bold;
 	position: relative;
-	left: 11px;
-	top: 3px;
+	top: 5px;
+}
+
+.job_list_table, .job_list_table tr, .job_list_table td{
+	font-family: sans-serif;
+	font-weight: bold;
+	position: relative;
+	width: 190px;
+	height: 30px;
+	top: 7px;
 }
 
 /* Selection Display */ 
