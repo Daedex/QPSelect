@@ -25,6 +25,7 @@
 		<div id="jobManager">
 			<!-- Modal -->
 			<button onclick="openModal()">New Job</button>
+			<button>Delete Job</button>
 			<div id="newJobModal" class="modal fade" style="display: none;">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -54,9 +55,29 @@
 <!-- Display current jobs list -->
 			<div id="jobList">			
 				<form method="post" action="job_list.php">
-					<p id="current_jobs">Current Jobs</p>
-					<hr>
-					<input type="button" value="Display Jobs"> 
+					<p id="current_jobs" align="center">Current Jobs</p>
+					<?php
+					$db_host = 'localhost';
+					$db_user = 'root';
+					$db_pwd = 'Quips123'; 
+					$database = "quips";
+
+					mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
+					mysql_select_db($database) or die(mysql_error());
+
+                    //query jobs list
+					$jobs_list = "SELECT job_name FROM jobs"; 
+					$result = mysql_query($jobs_list) or die(mysql_error()); 
+
+					echo "<table class='job_list_table'>"; 
+					while($record = mysql_fetch_array($result))
+					{
+						echo "<tr>";
+						echo "<td align='center'>" .$record['job_name']. "</td>"; 
+						echo "</tr>"; 	
+					}
+					echo "</table>";
+					?>
 				</form>
 			</div>
 		</div>		

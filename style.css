@@ -37,9 +37,10 @@ button{
 	font-size: .7em;
 	color: #292929;
 }
-	tr:nth-child(odd) { background-color : #b8d1f3; }
-	tr:nth-child(even) { background-color : #dae5f4; }
-	tr:hover { background-color : #00ADF1; }
+
+tr:nth-child(odd) { background-color : #b8d1f3; }
+tr:nth-child(even) { background-color : #dae5f4; }
+tr:hover { background-color : #00ADF1; }
 
 /** index.php **/
 /* log in form */ 
