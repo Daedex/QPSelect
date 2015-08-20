@@ -46,15 +46,14 @@
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						</div>
 					</div>
-					<!-- model-content -->
+					<!-- modal-content -->
 				</div>
 				<!-- modal-dialog -->
 			</div>
 			<!-- newJobModal -->
 
 <!-- Display current jobs list -->
-			<div id="jobList">			
-					<p id="current_jobs" align="center">Current Jobs</p>
+			<div id="jobList">
 					<?php
 					$db_host = 'localhost';
 					$db_user = 'root';

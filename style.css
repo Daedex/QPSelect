@@ -109,31 +109,23 @@ button{
 	border: 1px solid #00AEEF;	
 	height: 450px;
 	overflow-y: auto;
-	overflow-x: hidden; 
+	overflow-x: hidden;
 }
 
-#current_jobs{
-	background-color: #eee;
-	border-bottom: 10px;
-	font-size: 1.2em; 
+.job_list_table {
+
+} 
+
+.job_list_table tr {
+
+}
+
+.job_list_table td {
 	font-family: sans-serif;
 	font-weight: bold;
-	position: relative;
-	top: 5px;
-}
-
-.job_list_table, .job_list_table tr, .job_list_table td{
-	font-family: sans-serif;
-	font-weight: bold;
-	position: relative;
-	width: 190px;
-	height: 30px;
-	top: 7px;
-	
-}
-
-.job_list_table tr input {
-	float:left;
+	width: 300px;
+	height: 25px;
+	vertical-align: middle;
 }
 
 .job_list_table tr:nth-child(odd) { background-color : #b8d1f3; }
