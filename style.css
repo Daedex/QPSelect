@@ -38,10 +38,6 @@ button{
 	color: #292929;
 }
 
-tr:nth-child(odd) { background-color : #b8d1f3; }
-tr:nth-child(even) { background-color : #dae5f4; }
-tr:hover { background-color : #00ADF1; }
-
 /** index.php **/
 /* log in form */ 
 .login_form_wrapper {
@@ -117,6 +113,7 @@ tr:hover { background-color : #00ADF1; }
 }
 
 #current_jobs{
+	background-color: #eee;
 	border-bottom: 10px;
 	font-size: 1.2em; 
 	font-family: sans-serif;
@@ -132,8 +129,15 @@ tr:hover { background-color : #00ADF1; }
 	width: 190px;
 	height: 30px;
 	top: 7px;
-	right: 10px;
+	
 }
+
+.job_list_table tr input {
+	float:left;
+}
+
+.job_list_table tr:nth-child(odd) { background-color : #b8d1f3; }
+.job_list_table tr:nth-child(even) { background-color : #dae5f4; }
 
 /* Selection Display */ 
 #selectionArea {

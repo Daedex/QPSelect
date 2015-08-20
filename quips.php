@@ -54,7 +54,6 @@
 
 <!-- Display current jobs list -->
 			<div id="jobList">			
-				<form method="post" action="job_list.php">
 					<p id="current_jobs" align="center">Current Jobs</p>
 					<?php
 					$db_host = 'localhost';
@@ -73,12 +72,11 @@
 					while($record = mysql_fetch_array($result))
 					{
 						echo "<tr>";
-						echo "<td align='center'>" .$record['job_name']. "</td>"; 
+						echo "<td><input type='checkbox' name='checkbox'/>" .$record['job_name']. "</td>"; 
 						echo "</tr>"; 	
 					}
 					echo "</table>";
 					?>
-				</form>
 			</div>
 		</div>		
 		<!-- jobManager -->
