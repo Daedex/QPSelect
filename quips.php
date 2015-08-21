@@ -54,6 +54,7 @@
 <!-- Display current jobs list -->
 			<div id="jobList">
 				<form action="delete_job.php" method="get">
+					<input id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
 					<?php
 					$db_host = 'localhost';
 					$db_user = 'root';
@@ -77,7 +78,7 @@
 					}
 					echo "</table>";
 					?>
-					<input type="submit" action="delete_job.php" value="Delete Job">
+
 				</form>
 			</div>
 		</div>		

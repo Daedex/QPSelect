@@ -124,6 +124,9 @@ button{
 	background-color: #9A989A;
 }
 
+#del_job_btn{
+}
+
 .job_list_table tr:nth-child(odd) { background-color : #b8d1f3; }
 .job_list_table tr:nth-child(even) { background-color : #dae5f4; }
 
