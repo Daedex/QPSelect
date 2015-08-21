@@ -63,14 +63,14 @@
 					mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
 					mysql_select_db($database) or die(mysql_error());
 
-                    //query jobs list
-					$jobs_list = "SELECT job_name FROM jobs"; 
-					$result = mysql_query($jobs_list) or die(mysql_error()); 
+                    //query jobs names
+					$job_names = "SELECT * FROM jobs"; 
+					$result = mysql_query($job_names) or die(mysql_error()); 
 
 					echo "<table class='job_list_table'>"; 
 					while($record = mysql_fetch_array($result))
 					{
-						echo "<tr>";
+						echo "<tr id='" .$record['job_id']. "' onclick='selectJob()'>";
 						echo "<td><input type='checkbox' name='checkbox'>" .$record['job_name']. "</td>"; 
 						echo "<td>" .$record['job_id']. "</td>";
 						echo "</tr>"; 	
