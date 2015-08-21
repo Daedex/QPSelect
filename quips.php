@@ -25,7 +25,6 @@
 		<div id="jobManager">
 			<!-- Modal -->
 			<button onclick="openModal()">New Job</button>
-			<button>Delete Job</button>
 			<div id="newJobModal" class="modal fade" style="display: none;">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -54,6 +53,7 @@
 
 <!-- Display current jobs list -->
 			<div id="jobList">
+				<form action="delete_job.php" method="get">
 					<?php
 					$db_host = 'localhost';
 					$db_user = 'root';
@@ -70,13 +70,15 @@
 					echo "<table class='job_list_table'>"; 
 					while($record = mysql_fetch_array($result))
 					{
-						echo "<tr id='" .$record['job_id']. "' onclick='selectJob()'>";
-						echo "<td><input type='checkbox' name='checkbox'>" .$record['job_name']. "</td>"; 
-						echo "<td>" .$record['job_id']. "</td>";
+						echo "<tr>";
+						echo "<td><input type='checkbox' name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
+						           .$record['job_name']. "</td>"; 
 						echo "</tr>"; 	
 					}
 					echo "</table>";
 					?>
+					<input type="submit" action="delete_job.php" value="Delete Job">
+				</form>
 			</div>
 		</div>		
 		<!-- jobManager -->
