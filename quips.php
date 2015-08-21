@@ -70,7 +70,7 @@
 					echo "<table class='job_list_table'>"; 
 					while($record = mysql_fetch_array($result))
 					{
-						echo "<tr value='" .$record['job_id']. "'>";
+						echo "<tr id='" .$record['job_id']. "' onclick='selectJob()'>";
 						echo "<td><input type='checkbox' name='checkbox'>" .$record['job_name']. "</td>"; 
 						echo "</tr>"; 	
 					}
