@@ -112,14 +112,6 @@ button{
 	overflow-x: hidden;
 }
 
-.job_list_table {
-
-} 
-
-.job_list_table tr {
-
-}
-
 .job_list_table td {
 	font-family: sans-serif;
 	font-weight: bold;
@@ -128,8 +120,14 @@ button{
 	vertical-align: middle;
 }
 
+.jobSelected {
+	background-color: #9A989A;
+}
+
 .job_list_table tr:nth-child(odd) { background-color : #b8d1f3; }
 .job_list_table tr:nth-child(even) { background-color : #dae5f4; }
+
+
 
 /* Selection Display */ 
 #selectionArea {
