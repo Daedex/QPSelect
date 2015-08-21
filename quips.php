@@ -72,6 +72,7 @@
 					{
 						echo "<tr>";
 						echo "<td><input type='checkbox' name='checkbox'>" .$record['job_name']. "</td>"; 
+						echo "<td>" .$record['job_id']. "</td>";
 						echo "</tr>"; 	
 					}
 					echo "</table>";
