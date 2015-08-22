@@ -3,13 +3,15 @@
   <head>
   	<title>QUIPS</title>
   	<meta charset="utf-8">
+  	<style type="text/css"></style>
   	<script src="master.js"></script>
   	<script type="text/javascript" src="master.js"></script><link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
-  	<style type="text/css"></style>
-  	<link rel="stylesheet" type="text/css" href="reset.css">
-  	<link rel="stylesheet" type="text/css" href="style.css">
+  	<script src-"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></script>
+
+<!--  	<link rel="stylesheet" type="text/css" href="reset.css"> -->
+<!--  	<link rel="stylesheet" type="text/css" href="style.css"> -->
   </head>
 
   <body>
@@ -81,9 +83,9 @@
 
 				</form>
 			</div>
-		</div>		
-		<!-- jobManager -->
+		</div>
 
+		<!-- jobManager -->
 		<div id="selectionArea">
 			
 			<form id="selectionForm" action="select.php" method="get">
