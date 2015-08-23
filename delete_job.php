@@ -1,9 +1,9 @@
 <?php
 $id = $_GET['jobID']; 
-$db_host = 'daedex.com'; 
-$db_user = 'stauguu1_admin';
+$db_host = 'localhost'; 
+$db_user = 'root';
 $db_pwd = 'Quips123'; 
-$database = "stauguu1_quips";
+$database = "quips";
 
 mysql_connect($db_host, $db_user, $db_pwd);
 mysql_select_db($database) or die(mysql_error());

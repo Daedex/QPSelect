@@ -57,10 +57,10 @@
 						<form action="delete_job.php" method="get">
 							<input id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
 							<?php
-							$db_host = 'daedex.com'; 
-							$db_user = 'stauguu1_admin';
+							$db_host = 'localhost'; 
+							$db_user = 'root';
 							$db_pwd = 'Quips123'; 
-							$database = "stauguu1_quips";
+							$database = "quips";
 
 							mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
 							mysql_select_db($database) or die(mysql_error());
