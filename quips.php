@@ -12,7 +12,7 @@
   	<div class="container">
   		<div class="row">
 		  	<div class=".col-md-12">
-		  		<div id="header">
+		  		<div class="container-fluid" id="header">
 			  		<h3>Q<span>uips</span></h3>
 			  		<form action="login.php" method="get" id="sign_out">
 						<input type="submit" value="Sign Out" id="sign_out_button">
@@ -23,7 +23,7 @@
 	  		  				
 		<div class="row">
 			<div class=".col-md-3">
-				<div id="jobManager">
+				<div class="container-fluid" id="jobManager">
 					<!-- Modal -->
 					<button onclick="openModal()">New Job</button>
 					<div id="newJobModal" class="modal fade" style="display: none;">
@@ -84,45 +84,46 @@
 				</div>
 			</div>
 			<div class=".col-md-9">
-				<!-- jobManager -->
-				<div id="selectionArea">
-					
-					<form id="selectionForm" action="select.php" method="get">
-						<div>
-							<label>Unit Tag:</label>
-							<input id="unit_tag" autocomplete="off"></input>
-						</div>
-			  			<div>
-							<label>Air Volume:</label>
-							<input id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
-						</div>
-						<div>
-							<label>Total Static Pressure:</label>
-							<input id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
-						</div>
-						<div>
-							<label>Voltage:</label>
-							<select id="voltage" autocomplete="off">
-								<option value=""></option>
-								<option value="460">460V / 3~ / 60Hz</option>
-								<option value="208">208V / 3~ / 60Hz</option>
-							</select>
-						</div>
-						<div>
-							<label>Unit Height:</label>
-							<input id="unit_height" autocomplete="off">&nbsp;in</input>
-						</div>
-			  			<div>
-							<label>Unit Width:</label>
-							<input id="unit_weight" autocomplete="off">&nbsp;in</input>
-						</div>
-						<div>	
-							<input type="submit" value="Search" id="runSelection">
-							<input type="button" value="Reset" id="clearSelection">
-						</div>
-					</form>
-					
-					<div id="mainView">
+				<div class="row">
+					<div class="container-fluid" id="selectionArea">						
+						<form id="selectionForm" action="select.php" method="get">
+							<div>
+								<label>Unit Tag:</label>
+								<input id="unit_tag" autocomplete="off"></input>
+							</div>
+				  			<div>
+								<label>Air Volume:</label>
+								<input id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+							</div>
+							<div>
+								<label>Total Static Pressure:</label>
+								<input id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
+							</div>
+							<div>
+								<label>Voltage:</label>
+								<select id="voltage" autocomplete="off">
+									<option value=""></option>
+									<option value="460">460V / 3~ / 60Hz</option>
+									<option value="208">208V / 3~ / 60Hz</option>
+								</select>
+							</div>
+							<div>
+								<label>Unit Height:</label>
+								<input id="unit_height" autocomplete="off">&nbsp;in</input>
+							</div>
+				  			<div>
+								<label>Unit Width:</label>
+								<input id="unit_weight" autocomplete="off">&nbsp;in</input>
+							</div>
+							<div>	
+								<input type="submit" value="Search" id="runSelection">
+								<input type="button" value="Reset" id="clearSelection">
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<div class="container-fluid" id="mainView">
 						<table>
 							<tr>
 								<th>Unit Tag</th>
@@ -140,6 +141,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script type="text/javascript" src="master.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>	
