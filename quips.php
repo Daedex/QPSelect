@@ -12,135 +12,143 @@
   	<div class="container">
   		<div class="row">
 		  	<div class="col-md-12">
-		  		<div class="container-fluid" id="header">
-			  		<h3>Q<span>uips</span></h3>
+		  		<div class="col-sm-2">
+			  		<h3 style="color:#00ADF1">Q<span style="color:#9A989A">uips</span></h3>
+			  	</div>
+			  	<div class="col-sm-offset-8 col-sm-2">
 			  		<form action="login.php" method="get" id="sign_out">
-						<input class="btn btn-default" type="submit" value="Sign Out" id="sign_out_button">
+			  			<div class="form-group">
+							<input class="btn btn-default" type="submit" value="Sign Out" id="sign_out_button">
+						</div>
 					</form>
 				</div>
 		  	</div>
 	  	</div>
 	  		  				
 		<div class="row">
-			<div class="col-md-3">
-				<div class="container-fluid" id="jobManager">
-					<!-- Modal -->
-					<button class="btn btn-default" onclick="openModal()">New Job</button>
-					<div id="newJobModal" class="modal fade" style="display: none;">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">x</span>
-									</button>
-									<h4 class="modal-title">New Job</h4>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="col-md-3">
+						<div class="container-fluid" id="jobManager">
+							<!-- Modal -->
+							<button class="btn btn-default" onclick="openModal()">New Job</button>
+							<div id="newJobModal" class="modal fade" style="display: none;">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">x</span>
+											</button>
+											<h4 class="modal-title">New Job</h4>
+										</div>
+										<div class="modal-body">
+											<p>Job Name: </p>
+											<form method="post" action="create_job.php">
+												<input name="new_job" placeholder="New Job" autocomplete="off">
+												<input type="submit" value= "Create Job">
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+									<!-- modal-content -->
 								</div>
-								<div class="modal-body">
-									<p>Job Name: </p>
-									<form method="post" action="create_job.php">
-										<input name="new_job" placeholder="New Job" autocomplete="off">
-										<input type="submit" value= "Create Job">
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
+								<!-- modal-dialog -->
 							</div>
-							<!-- modal-content -->
+							<!-- newJobModal -->
+
+							<!-- Display current jobs list -->
+							<div id="jobList">
+								<form action="delete_job.php" method="get">
+									<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
+									<?php
+									$db_host = 'localhost'; 
+									$db_user = 'root';
+									$db_pwd = 'Quips123'; 
+									$database = "quips";
+
+									mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
+									mysql_select_db($database) or die(mysql_error());
+
+				                    //query jobs names
+									$job_names = "SELECT * FROM jobs"; 
+									$result = mysql_query($job_names) or die(mysql_error()); 
+
+									echo "<table class='table'>"; 
+									while($record = mysql_fetch_array($result))
+									{
+										echo "<tr>";
+										echo "<td><input type='checkbox' name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
+										           .$record['job_name']. "</td>"; 
+										echo "</tr>"; 	
+									}
+									echo "</table>";
+									?>
+								</form>
+							</div>
 						</div>
-						<!-- modal-dialog -->
 					</div>
-					<!-- newJobModal -->
-
-					<!-- Display current jobs list -->
-					<div id="jobList">
-						<form action="delete_job.php" method="get">
-							<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
-							<?php
-							$db_host = 'localhost'; 
-							$db_user = 'root';
-							$db_pwd = 'Quips123'; 
-							$database = "quips";
-
-							mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
-							mysql_select_db($database) or die(mysql_error());
-
-		                    //query jobs names
-							$job_names = "SELECT * FROM jobs"; 
-							$result = mysql_query($job_names) or die(mysql_error()); 
-
-							echo "<table class='table'>"; 
-							while($record = mysql_fetch_array($result))
-							{
-								echo "<tr>";
-								echo "<td><input type='checkbox' name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
-								           .$record['job_name']. "</td>"; 
-								echo "</tr>"; 	
-							}
-							echo "</table>";
-							?>
-						</form>
+					<div class="col-md-9">
+						<div class="row">
+							<div class="container-fluid" id="selectionArea">						
+								<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
+									<div class="form-group">
+										<label class="control-label col-sm-3">Unit Tag:</label>
+										<input class="col-sm-2" id="unit_tag" autocomplete="off"></input>
+									</div>
+						  			<div class="form-group">
+										<label class="control-label col-sm-3">Air Volume:</label>
+										<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-3">Total Static Pressure:</label>
+										<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-3">Voltage:</label>
+										<select class="col-sm-2" id="voltage" autocomplete="off">
+											<option value=""></option>
+											<option value="460">460V / 3~ / 60Hz</option>
+											<option value="208">208V / 3~ / 60Hz</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-3">Unit Height:</label>
+										<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
+									</div>
+						  			<div class="form-group">
+										<label class="control-label col-sm-3">Unit Width:</label>
+										<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">	
+											<input class="btn btn-default" type="submit" value="Search" id="runSelection">
+											<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="container-fluid" id="mainView">
+								<table class="table">
+									<tr>
+										<th>Unit Tag</th>
+										<th>Detail 1</th> 
+										<th>Detail 2</th>
+									</tr>
+									<tr>
+										<td>AHU-1 SA</td>
+										<td>14700</td> 
+										<td>3.6</td>
+									</tr>
+								</table>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-md-9">
-				<div class="row">
-					<div class="container-fluid" id="selectionArea">						
-						<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
-							<div class="form-group">
-								<label class="control-label col-sm-3">Unit Tag:</label>
-								<input class="col-sm-2" id="unit_tag" autocomplete="off"></input>
-							</div>
-				  			<div class="form-group">
-								<label class="control-label col-sm-3">Air Volume:</label>
-								<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-3">Total Static Pressure:</label>
-								<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-3">Voltage:</label>
-								<select class="col-sm-2" id="voltage" autocomplete="off">
-									<option value=""></option>
-									<option value="460">460V / 3~ / 60Hz</option>
-									<option value="208">208V / 3~ / 60Hz</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-3">Unit Height:</label>
-								<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
-							</div>
-				  			<div class="form-group">
-								<label class="control-label col-sm-3">Unit Width:</label>
-								<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">	
-									<input class="btn btn-default" type="submit" value="Search" id="runSelection">
-									<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="row">
-					<div class="container-fluid" id="mainView">
-						<table class="table">
-							<tr>
-								<th>Unit Tag</th>
-								<th>Detail 1</th> 
-								<th>Detail 2</th>
-							</tr>
-							<tr>
-								<td>AHU-1 SA</td>
-								<td>14700</td> 
-								<td>3.6</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
+				</div> <!-- panel body -->
+			</div> <!-- panel -->
 		</div>
 	</div>
 
