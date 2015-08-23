@@ -11,21 +11,21 @@
   <body>
   	<div class="container">
   		<div class="row">
-		  	<div class=".col-md-12">
+		  	<div class="col-md-12">
 		  		<div class="container-fluid" id="header">
 			  		<h3>Q<span>uips</span></h3>
 			  		<form action="login.php" method="get" id="sign_out">
-						<input type="submit" value="Sign Out" id="sign_out_button">
+						<input class="btn btn-default" type="submit" value="Sign Out" id="sign_out_button">
 					</form>
 				</div>
 		  	</div>
 	  	</div>
 	  		  				
 		<div class="row">
-			<div class=".col-md-3">
+			<div class="col-md-3">
 				<div class="container-fluid" id="jobManager">
 					<!-- Modal -->
-					<button onclick="openModal()">New Job</button>
+					<button class="btn btn-default" onclick="openModal()">New Job</button>
 					<div id="newJobModal" class="modal fade" style="display: none;">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -55,7 +55,7 @@
 					<!-- Display current jobs list -->
 					<div id="jobList">
 						<form action="delete_job.php" method="get">
-							<input id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
+							<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
 							<?php
 							$db_host = 'localhost'; 
 							$db_user = 'root';
@@ -69,7 +69,7 @@
 							$job_names = "SELECT * FROM jobs"; 
 							$result = mysql_query($job_names) or die(mysql_error()); 
 
-							echo "<table class='job_list_table'>"; 
+							echo "<table class='table'>"; 
 							while($record = mysql_fetch_array($result))
 							{
 								echo "<tr>";
@@ -83,48 +83,50 @@
 					</div>
 				</div>
 			</div>
-			<div class=".col-md-9">
+			<div class="col-md-9">
 				<div class="row">
 					<div class="container-fluid" id="selectionArea">						
-						<form id="selectionForm" action="select.php" method="get">
-							<div>
-								<label>Unit Tag:</label>
-								<input id="unit_tag" autocomplete="off"></input>
+						<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
+							<div class="form-group">
+								<label class="control-label col-sm-3">Unit Tag:</label>
+								<input class="col-sm-2" id="unit_tag" autocomplete="off"></input>
 							</div>
-				  			<div>
-								<label>Air Volume:</label>
-								<input id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+				  			<div class="form-group">
+								<label class="control-label col-sm-3">Air Volume:</label>
+								<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
 							</div>
-							<div>
-								<label>Total Static Pressure:</label>
-								<input id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
+							<div class="form-group">
+								<label class="control-label col-sm-3">Total Static Pressure:</label>
+								<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
 							</div>
-							<div>
-								<label>Voltage:</label>
-								<select id="voltage" autocomplete="off">
+							<div class="form-group">
+								<label class="control-label col-sm-3">Voltage:</label>
+								<select class="col-sm-2" id="voltage" autocomplete="off">
 									<option value=""></option>
 									<option value="460">460V / 3~ / 60Hz</option>
 									<option value="208">208V / 3~ / 60Hz</option>
 								</select>
 							</div>
-							<div>
-								<label>Unit Height:</label>
-								<input id="unit_height" autocomplete="off">&nbsp;in</input>
+							<div class="form-group">
+								<label class="control-label col-sm-3">Unit Height:</label>
+								<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
 							</div>
-				  			<div>
-								<label>Unit Width:</label>
-								<input id="unit_weight" autocomplete="off">&nbsp;in</input>
+				  			<div class="form-group">
+								<label class="control-label col-sm-3">Unit Width:</label>
+								<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
 							</div>
-							<div>	
-								<input type="submit" value="Search" id="runSelection">
-								<input type="button" value="Reset" id="clearSelection">
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">	
+									<input class="btn btn-default" type="submit" value="Search" id="runSelection">
+									<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
+								</div>
 							</div>
 						</form>
 					</div>
 				</div>
 				<div class="row">
 					<div class="container-fluid" id="mainView">
-						<table>
+						<table class="table">
 							<tr>
 								<th>Unit Tag</th>
 								<th>Detail 1</th> 
