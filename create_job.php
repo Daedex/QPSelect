@@ -1,10 +1,10 @@
 <?php
 header('Location: http://localhost/quips/quips.php');
 $new_job = mysql_real_escape_string($_POST["new_job"]);
-$db_host = 'localhost'; 
-$db_user = 'root';
+$db_host = 'daedex.com'; 
+$db_user = 'stauguu1_admin';
 $db_pwd = 'Quips123'; 
-$database = "quips";
+$database = "stauguu1_quips";
 
 mysql_connect($db_host, $db_user, $db_pwd);
 mysql_select_db($database) or die(mysql_error());

@@ -3,13 +3,7 @@
   <head>
   	<title>QUIPS</title>
   	<meta charset="utf-8">
-  	<script src="master.js"></script>
-  	<script type="text/javascript" src="master.js"></script><link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
-  	<style type="text/css"></style>
-  	<link rel="stylesheet" type="text/css" href="reset.css">
-  	<link rel="stylesheet" type="text/css" href="style.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
 
   <body>
@@ -56,10 +50,10 @@
 				<form action="delete_job.php" method="get">
 					<input id="del_job_btn" type="submit" action="delete_job.php" value="Delete Job">
 					<?php
-					$db_host = 'localhost';
-					$db_user = 'root';
+					$db_host = 'daedex.com'; 
+					$db_user = 'stauguu1_admin';
 					$db_pwd = 'Quips123'; 
-					$database = "quips";
+					$database = "stauguu1_quips";
 
 					mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
 					mysql_select_db($database) or die(mysql_error());
@@ -81,9 +75,9 @@
 
 				</form>
 			</div>
-		</div>		
-		<!-- jobManager -->
+		</div>
 
+		<!-- jobManager -->
 		<div id="selectionArea">
 			
 			<form id="selectionForm" action="select.php" method="get">
@@ -137,5 +131,8 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="master.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
   </body>
 </html>

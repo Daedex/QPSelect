@@ -5,10 +5,10 @@ ini_set('display_errors',1);
 error_reporting(-1);
 >>>>>>> 30d1e1ea3e4f5aeabad36db7d995a0b5f556012e
 //$job_name = mysql_real_escape_string($_POST["new_job"]);
-$db_host = 'localhost';
-$db_user = 'root';
+$db_host = 'daedex.com'; 
+$db_user = 'stauguu1_admin';
 $db_pwd = 'Quips123'; 
-$database = "quips";
+$database = "stauguu1_quips";
 
 mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
 mysql_select_db($database) or die(mysql_error());
