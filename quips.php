@@ -111,14 +111,14 @@
 								</div>
 							</div> <!-- row -->
 							<div class="row">
-								<div class="container-fluid" id="selectionArea">
+								<div class="container-fluid">
 									<ul class="nav nav-tabs">
-										<li class="active"><a data-toggle="tab" href="#section1">Section 1</a></li>
-										<li><a data-toggle="tab" href="#section2">Section 2</a></li>
-										<li><a data-toggle="tab" href="#section3">Section 3</a></li>
+										<li class="active"><a data-toggle="tab" href="#inputTab">Input</a></li>
+										<li><a data-toggle="tab" href="#resultsTab">Results</a></li>
+										<li><a data-toggle="tab" href="#outputTab">Output</a></li>
 									</ul>
-									<div class="tab=content">
-										<div id="section1" class="tab-pane fade in active">						
+									<div class="tab-content">
+										<div id="inputTab" class="tab-pane fade in active">						
 											<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
 												<div class="form-group">
 													<label class="control-label col-sm-3">Unit Tag:</label>
@@ -156,10 +156,28 @@
 												</div>
 											</form>
 										</div>
-										<div id="section2" class="tab-pane">
-											
-										</div>
-										<div id="section3" class="tab-pane">
+										<div id="resultsTab" class="tab-pane">
+											<table class="table table-hover table-striped table-condensed">
+												<tr>
+													<th>Quantity</th>
+													<th>Fan</th>
+													<th>HP</th>
+													<th>Efficiency</th>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>114918</td>
+													<td>4.2</td>
+													<td>1210</td>
+												</tr>
+												<tr>
+													<td>3</td> 
+													<td>114722</td>
+													<td>5.3</td>
+													<td>958</td>
+												</tr>
+											</div>
+										<div id="outputTab" class="tab-pane">
 											
 										</div>
 									</div>
