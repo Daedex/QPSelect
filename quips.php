@@ -78,8 +78,7 @@
 										while($record = mysql_fetch_array($result))
 										{
 											echo "<tr>";
-											echo "<td><input type='checkbox' name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
-											           .$record['job_name']. "</td>"; 
+											echo "<td>" .$record['job_name']. "</td>"; 
 											echo "</tr>"; 	
 										}
 										echo "</table>";
