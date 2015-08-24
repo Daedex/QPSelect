@@ -4,8 +4,12 @@
 		<title>QUIPS</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	</head>
 
 	<body>
@@ -60,30 +64,39 @@
 								<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete">
 								<!-- Display current jobs list -->
 								<div id="jobList">
-									<form action="delete_job.php" method="get">
-										<?php
-										$db_host = 'localhost'; 
-										$db_user = 'root';
-										$db_pwd = 'Quips123'; 
-										$database = "quips";
 
-										mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
-										mysql_select_db($database) or die(mysql_error());
+									<p id="feedback">
+										<span>You've selected:</span> <span id="select-result">none</span>.
+									</p>
+									<?php
+									$db_host = 'localhost';
+									$db_user = 'root';
+									$db_pwd = 'Quips123'; 
+									$database = "quips";
 
-					                    //query jobs names
-										$job_names = "SELECT * FROM jobs"; 
-										$result = mysql_query($job_names) or die(mysql_error()); 
+									mysql_connect($db_host, $db_user, $db_pwd) or die(mysql_error()); 
+									mysql_select_db($database) or die(mysql_error());
+									$job_names = "SELECT * FROM jobs"; 
+									$result = mysql_query($job_names) or die(mysql_error()); 
+									echo "<ul id='job-list-content'>";
+									while($record = mysql_fetch_array($result))
+									{
 
-										echo "<table class='table table-hover'>"; 
-										while($record = mysql_fetch_array($result))
-										{
-											echo "<tr>";
-											echo "<td>" .$record['job_name']. "</td>"; 
-											echo "</tr>"; 	
-										}
-										echo "</table>";
-										?>
-									</form>
+										echo "<li class='ui-widget-content' name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
+										.$record['job_name']. "</li>"; 
+									}
+									echo"</ul>"; 
+
+									?>
+									<!--
+									<ul id="job-list-content">
+										<li class="ui-widget-content">Job 1</li>
+										<li class="ui-widget-content">Job 2</li>
+										<li class="ui-widget-content">Job 3</li>
+										<li class="ui-widget-content">Job 4</li>
+										<li class="ui-widget-content">Job 5</li>
+									</ul>
+								    -->
 								</div>
 							</div>
 						</div>
@@ -189,7 +202,6 @@
 		</div>
 
 		<script type="text/javascript" src="master.js"></script>
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>	
   	
  	</body>

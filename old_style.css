@@ -1,0 +1,177 @@
+html {
+	background-color: #353739;
+}
+
+body {
+	width: 960px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+
+h1{
+	margin: auto;
+	position: center;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+li {
+	font-size: 1em; 
+	font-family: sans-serif;
+	position: relative;
+	left: 20px;
+}
+
+button{
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 7px;
+	font-size: .7em;
+	color: #292929;
+}
+
+/** index.php **/
+/* log in form */ 
+.login_form_wrapper {
+	padding: 5px;
+	border: 1px solid #00AEEF;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 50px;
+}
+
+.login_form_wrapper h3 {
+	font-weight: bold;
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+	text-align: middle;
+}
+
+#login_form label {
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+}
+
+/** quips.html **/
+
+.container {
+	padding: 5px;
+	background-color: #FFFFFF;	
+}
+
+/* Header */
+#header {
+	margin: 5px;
+}
+
+#header h3 {
+	font-size: 2em;
+	color: #00ADF1;
+	margin: 5px;
+	display: inline-block;
+}
+
+#header h3 span {
+	 color: #9A989A;
+}
+
+/* Job List */ 
+#jobManager {
+	display: inline-block;
+	float: left;
+	padding: 5px;
+	width: 190px;
+	height: 500px;
+	color: #292929;	
+	margin: 5px;
+}
+
+#jobManager input {
+	display: inline-block;
+	width: 70px;
+	padding: 5px;
+	margin: 2px;
+	font-size: .7em;
+	color: #292929;
+}
+
+#jobList {
+	border: 1px solid #00AEEF;	
+	height: 450px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.job_list_table td {
+	font-family: sans-serif;
+	font-weight: bold;
+	width: 300px;
+	height: 25px;
+	vertical-align: middle;
+}
+
+.jobSelected {
+	background-color: #9A989A;
+}
+
+
+
+
+
+/* Selection Display */ 
+#selectionArea {
+	display: inline-block;
+	width: 722px;
+	height: 500px;
+	margin: 5px;
+	padding: 5px;
+}
+
+#selectionForm {
+	display: block;
+	padding: 5px;
+	margin: 5px;
+	width: 315px;
+	color: #292929;
+	font-size: .85em;
+}
+
+#selectionForm label {
+	display: inline-block;	
+	width: 96px;
+	padding: 5px;
+	font-size: .85em;	
+}
+
+#selectionForm input {
+	display: inline-block;
+	width: 70px;	
+	font-size: .85em;
+}
+
+#selectionForm input[type=button] {
+	display: inline-block;	
+	font-size: .85em;
+}
+
+#selectionForm select {
+	font-size: .85em;	
+}
+
+#mainView {
+	display: block;
+	border: 1px solid #00AEEF;
+	padding: 5px;
+	margin: 5px;	
+	height: 300px;
+}

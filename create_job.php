@@ -11,5 +11,5 @@ mysql_select_db($database) or die(mysql_error());
 $insert = "INSERT INTO jobs (job_name)
 	       VALUES ('$new_job')"; 
 mysql_query($insert);
-$id = mysql_insert_id(); 
+
 ?>
