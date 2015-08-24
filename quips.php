@@ -111,46 +111,60 @@
 								</div>
 							</div> <!-- row -->
 							<div class="row">
-								<div class="container-fluid" id="selectionArea">						
-									<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
-										<div class="form-group">
-											<label class="control-label col-sm-3">Unit Tag:</label>
-											<input class="col-sm-2" id="unit_tag" autocomplete="off"></input>
+								<div class="container-fluid" id="selectionArea">
+									<ul class="nav nav-tabs">
+										<li class="active"><a data-toggle="tab" href="#section1">Section 1</a></li>
+										<li><a data-toggle="tab" href="#section2">Section 2</a></li>
+										<li><a data-toggle="tab" href="#section3">Section 3</a></li>
+									</ul>
+									<div class="tab=content">
+										<div id="section1" class="tab-pane fade in active">						
+											<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
+												<div class="form-group">
+													<label class="control-label col-sm-3">Unit Tag:</label>
+													<input class="col-sm-2" id="unit_tag" autocomplete="off"></input>
+												</div>
+									  			<div class="form-group">
+													<label class="control-label col-sm-3">Air Volume:</label>
+													<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-3">Total Static Pressure:</label>
+													<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-3">Voltage:</label>
+													<select class="col-sm-2" id="voltage" autocomplete="off">
+														<option value=""></option>
+														<option value="460">460V / 3~ / 60Hz</option>
+														<option value="208">208V / 3~ / 60Hz</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-3">Unit Height:</label>
+													<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
+												</div>
+									  			<div class="form-group">
+													<label class="control-label col-sm-3">Unit Width:</label>
+													<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
+												</div>
+												<div class="form-group">
+													<div class="col-sm-offset-2 col-sm-10">	
+														<input class="btn btn-default" type="submit" value="Search" id="runSelection">
+														<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
+													</div>
+												</div>
+											</form>
 										</div>
-							  			<div class="form-group">
-											<label class="control-label col-sm-3">Air Volume:</label>
-											<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+										<div id="section2" class="tab-pane">
+											
 										</div>
-										<div class="form-group">
-											<label class="control-label col-sm-3">Total Static Pressure:</label>
-											<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
+										<div id="section3" class="tab-pane">
+											
 										</div>
-										<div class="form-group">
-											<label class="control-label col-sm-3">Voltage:</label>
-											<select class="col-sm-2" id="voltage" autocomplete="off">
-												<option value=""></option>
-												<option value="460">460V / 3~ / 60Hz</option>
-												<option value="208">208V / 3~ / 60Hz</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label class="control-label col-sm-3">Unit Height:</label>
-											<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
-										</div>
-							  			<div class="form-group">
-											<label class="control-label col-sm-3">Unit Width:</label>
-											<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
-										</div>
-										<div class="form-group">
-											<div class="col-sm-offset-2 col-sm-10">	
-												<input class="btn btn-default" type="submit" value="Search" id="runSelection">
-												<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>				
-						</div> 
+									</div>
+								</div>				
+							</div> 
 					</div> 
 				</div> 
 			</div>
