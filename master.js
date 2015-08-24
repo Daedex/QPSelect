@@ -34,6 +34,20 @@ function clearSelection() {
 function openModal(){
 	$("#newJobModal").modal(); 
 }
+
+   // make jobs list selectable 
+$(function() {
+  $( "#job-list-content" ).selectable({
+      stop: function() {
+          var result = $( "#select-result" ).empty();
+          $( ".ui-selected", this ).each(function() {
+             var index = $( "#job-list-content li" ).index( this );
+                  result.append( " #" + ( index + 1 ) );
+            });
+        }
+    });
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //MODEL - DATA AND LOGIC
 ////////////////////////////////////////////////////////////////////////////////////////////////

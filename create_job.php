@@ -11,5 +11,17 @@ mysql_select_db($database) or die(mysql_error());
 $insert = "INSERT INTO jobs (job_name)
 	       VALUES ('$new_job')"; 
 mysql_query($insert);
-$id = mysql_insert_id(); 
+
+$job_names = "SELECT * FROM jobs"; 
+$result = mysql_query($job_names) or die(mysql_error()); 
+
+while($record = mysql_fetch_array($result))
+{
+	echo "<ul>";
+	echo "<li><input name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
+        .$record['job_name']. "</li>"; 
+	echo "</ul>"; 	
+}
+
+
 ?>
