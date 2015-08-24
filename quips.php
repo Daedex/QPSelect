@@ -33,35 +33,37 @@
 					<div class="row">					
 						<div class="col-md-2">
 							<div class="panel panel-default">
-								<div class="panel-heading">Job Manager</div>
-								<!-- Modal -->
-								<button class="btn btn-default" onclick="openModal()">Create</button>
-								<div id="newJobModal" class="modal fade" style="display: none;">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">x</span>
-												</button>
-												<h4 class="modal-title">New Job</h4>
+								<div class="panel-heading clearfix">
+									<h4 class="panel-title">Job Manager</h4>
+									<!-- Modal -->
+									<button class="btn btn-default" onclick="openModal()">New</button>
+									<div id="newJobModal" class="modal fade" style="display: none;">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">x</span>
+													</button>
+													<h4 class="modal-title">New Job</h4>
+												</div>
+												<div class="modal-body">
+													<p>Job Name: </p>
+													<form method="post" action="create_job.php">
+														<input name="new_job" placeholder="New Job" autocomplete="off">
+														<input type="submit" value= "Create Job">
+													</form>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
 											</div>
-											<div class="modal-body">
-												<p>Job Name: </p>
-												<form method="post" action="create_job.php">
-													<input name="new_job" placeholder="New Job" autocomplete="off">
-													<input type="submit" value= "Create Job">
-												</form>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-											</div>
+											<!-- modal-content -->
 										</div>
-										<!-- modal-content -->
+										<!-- modal-dialog -->
 									</div>
-									<!-- modal-dialog -->
+									<!-- newJobModal -->
+									<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete">
 								</div>
-								<!-- newJobModal -->
-								<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete">
 								<!-- Display current jobs list -->
 								<div id="jobList">
 
@@ -103,22 +105,34 @@
 						<div class="col-md-10">						
 							<div class="row">
 								<div class="panel panel-default">
-									<div class="panel-heading">Q-PAC Selections</div>
+									<div class="panel-heading clearfix">
+										<h4 class="panel-title pull-left">Q-PAC Selections</h4>
+										<button class="btn btn-default pull-right" onclick="">Create</button>
+									</div>
 									<table class="table table-hover table-striped table-condensed">
 										<tr>
 											<th>Unit Tag</th>
-											<th>Detail 1</th> 
-											<th>Detail 2</th>
+											<th>CFM</th> 
+											<th>TSP</th>
+											<th>Voltage</th>
+											<th>Width</th>
+											<th>Height</th>
 										</tr>
 										<tr>
 											<td>AHU-1 SA</td>
 											<td>14700</td> 
 											<td>3.2</td>
+											<td>230V</td>
+											<td>120in</td>
+											<td>80in</td>
 										</tr>
 										<tr>
 											<td>AHU-1 EA</td>
 											<td>12700</td> 
 											<td>2.6</td>
+											<td>460V</td>
+											<td>140in</td>
+											<td>86in</td>
 										</tr>
 									</table>								
 								</div>
@@ -154,13 +168,13 @@
 													</select>
 												</div>
 												<div class="form-group">
-													<label class="control-label col-sm-3">Unit Height:</label>
-													<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
-												</div>
-									  			<div class="form-group">
 													<label class="control-label col-sm-3">Unit Width:</label>
 													<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
 												</div>
+												<div class="form-group">
+													<label class="control-label col-sm-3">Unit Height:</label>
+													<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
+												</div>									  			
 												<div class="form-group">
 													<div class="col-sm-offset-2 col-sm-10">	
 														<input class="btn btn-default" type="submit" value="Search" id="runSelection">
