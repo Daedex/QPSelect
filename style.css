@@ -1,12 +1,19 @@
 /** Jobs List **/
 #job-list-content .ui-selecting {
  background: #FECA40; 
-}
+ }
 
 #job-list-content .ui-selected {
  background: #F39814; color: white; 
 }
 
 #job-list-content {
- list-style-type: none; margin: 0; padding: 0; width: 100%; 
-}			
+ list-style-type: none; margin: 0; padding: 0; width: 100%;
+ text-align: center;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+
+#jobList {
+	font-weight: bold; 
+}

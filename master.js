@@ -35,7 +35,22 @@ function openModal(){
 	$("#newJobModal").modal(); 
 }
 
-   // make jobs list selectable 
+function displayJobList(){
+	var jobsList = []; 
+	var jobName = document.getElementById("newJob").value; 
+	jobsList.push(jobName);
+
+	var items = document.getElementById("job-list-content"); 
+
+	for (var i = 0; i < jobsList.length; i++ ) {
+        var item = document.createElement("li");
+        item.className = "list-group-item active";
+        item.innerHTML = jobsList[i];
+        items.appendChild(item);
+    }
+}
+
+// make jobs list selectable 
 $(function() {
   $( "#job-list-content" ).selectable({
       stop: function() {
@@ -47,6 +62,8 @@ $(function() {
         }
     });
 });
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //MODEL - DATA AND LOGIC
