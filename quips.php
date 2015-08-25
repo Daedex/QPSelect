@@ -47,9 +47,9 @@
 											</div>
 											<div class="modal-body">
 												<p>Job Name: </p>
-												<form method="post" action="create_job.php">
-													<input name="new_job" placeholder="New Job" autocomplete="off">
-													<input type="submit" value= "Create Job">
+												<form method="post" action="">
+													<input id="newJob" type="text" name="new_job" placeholder="New Job">
+													<input type="button" value= "Create Job" onclick="displayJobList()">
 												</form>
 											</div>
 											<div class="modal-footer">
@@ -63,12 +63,19 @@
 								<!-- newJobModal -->
 								<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete">
 								<!-- Display current jobs list -->
+
 								<div id="jobList">
 
 									<p id="feedback">
 										<span>You've selected:</span> <span id="select-result">none</span>.
 									</p>
-									<?php
+
+									<ul id='job-list-content'></ul> 
+
+								<!--
+								
+                                	<?php
+                                	/*
 									$db_host = 'localhost';
 									$db_user = 'root';
 									$db_pwd = 'Quips123'; 
@@ -81,22 +88,14 @@
 									echo "<ul id='job-list-content'>";
 									while($record = mysql_fetch_array($result))
 									{
-
-										echo "<li class='ui-widget-content' name='jobID[]' id='jobID' value='" .$record['job_id']. "'>" 
+										echo "<li class='ui-widget-content' name='jobID[]'" .$record['job_id']. "'>" 
 										.$record['job_name']. "</li>"; 
 									}
 									echo"</ul>"; 
-
+									*/
 									?>
-									<!--
-									<ul id="job-list-content">
-										<li class="ui-widget-content">Job 1</li>
-										<li class="ui-widget-content">Job 2</li>
-										<li class="ui-widget-content">Job 3</li>
-										<li class="ui-widget-content">Job 4</li>
-										<li class="ui-widget-content">Job 5</li>
-									</ul>
-								    -->
+								-->
+			
 								</div>
 							</div>
 						</div>
