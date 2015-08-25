@@ -47,13 +47,6 @@ function displayJobList(){
         item.innerHTML = jobsList[i];
         items.appendChild(item);
     }
-/*
-	var items = ""; 
-	for(var i = 0; i < jobsList.length; i++){
-		items += "<li>" + jobsList[i] + "</li>"; 
-	}
-	document.getElementById("job-list-content").innerHTML = items; 
-*/	
 }
 
 // make jobs list selectable 
