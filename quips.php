@@ -32,10 +32,13 @@
 				  	</div>				  		  				
 					<div class="row">					
 						<div class="col-md-2">
-							<div class="panel panel-default">
-								<div class="panel-heading">Job Manager</div>
-								<!-- Modal -->
-								<button class="btn btn-default" onclick="openModal()">New</button>
+							<div class="panel panel-default" style="height:600px;">
+								<div class="panel-heading">
+									<h1 class="panel-title">Job Manager</h1>
+									<button class="btn btn-default" onclick="openModal()">New</button>
+									<button class="btn btn-default" onclick="">Delete</button>
+								</div>
+								<!-- Modal -->								
 								<div id="newJobModal" class="modal fade" style="display: none;">
 									<div class="modal-dialog">
 										<div class="modal-content">
@@ -61,9 +64,8 @@
 									<!-- modal-dialog -->
 								</div>
 								<!-- newJobModal -->
-								<input class="btn btn-default" id="del_job_btn" type="submit" action="delete_job.php" value="Delete">
+								
 								<!-- Display current jobs list -->
-
 								<div id="jobList">
 
 									<p id="feedback">
@@ -72,8 +74,7 @@
 
 									<ul class="list-group" id='job-list-content'></ul> 
 
-								<!--
-								
+								<!--								
                                 	<?php
                                 	/*
 									$db_host = 'localhost';
@@ -94,122 +95,248 @@
 									echo"</ul>"; 
 									*/
 									?>
-								-->
-			
+								-->			
 								</div>
 							</div>
 						</div>
+						
 						<div class="col-md-10">						
-							<div class="row">
-								<div class="panel panel-default">
-									<div class="panel-heading clearfix">
-										<h1 class="panel-title pull-left">Q-PAC Selections</h1>
-										<button class="btn btn-default pull-right" onclick="">New</button>
+							<div class="row">								
+								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading clearfix">
+											<h1 class="panel-title">Selections</h1>
+											<button class="btn btn-default" onclick="">New</button>
+											<button class="btn btn-default" onclick="">Delete</button>
+										</div>
+										<div style="height:186px;overflow: auto;">
+											<table class="table table-hover table-striped table-condensed">
+												<tr>
+													<td>AHU-1 SA</td>												
+												</tr>
+												<tr>
+													<td>AHU-1 EA</td>
+												</tr>
+												<tr>
+													<td>AHU-2 SA</td>
+												</tr>
+												<tr>
+													<td>AHU-2 EA</td>
+												</tr>
+												<tr>
+													<td>AHU-3 SA</td>
+												</tr>
+												<tr>
+													<td>AHU-3 EA</td>
+												</tr>
+												<tr>
+													<td>AHU-4 SA</td>
+												</tr>
+											</table>
+										</div>								
 									</div>
-									<table class="table table-hover table-striped table-condensed">
-										<tr>
-											<th>Unit Tag</th>
-											<th>Volume (&nbsp;ft<sup>3</sup>/min)</th> 
-											<th>TSP (&nbsp;in W.C.)</th>
-											<th>Voltage (V)</th>
-											<th>Height (in)</th> 
-											<th>Width (in)</th>
-										</tr>
-										<tr>
-											<td>AHU-1 SA</td>
-											<td>14700</td> 
-											<td>3.2</td>
-											<td>230</td>
-											<td>96</td> 
-											<td>122</td>
-										</tr>
-										<tr>
-											<td>AHU-1 EA</td>
-											<td>12700</td> 
-											<td>2.6</td>
-											<td>460</td>
-											<td>72</td> 
-											<td>90</td>
-										</tr>
-									</table>								
+								</div>
+								<div class="col-md-6">
+									<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
+							  			<div class="form-group">
+											<label class="control-label col-sm-3">Air Volume:</label>
+											<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3">Total Static Pressure:</label>
+											<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3">Voltage:</label>
+											<select class="col-sm-2" id="voltage" autocomplete="off">
+												<option value=""></option>
+												<option value="460">460V / 3~ / 60Hz</option>
+												<option value="208">208V / 3~ / 60Hz</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-sm-3">Height:</label>
+											<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
+										</div>
+							  			<div class="form-group">
+											<label class="control-label col-sm-3">Width:</label>
+											<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">	
+												<input class="btn btn-default" type="submit" value="Search" id="runSelection">
+												<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="col-md-3">
 								</div>
 							</div> <!-- row -->
 							<div class="row">
 								<div class="container-fluid" id="selectionArea">
 									<ul class="nav nav-tabs">
-										<li class="active"><a data-toggle="tab" href="#inputsTab">Inputs</a></li>
-										<li><a data-toggle="tab" href="#resultsTab">Results</a></li>
+										<li class="active"><a data-toggle="tab" href="#resultsTab">Results</a></li>
 										<li><a data-toggle="tab" href="#outputsTab">Outputs</a></li>
 									</ul>
 									<div class="tab-content" style="padding-left:5px;padding-top:5px;">
-										<div id="inputsTab" class="tab-pane fade in active">						
-											<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
-												<div class="form-group">
-													<label class="control-label col-sm-3">Unit Tag:</label>
-													<input class="col-sm-2" id="unit_tag" autocomplete="off"></input>
-												</div>
-									  			<div class="form-group">
-													<label class="control-label col-sm-3">Air Volume:</label>
-													<input class="col-sm-2" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
-												</div>
-												<div class="form-group">
-													<label class="control-label col-sm-3">Total Static Pressure:</label>
-													<input class="col-sm-2" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
-												</div>
-												<div class="form-group">
-													<label class="control-label col-sm-3">Voltage:</label>
-													<select class="col-sm-2" id="voltage" autocomplete="off">
-														<option value=""></option>
-														<option value="460">460V / 3~ / 60Hz</option>
-														<option value="208">208V / 3~ / 60Hz</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label class="control-label col-sm-3">Height:</label>
-													<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
-												</div>
-									  			<div class="form-group">
-													<label class="control-label col-sm-3">Width:</label>
-													<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
-												</div>
-												<div class="form-group">
-													<div class="col-sm-offset-2 col-sm-10">	
-														<input class="btn btn-default" type="submit" value="Search" id="runSelection">
-														<input class="btn btn-default" type="button" value="Reset" id="clearSelection">
-													</div>
-												</div>
-											</form>
-										</div>
-										<div id="resultsTab" class="tab-pane">
+										<div id="resultsTab" class="tab-pane fade in active">
 											<table class="table table-striped table-hover table-condensed">
 												<tr>
-													<th>Fan</th>
-													<th>Quantity</th> 
-													<th>HP</th>
-													<th>FLA</th>
-													<th>Efficiency</th>
-													<th>Sound</th> 													
+													<th>Article No.</th>
+													<th>Size (mm)</th>
+													<th>Qty</th>																						
+													<th>P<sub>sys</sub> (W)</th>
+													<th>Speed (RPM)</th>
+													<th>L<sub>w(A),5</sub> (dB)</th>
+													<th>L<sub>w(A),6</sub> (dB)</th>
+													<th>I<sub>DP</sub> (A)</th>													 													
 												</tr>
 												<tr>
-													<td>114918</td>
+													<td>114922</td>
+													<td>355</td>
 													<td>3</td> 
-													<td>4.2</td>
-													<td>4.8</td>
-													<td>1025</td> 
-													<td>1.1</td>
+													<td>3314</td>
+													<td>3321</td>
+													<td>84</td> 
+													<td>91</td>
+													<td>4.39</td>
 												</tr>
 												<tr>
 													<td>114722</td>
+													<td>450</td>
 													<td>2</td> 
-													<td>5.1</td>
-													<td>3.6</td>
-													<td>978</td> 
-													<td>2.3</td>
+													<td>3535</td>
+													<td>2289</td>
+													<td>82</td> 
+													<td>90</td>
+													<td>4.69</td>
+												</tr>
+												<tr>
+													<td>114922</td>
+													<td>355</td>
+													<td>3</td> 
+													<td>3314</td>
+													<td>3321</td>
+													<td>84</td> 
+													<td>91</td>
+													<td>4.39</td>
+												</tr>
+												<tr>
+													<td>114722</td>
+													<td>450</td>
+													<td>2</td> 
+													<td>3535</td>
+													<td>2289</td>
+													<td>82</td> 
+													<td>90</td>
+													<td>4.69</td>
+												</tr>
+												<tr>
+													<td>114922</td>
+													<td>355</td>
+													<td>3</td> 
+													<td>3314</td>
+													<td>3321</td>
+													<td>84</td> 
+													<td>91</td>
+													<td>4.39</td>
+												</tr>
+												<tr>
+													<td>114722</td>
+													<td>450</td>
+													<td>2</td> 
+													<td>3535</td>
+													<td>2289</td>
+													<td>82</td> 
+													<td>90</td>
+													<td>4.69</td>
+												</tr>
+												<tr>
+													<td>114922</td>
+													<td>355</td>
+													<td>3</td> 
+													<td>3314</td>
+													<td>3321</td>
+													<td>84</td> 
+													<td>91</td>
+													<td>4.39</td>
+												</tr>
+												<tr>
+													<td>114722</td>
+													<td>450</td>
+													<td>2</td> 
+													<td>3535</td>
+													<td>2289</td>
+													<td>82</td> 
+													<td>90</td>
+													<td>4.69</td>
+												</tr>
+												<tr>
+													<td>114922</td>
+													<td>355</td>
+													<td>3</td> 
+													<td>3314</td>
+													<td>3321</td>
+													<td>84</td> 
+													<td>91</td>
+													<td>4.39</td>
+												</tr>
+												<tr>
+													<td>114722</td>
+													<td>450</td>
+													<td>2</td> 
+													<td>3535</td>
+													<td>2289</td>
+													<td>82</td> 
+													<td>90</td>
+													<td>4.69</td>
+												</tr>
+												<tr>
+													<td>114922</td>
+													<td>355</td>
+													<td>3</td> 
+													<td>3314</td>
+													<td>3321</td>
+													<td>84</td> 
+													<td>91</td>
+													<td>4.39</td>
+												</tr>
+												<tr>
+													<td>114722</td>
+													<td>450</td>
+													<td>2</td> 
+													<td>3535</td>
+													<td>2289</td>
+													<td>82</td> 
+													<td>90</td>
+													<td>4.69</td>
 												</tr>
 											</table>
 										</div>
 										<div id="outputsTab" class="tab-pane">
-											
+											<form class="form-horizontal">
+												<div>
+													<label>Save to Name:</label>
+													<input autocomplete="off"></input>
+												</div>												
+												<div class="checkbox">
+												    <label>
+												      <input type="checkbox"> Technical Data
+												    </label>
+												 </div>
+												 <div class="checkbox">
+												    <label>
+												      <input type="checkbox"> Fan Curve
+												    </label>
+												 </div>
+												 <div class="checkbox">
+												    <label>
+												      <input type="checkbox"> Drawing
+												    </label>
+												 </div>
+												<button type="submit" class="btn btn-default">Export</button>											
+											</form>											
 										</div>
 									</div>
 								</div>				
