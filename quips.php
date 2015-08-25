@@ -35,7 +35,7 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">Job Manager</div>
 								<!-- Modal -->
-								<button class="btn btn-default" onclick="openModal()">Create</button>
+								<button class="btn btn-default" onclick="openModal()">New</button>
 								<div id="newJobModal" class="modal fade" style="display: none;">
 									<div class="modal-dialog">
 										<div class="modal-content">
@@ -70,7 +70,7 @@
 										<span>You've selected:</span> <span id="select-result">none</span>.
 									</p>
 
-									<ul id='job-list-content'></ul> 
+									<ul class="list-group" id='job-list-content'></ul> 
 
 								<!--
 								
@@ -102,22 +102,34 @@
 						<div class="col-md-10">						
 							<div class="row">
 								<div class="panel panel-default">
-									<div class="panel-heading">Q-PAC Selections</div>
+									<div class="panel-heading clearfix">
+										<h1 class="panel-title pull-left">Q-PAC Selections</h1>
+										<button class="btn btn-default pull-right" onclick="">New</button>
+									</div>
 									<table class="table table-hover table-striped table-condensed">
 										<tr>
 											<th>Unit Tag</th>
-											<th>Detail 1</th> 
-											<th>Detail 2</th>
+											<th>Volume (&nbsp;ft<sup>3</sup>/min)</th> 
+											<th>TSP (&nbsp;in W.C.)</th>
+											<th>Voltage (V)</th>
+											<th>Height (in)</th> 
+											<th>Width (in)</th>
 										</tr>
 										<tr>
 											<td>AHU-1 SA</td>
 											<td>14700</td> 
 											<td>3.2</td>
+											<td>230</td>
+											<td>96</td> 
+											<td>122</td>
 										</tr>
 										<tr>
 											<td>AHU-1 EA</td>
 											<td>12700</td> 
 											<td>2.6</td>
+											<td>460</td>
+											<td>72</td> 
+											<td>90</td>
 										</tr>
 									</table>								
 								</div>
@@ -125,12 +137,12 @@
 							<div class="row">
 								<div class="container-fluid" id="selectionArea">
 									<ul class="nav nav-tabs">
-										<li class="active"><a data-toggle="tab" href="#section1">Section 1</a></li>
-										<li><a data-toggle="tab" href="#section2">Section 2</a></li>
-										<li><a data-toggle="tab" href="#section3">Section 3</a></li>
+										<li class="active"><a data-toggle="tab" href="#inputsTab">Inputs</a></li>
+										<li><a data-toggle="tab" href="#resultsTab">Results</a></li>
+										<li><a data-toggle="tab" href="#outputsTab">Outputs</a></li>
 									</ul>
-									<div class="tab=content">
-										<div id="section1" class="tab-pane fade in active">						
+									<div class="tab-content" style="padding-left:5px;padding-top:5px;">
+										<div id="inputsTab" class="tab-pane fade in active">						
 											<form class="form-horizontal" id="selectionForm" action="select.php" method="get">
 												<div class="form-group">
 													<label class="control-label col-sm-3">Unit Tag:</label>
@@ -153,11 +165,11 @@
 													</select>
 												</div>
 												<div class="form-group">
-													<label class="control-label col-sm-3">Unit Height:</label>
+													<label class="control-label col-sm-3">Height:</label>
 													<input class="col-sm-2" id="unit_height" autocomplete="off">&nbsp;in</input>
 												</div>
 									  			<div class="form-group">
-													<label class="control-label col-sm-3">Unit Width:</label>
+													<label class="control-label col-sm-3">Width:</label>
 													<input class="col-sm-2" id="unit_weight" autocomplete="off">&nbsp;in</input>
 												</div>
 												<div class="form-group">
@@ -168,10 +180,35 @@
 												</div>
 											</form>
 										</div>
-										<div id="section2" class="tab-pane">
-											
+										<div id="resultsTab" class="tab-pane">
+											<table class="table table-striped table-hover table-condensed">
+												<tr>
+													<th>Fan</th>
+													<th>Quantity</th> 
+													<th>HP</th>
+													<th>FLA</th>
+													<th>Efficiency</th>
+													<th>Sound</th> 													
+												</tr>
+												<tr>
+													<td>114918</td>
+													<td>3</td> 
+													<td>4.2</td>
+													<td>4.8</td>
+													<td>1025</td> 
+													<td>1.1</td>
+												</tr>
+												<tr>
+													<td>114722</td>
+													<td>2</td> 
+													<td>5.1</td>
+													<td>3.6</td>
+													<td>978</td> 
+													<td>2.3</td>
+												</tr>
+											</table>
 										</div>
-										<div id="section3" class="tab-pane">
+										<div id="outputsTab" class="tab-pane">
 											
 										</div>
 									</div>

@@ -44,6 +44,7 @@ function displayJobList(){
 
 	for (var i = 0; i < jobsList.length; i++ ) {
         var item = document.createElement("li");
+        item.className = "list-group-item active";
         item.innerHTML = jobsList[i];
         items.appendChild(item);
     }
