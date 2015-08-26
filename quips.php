@@ -32,7 +32,7 @@
 				  	</div>				  		  				
 					<div class="row">					
 						<div class="col-md-2">
-							<div class="panel panel-default" style="height:600px;">
+							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h1 class="panel-title">Job Manager</h1>
 									<button class="btn btn-default" onclick="openModal()">New</button>
@@ -41,7 +41,7 @@
 								<!-- Modal -->								
 								<div id="newJobModal" class="modal fade" style="display: none;">
 									<div class="modal-dialog">
-										<div class="modal-content">
+										<div class="modal-content" style="margin-top: 250px;">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 													<span aria-hidden="true">x</span>
@@ -49,10 +49,9 @@
 												<h4 class="modal-title">New Job</h4>
 											</div>
 											<div class="modal-body">
-												<p>Job Name: </p>
 												<form method="post" action="">
-													<input id="newJob" type="text" name="new_job" placeholder="New Job">
-													<input type="button" value= "Create Job" onclick="displayJobList()">
+													<input id="newJobName" type="text" name="new_job" placeholder="Job Name">
+													<input type="button" value= "Create Job" onclick="addNewJob()">
 												</form>
 											</div>
 											<div class="modal-footer">
@@ -66,7 +65,7 @@
 								<!-- newJobModal -->
 								
 								<!-- Display current jobs list -->
-								<div id="jobList">
+								<div style="height:500px; overflow:auto;">
 
 									<!--
 									<p id="feedback">
@@ -130,6 +129,7 @@
 												</tr>
 												<tr>
 													<td>AHU-3 EA</td>
+				
 												</tr>
 												<tr>
 													<td>AHU-4 SA</td>

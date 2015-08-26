@@ -35,6 +35,32 @@ function openModal(){
 	$("#newJobModal").modal(); 
 }
 
+// adds new job to array of jobs
+function addNewJob(){
+	var jobs = [];
+	jobs.push(document.getElementById("newJobName").value);
+	displayJobs(jobs);
+}
+
+// adds new selection to array of selections
+function addNewSelection(){
+	var selections = [];
+	selections.push(document.getElementById("newSelectionName").value);
+	displaySelections(selections);
+}
+
+// updates <ul> with array of jobs
+function displayJobs(jobs){
+	var elements = document.getElementById("job-list-content");
+	for (var i=0; i<jobs.length; i++) {
+		var element = document.createElement("li");
+		element.className = "list-group-item";
+		element.innerHTML = jobs[i];
+		elements.appendChild(element);
+	}
+}
+
+// adds new job to array and then updates <ul> with new array
 function displayJobList(){
 	var jobsList = []; 
 	var jobName = document.getElementById("newJob").value; 
@@ -44,7 +70,7 @@ function displayJobList(){
 
 	for (var i = 0; i < jobsList.length; i++ ) {
         var item = document.createElement("li");
-        item.className = "list-group-item active";
+        item.className = "list-group-item";
         item.innerHTML = jobsList[i];
         items.appendChild(item);
     }
@@ -111,6 +137,39 @@ function runCalculations(CFM, H, W) {
 //FIDDLE CODE
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /*
+
+<table id="jobs">
+	<tr id="job1">
+		<table id="job1Selections">
+			<tr id="selection1">
+			</tr>
+			<tr id="selection2">
+			</tr>
+		</table>
+	</tr>
+	<tr id="job2">
+		<table id="job2Selections">
+			<tr id="selection1">
+			</tr>
+			<tr id="selection2">
+			</tr>
+		</table>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // array = [{key:value},{key:value}]
 function objectFindByKey(array, key, value) {
@@ -261,7 +320,15 @@ document.getElementById("x36y74").className = "blackCell";
 	vertical-align: middle;
 	border: 1px solid black;
 }
-*/
 
+
+
+
+
+
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////
+//FIDDLE CODE
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 
