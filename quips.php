@@ -143,7 +143,7 @@
 									<input class="col-sm-6" id="air_vol" autocomplete="off">&nbsp;ft<sup>3</sup>/min</input>
 								</div>
 								<div class="form-group">
-									<label class="control-label col-sm-4">Pressure:</label>
+									<label class="control-label col-sm-4">Total S.P.:</label>
 									<input class="col-sm-6" id="total_static_press" autocomplete="off">&nbsp;in W.C.</input>
 								</div>
 								<div class="form-group">
@@ -161,7 +161,7 @@
 					  			<div class="form-group">
 									<label class="control-label col-sm-4">Width:</label>
 									<input class="col-sm-6" id="unit_weight" autocomplete="off">&nbsp;in</input>
-								</div>
+								</div>								
 							</form>
 						</div>
 						<div class="col-md-5">
@@ -183,130 +183,156 @@
 												<th>Size (mm)</th>
 												<th>Qty</th>																						
 												<th>P<sub>Input</sub> (W)</th>
+												<th>Motor (kW)</th>
 												<th>Speed (RPM)</th>
 												<th>L<sub>w(A),5</sub> (dB)</th>
 												<th>L<sub>w(A),6</sub> (dB)</th>
-												<th>I<sub>DP</sub> (A)</th>													 													
+												<th>I<sub>DP</sub> (A)</th>	
+												<th>Relative Cost</th>														 													
 											</tr>
 											<tr>
 												<td>114922</td>
 												<td>355</td>
 												<td>3</td> 
 												<td>3314</td>
+												<td>3.3</td>
 												<td>3321</td>
 												<td>84</td> 
 												<td>91</td>
 												<td>4.39</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114722</td>
 												<td>450</td>
 												<td>2</td> 
 												<td>3535</td>
+												<td>3.3</td>
 												<td>2289</td>
 												<td>82</td> 
 												<td>90</td>
 												<td>4.69</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114922</td>
 												<td>355</td>
 												<td>3</td> 
 												<td>3314</td>
+												<td>3.3</td>
 												<td>3321</td>
 												<td>84</td> 
 												<td>91</td>
 												<td>4.39</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114722</td>
 												<td>450</td>
 												<td>2</td> 
 												<td>3535</td>
+												<td>3.3</td>
 												<td>2289</td>
 												<td>82</td> 
 												<td>90</td>
 												<td>4.69</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114922</td>
 												<td>355</td>
 												<td>3</td> 
 												<td>3314</td>
+												<td>3.3</td>
 												<td>3321</td>
 												<td>84</td> 
 												<td>91</td>
 												<td>4.39</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114722</td>
 												<td>450</td>
 												<td>2</td> 
 												<td>3535</td>
+												<td>3.3</td>
 												<td>2289</td>
 												<td>82</td> 
 												<td>90</td>
 												<td>4.69</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114922</td>
 												<td>355</td>
 												<td>3</td> 
 												<td>3314</td>
+												<td>3.3</td>
 												<td>3321</td>
 												<td>84</td> 
 												<td>91</td>
 												<td>4.39</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114722</td>
 												<td>450</td>
 												<td>2</td> 
 												<td>3535</td>
+												<td>3.3</td>
 												<td>2289</td>
 												<td>82</td> 
 												<td>90</td>
 												<td>4.69</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114922</td>
 												<td>355</td>
 												<td>3</td> 
 												<td>3314</td>
+												<td>3.3</td>
 												<td>3321</td>
 												<td>84</td> 
 												<td>91</td>
 												<td>4.39</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114722</td>
 												<td>450</td>
 												<td>2</td> 
 												<td>3535</td>
+												<td>3.3</td>
 												<td>2289</td>
 												<td>82</td> 
 												<td>90</td>
 												<td>4.69</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114922</td>
 												<td>355</td>
 												<td>3</td> 
 												<td>3314</td>
+												<td>3.3</td>
 												<td>3321</td>
 												<td>84</td> 
 												<td>91</td>
 												<td>4.39</td>
+												<td>1.00</td>
 											</tr>
 											<tr>
 												<td>114722</td>
 												<td>450</td>
 												<td>2</td> 
 												<td>3535</td>
+												<td>3.3</td>
 												<td>2289</td>
 												<td>82</td> 
 												<td>90</td>
 												<td>4.69</td>
+												<td>1.00</td>
 											</tr>
 										</table>
 									</div>
