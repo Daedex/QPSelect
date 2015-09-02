@@ -40,6 +40,7 @@ function addNewJob(){
 	var jobs = [];
 	jobs.push(document.getElementById("newJobName").value);
 	displayJobs(jobs);
+	$('#newJobModal').modal('hide');
 }
 
 // adds new selection to array of selections
