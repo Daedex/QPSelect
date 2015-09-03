@@ -30,6 +30,19 @@ function clearSelection() {
 };
 */ 
 
+function FindCategoriesByItem(item_id) {
+ $.ajax({
+  url: 'getJobs.php',
+  method: 'get',
+  data: {
+   item_id: item_id
+  },
+  dataType: 'json'
+ }).done(function(data) {
+  // do shit
+ });
+}
+
 // open new job modal window
 function openModal(){
 	$("#newJobModal").modal(); 
