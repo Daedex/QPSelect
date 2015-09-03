@@ -49,7 +49,7 @@
 									<div class="modal-body">
 										<form method="post" action="create_job.php">
 											<input id="newJobName" type="text" name="new_job" placeholder="Job Name">
-											<input type="submit" value= "Create Job" onclick="addNewJob()">
+											<input type="submit" value="Create Job">
 										</form>
 									</div>
 									<div class="modal-footer">
