@@ -47,9 +47,9 @@
 										<h4 class="modal-title">New Job</h4>
 									</div>
 									<div class="modal-body">
-										<form method="post" action="">
+										<form method="post" action="create_job.php">
 											<input id="newJobName" type="text" name="new_job" placeholder="Job Name">
-											<input type="button" value= "Create Job" onclick="addNewJob()">
+											<input type="submit" value= "Create Job" onclick="addNewJob()">
 										</form>
 									</div>
 									<div class="modal-footer">
