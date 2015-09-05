@@ -23,8 +23,8 @@ function runSelection() {
 document.getElementById("clearSelection").onclick = clearSelection;
 function clearSelection() {
 	$('#airVolume').val(null);
-	$('#totalSP').val(null);
-	$('#voltage').val(null);
+	$('#totalSP').val(null);														
+	$('#voltage').val(null);				
 	$('#unitHeight').val(null);
 	$('#unitWidth').val(null);
 };
@@ -43,7 +43,7 @@ function FindCategoriesByItem(item_id) {
  });
 }
 
-// open new job modal window
+// open new job modal window			
 function openModal(){
 	$("#newJobModal").modal(); 
 }
