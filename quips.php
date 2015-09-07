@@ -47,7 +47,7 @@
 										<h4 class="modal-title">New Job</h4>
 									</div>
 									<div class="modal-body">
-										<form method="post" action="create_job.php">
+										<form method="post" action="components/jobs/create.php">
 											<input id="newJobName" type="text" name="new_job" placeholder="Job Name" autocomplete="off">
 											<input type="submit" value="Create Job">
 										</form>

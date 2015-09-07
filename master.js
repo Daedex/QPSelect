@@ -30,18 +30,21 @@ function clearSelection() {
 };
 */ 
 
-function FindCategoriesByItem(item_id) {
+$(document).ready(function(){
  $.ajax({
-  url: 'getJobs.php',
+  url: 'components/jobs/readAll.php',
   method: 'get',
-  data: {
-   item_id: item_id
-  },
   dataType: 'json'
- }).done(function(data) {
-  // do shit
+ }).done(function(data){
+ 	var elements = document.getElementById("job-list-content");
+	for (var i=0; i<data.length; i++) {
+		var element = document.createElement("li");
+		element.className = "list-group-item";
+		element.innerHTML = data[i].name;
+		elements.appendChild(element);
+	}
  });
-}
+})
 
 
 
