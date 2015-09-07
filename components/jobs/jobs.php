@@ -7,8 +7,8 @@
     public $name;
 
     public function __construct($id, $name){
-      $this->id = $id;
-      $this->name = $name; 
+      this->$id = $id;
+      this->$name = $name; 
     }
   }
 
@@ -16,7 +16,7 @@
     private $db; 
 
     public function __construct(){
-      $this->db = new mysqli('localhost', 'root', 'Quips123', 'quips');
+      $this->db = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
       $this->db->autocommit(FALSE); 
     }
 
@@ -40,11 +40,25 @@
       $id = $this->db->insert_id;
       $this->db->commit();
       $stmt->close();
-      
+
       return $id;
     }
-    
-    public function readAll($user_id){
+
+    public function Read($id){
+      $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE id = ?");
+      $stmt->bind_param('i', $id);
+      $stmt->execute();
+      $stmt->bind_result($id, $name);
+
+      $jobs = []
+      while($stmt->fetch()) {
+        $jobs[] = new Job($id, $name);
+      }
+
+      return $jobs; 
+    }
+
+    public function Read_by_User($user_id){
       $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE user_id = ?");
       $stmt->bind_param('i', $user_id); 
       $stmt->execute();
