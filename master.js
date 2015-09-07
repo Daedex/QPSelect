@@ -1,34 +1,23 @@
-////////////////////////////////////////////////////////////////////////////////////////////////
-//VIEW - RENDERING FUNCTIONS / DOM MANIPULATIONS
-////////////////////////////////////////////////////////////////////////////////////////////////
+function AuthenticateApp() {
+ session_start();
 
+ global $user;
 
+ if(!isset($_SERVER['HTTP_USER_AGENT']) || !isset($_SESSION['user_id']) || $_SESSION['user_agent'] !== $_SERVER['HTTP_USER_AGENT']) {
+  header("Location: quips.html/login.html"); return;
+ }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//CONTROLLER - USER INPUTS
-////////////////////////////////////////////////////////////////////////////////////////////////
+ include_once('scripts/users/users.php');
 
-//run new selection
-/*document.getElementById("runSelection").onclick = runSelection;
-function runSelection() {
-	var airVolume = $('#airVolume').val(),
-		totalSP = $('#totalSP').val(),
-		voltage = $('#voltage').val(),
-		unitHeight = $('#unitHeight').val(),
-		unitWidth = $('#unitWidth').val();
-		runCalculations(airVolume, unitHeight, unitWidth);
-};
+ $controller = new Users();
+ $user = $controller->Read($_SESSION['user_id']);
 
-//clear all inputs
-document.getElementById("clearSelection").onclick = clearSelection;
-function clearSelection() {
-	$('#airVolume').val(null);
-	$('#totalSP').val(null);														
-	$('#voltage').val(null);				
-	$('#unitHeight').val(null);
-	$('#unitWidth').val(null);
-};
-*/ 
+ if(!$user) {
+  header("Location: quips.html/login.html"); return;
+ }
+
+ return $user;
+}
 
 $(document).ready(function(){
 	var user_id = 1;
@@ -48,8 +37,7 @@ $(document).ready(function(){
 	 });
 })
 
-$(document).ready(function(){
-	var user_id = 1;
+function loadJobs(user_id){
 	 $.ajax({
 	  url: 'components/jobs/readAll.php',
 	  type: 'GET',
@@ -134,7 +122,37 @@ $(function() {
     });
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+//VIEW - RENDERING FUNCTIONS / DOM MANIPULATIONS
+////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//CONTROLLER - USER INPUTS
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+//run new selection
+/*document.getElementById("runSelection").onclick = runSelection;
+function runSelection() {
+	var airVolume = $('#airVolume').val(),
+		totalSP = $('#totalSP').val(),
+		voltage = $('#voltage').val(),
+		unitHeight = $('#unitHeight').val(),
+		unitWidth = $('#unitWidth').val();
+		runCalculations(airVolume, unitHeight, unitWidth);
+};
+
+//clear all inputs
+document.getElementById("clearSelection").onclick = clearSelection;
+function clearSelection() {
+	$('#airVolume').val(null);
+	$('#totalSP').val(null);														
+	$('#voltage').val(null);				
+	$('#unitHeight').val(null);
+	$('#unitWidth').val(null);
+};
+*/ 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //MODEL - DATA AND LOGIC
@@ -156,26 +174,6 @@ var Selection = function(airVolume, unitHeight, unitWidth) {
 function runCalculations(CFM, H, W) {
 	$('#viewArea').append("<p>"+(CFM/((H*W)/144))+"ft/min</p>");
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -201,19 +199,6 @@ function runCalculations(CFM, H, W) {
 		</table>
 	</tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // array = [{key:value},{key:value}]
@@ -365,11 +350,6 @@ document.getElementById("x36y74").className = "blackCell";
 	vertical-align: middle;
 	border: 1px solid black;
 }
-
-
-
-
-
 
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////
