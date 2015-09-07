@@ -50,9 +50,23 @@
     $stmt->execute();
     $stmt->bind_result($id, $name);
     
-    while($stmt->fetch()) {
-      $job = new Job($id, $name);
-      return $job;
+      while($stmt->fetch()){
+        $job = new Job($id, $name);
+        return $job;
+      }
+    }
+
+    public function readAll(){
+    $stmt = $this->db->prepare("SELECT * FROM jobs");
+    $stmt->execute();   
+    $stmt->bind_result(); 
+
+    $jobs = [];
+    
+      while($stmt->fetch()){
+        $jobs[] = new Job($id, $name);
+      }
+      return $jobs;
     }
 
     public function Update($name, $id){
