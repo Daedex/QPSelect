@@ -16,7 +16,7 @@
     private $db; 
 
     public function __construct(){
-      $this->db = new mysqli('localhost', 'root', 'Quips123', 'quips');
+      $this->db = new mysqli('daedex.com', 'stauguu1_admin', 'Quips123', 'stauguu1_quips');
       $this->db->autocommit(FALSE); 
     }
 
@@ -45,12 +45,12 @@
     }
     
     public function readAll($user_id){
-      $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE user_id = ?");
+      $stmt = $this->db->prepare("SELECT job_id, job_name FROM jobs WHERE user_id = ?");
       $stmt->bind_param('i', $user_id); 
       $stmt->execute();
-      $stmt->bind_result(); 
+      $stmt->bind_result($id, $name);
 
-      $jobs = []
+      $jobs = [];
       while($stmt->fetch()){
         $jobs[] = new Job($id, $name);
       }
