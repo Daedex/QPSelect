@@ -63,9 +63,9 @@
       $stmt->close(); 
     }
 
-    public function Delete($name){
-      $stmt = $this->db->prepare("DELETE FROM jobs WHERE name = ?");
-      $stmt->bind_param('s', $name); 
+    public function Delete($name, $id){
+      $stmt = $this->db->prepare("DELETE FROM jobs WHERE job_name = ? AND job_id = ?");
+      $stmt->bind_param('si', $name, $id); 
       $stmt->execute();
       $this->db->commit();
       $stmt->close(); 
