@@ -43,42 +43,8 @@
       
       return $id;
     }
-
-    public function Read($id){
-      $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE id = ?");
-      $stmt->bind_param('i', $id);
-      $stmt->execute();
-      $stmt->bind_result($id, $name);
-<<<<<<< HEAD
-      
-      while($stmt->fetch()){
-        $job = new Job($id, $name);
-        return $job;
-=======
-
-      $jobs = []
-      while($stmt->fetch()) {
-        $jobs[] = new Job($id, $name);
->>>>>>> 43cc2ba47652f5cbba31664e877041e3c4a85cba
-      }
-
-      return $jobs; 
-    }
-
-    public function readAll(){
-      $stmt = $this->db->prepare("SELECT * FROM jobs");
-      $stmt->execute();   
-      $stmt->bind_result($id, $name); 
-
-      $jobs = [];
     
-      while($stmt->fetch()){
-        $jobs[] = new Job($id, $name);
-      }
-      return $jobs;
-    }
-    
-    public function Read_by_User($user_id){
+    public function readAll($user_id){
       $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE user_id = ?");
       $stmt->bind_param('i', $user_id); 
       $stmt->execute();
