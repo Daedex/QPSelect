@@ -43,6 +43,8 @@ function FindCategoriesByItem(item_id) {
  });
 }
 
+
+
 // open new job modal window			
 function openModal(){
 	$("#newJobModal").modal(); 
