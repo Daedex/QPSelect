@@ -38,14 +38,30 @@ $(document).ready(function(){
 	  data: {user_id: user_id},
 	  dataType: 'json'
 	 }).done(function(data){
-	 	console.log(data);
 	 	var elements = document.getElementById("job-list-content");
 		for (var i=0; i<data.length; i++) {
 			var element = document.createElement("li");
 			element.className = "list-group-item";
 			element.innerHTML = data[i].name;
 			elements.appendChild(element);
+		}
+	 });
+})
 
+$(document).ready(function(){
+	var user_id = 1;
+	 $.ajax({
+	  url: 'components/jobs/readAll.php',
+	  type: 'GET',
+	  data: {user_id: user_id},
+	  dataType: 'json'
+	 }).done(function(data){
+	 	var elements = document.getElementById("job-list-content");
+		for (var i=0; i<data.length; i++) {
+			var element = document.createElement("li");
+			element.className = "list-group-item";
+			element.innerHTML = data[i].name;
+			elements.appendChild(element);
 		}
 	 });
 })
