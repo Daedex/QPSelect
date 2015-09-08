@@ -7,8 +7,8 @@
     public $name;
 
     public function __construct($id, $name){
-      this->$id = $id;
-      this->$name = $name; 
+      $this->id = $id;
+      $this->name = $name; 
     }
   }
 
@@ -16,11 +16,7 @@
     private $db; 
 
     public function __construct(){
-<<<<<<< HEAD
-      $this->db = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-=======
       $this->db = new mysqli('daedex.com', 'stauguu1_admin', 'Quips123', 'stauguu1_quips');
->>>>>>> 32951c9287b391a47cd09985c75da1ede33609a8
       $this->db->autocommit(FALSE); 
     }
 
@@ -44,32 +40,12 @@
       $id = $this->db->insert_id;
       $this->db->commit();
       $stmt->close();
-
+      
       return $id;
     }
-<<<<<<< HEAD
-
-    public function Read($id){
-      $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE id = ?");
-      $stmt->bind_param('i', $id);
-      $stmt->execute();
-      $stmt->bind_result($id, $name);
-
-      $jobs = []
-      while($stmt->fetch()) {
-        $jobs[] = new Job($id, $name);
-      }
-
-      return $jobs; 
-    }
-
-    public function Read_by_User($user_id){
-      $stmt = $this->db->prepare("SELECT id, name FROM jobs WHERE user_id = ?");
-=======
     
     public function readAll($user_id){
       $stmt = $this->db->prepare("SELECT job_id, job_name FROM jobs WHERE user_id = ?");
->>>>>>> 32951c9287b391a47cd09985c75da1ede33609a8
       $stmt->bind_param('i', $user_id); 
       $stmt->execute();
       $stmt->bind_result($id, $name);
