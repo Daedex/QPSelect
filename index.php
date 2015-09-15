@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  	<link rel="stylesheet" type="text/css" href="reset.css">
-  	<link rel="stylesheet" type="text/css" href="style.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  	<script type="text/javascript" src="master.js"></script>
-  	<title>QUIPS Log In</title>
-  </head> 
-  <body>
-  	<script src="master.js"></script>
-  	<div class="container">
-  		<!-- Quips logo -->
-  		<div id="header"><h3>Q<span>uips</span></h3>
-  		<div class="login_form_wrapper">
-	  	<div id="login_header">
-	  		<h3>Log In</h3>
-	  	</div>
+<html lang="en">    
+<head>
+        <title>QUIPS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    </head>
 
-	  	<!-- Log In form -->
-	    <form id="login_form" method="post" action="login.php">
-	    	<div id="login_area">
-	    		<table>
-	    			<tr>
-	    				<td>
-	    					<label>User Name</label>
-	    					<input name="user_name" autocomplete="off"></input>
-	    				</td>
-	    			</tr>
-	    			<tr>
-	    				<td>
-	    					<label>Password</label>
-	    					<input name="password" type="password" autocomplete="off"></input>
-	    				</td>
-	    			</tr>	    			
-	    		</table>
-	    	</div>
-	    	<input type="submit" value="Log In">
-	    </form>
-  	</div>
-  </body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+            <h4>Log in to QUIPS</h4>
+            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+            </br>
+            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+            <div class="wrapper">
+            <span class="group-btn">     
+                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
