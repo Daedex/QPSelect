@@ -16,5 +16,4 @@ function db_connect(){
 function db_disconnect($link){
 	mysql_close($link); 
 }
-
 ?>
